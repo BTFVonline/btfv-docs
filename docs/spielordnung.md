@@ -67,7 +67,7 @@ Diese sind aktuell: Freitag 20:00, Samstag 18:00, Sonntag 14:00, Sonntag 15:00 o
 
 Ohne vollständige und korrekte Angabe der Daten über Spielstätte, Spielführer und Spieler ist eine Teilnahme am Ligabetrieb nicht möglich.
 
-Spielstätte
+Spielstätten
 
 Adresse, Telefonnummer, verständliche Wegbeschreibung, Spieltag/- Uhrzeit, Bewirtung
 
