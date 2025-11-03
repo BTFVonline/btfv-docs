@@ -26,6 +26,8 @@ date: {{ site.time | date: "%d-%m-%Y" }}
 
 Die Finanzwirtschaft des Verbandes ist sparsam zu führen.
 
+MEINE TOLLE ÄNDERUNG
+
 # Kassenbericht
 
 Im Kassenbericht sind die Einnahmen und Ausgaben des Verbandes nachzuweisen, sowie die Schulden und Vermögen aufzuführen. Er hat außerdem eine Vermögensübersicht zu enthalten. Nach Prüfung durch die gewählten Kassenprüfer erstattet der Kassenwart dem Vorstand Bericht. Nach Genehmigung durch den Vorstand erfolgt die Veröffentlichung in der Mitgliederversammlung.
