@@ -74,6 +74,15 @@ Der BTFV verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke im Sinne
 2. Ordentliche Mitglieder sind Tischfußballvereinigungen oder Abteilungen von Vereinigungen mit Sitz in Bayern.
 3. Außerordentliche (fördernde) Mitglieder sind Institutionen und Einzelpersonen, die die Bestrebungen des BTFV fördern.
 4. Ehrenmitglieder sind Einzelpersonen, die sich um den Tischfußballsport hervorragende Verdienste erworben haben und von der Mitgliederversammlung hierzu ernannt werden.
+5. Rechtsform, Gemeinnützigkeit und Übergangsfristen
+
+    5.1 Ordentliche Mitglieder des BTFV können sowohl eingetragene Vereine (e.V.) als auch nicht eingetragene Vereine sein.  
+
+    5.2 Vereine mit mehr als 15 Mitgliedern müssen als eingetragener Verein (e.V.) organisiert sein und einen Nachweis der Gemeinnützigkeit gemäß §§ 51–68 AO erbringen.  
+
+    5.3 Vereine mit 15 oder weniger Mitgliedern können als nicht eingetragene Vereine aufgenommen werden, sofern sie in ihrer Satzung die Förderung des Tischfußballsports verankert haben und die Voraussetzungen der Gemeinnützigkeit grundsätzlich erfüllen können.
+
+    5.4 Für Vereine, die zum Zeitpunkt der Aufnahme die Anforderungen an die Eintragung als e.V. oder die anerkannte Gemeinnützigkeit noch nicht erfüllen, kann der Vorstand eine Übergangsfrist von bis zu einem Jahr gewähren. Erfolgt die Eintragung als e.V. oder die Anerkennung der Gemeinnützigkeit nicht innerhalb dieser Frist, kann die Aufnahme rückgängig gemacht oder der Verein aus dem Verband ausgeschlossen werden.
 
 # Aufnahme
 
