@@ -14,7 +14,7 @@ date: {{ site.time | date: "%d-%m-%Y" }}
     </p>
     <p>
         <a href="./../assets/pdf/spielordnung.pdf" target="_blank">Download als PDF</a><br />
-        <a href="https://github.com/BTFVonline/btfv-docs/blob/main/docs/satzung.md" target="_blank">GitHub Repository</a>
+        <a href="https://github.com/BTFVonline/btfv-docs/blob/main/docs/spielordnung.md" target="_blank">GitHub Repository</a>
     </p>
 </div>
 
