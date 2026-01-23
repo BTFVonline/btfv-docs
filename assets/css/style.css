@@ -32,6 +32,10 @@ h1::before {
     content: counter(section) ". "; /* Zeigt den aktuellen Wert von section */
 }
 
+body.section-prefix h1::before {
+    content: "\00A7 " counter(section) " ";
+}
+
 h2::before {
     counter-increment: subsection; /* Erhöht den subsection-Zähler */
     content: counter(section) "." counter(subsection) " "; /* Zeigt section und subsection */
@@ -85,6 +89,10 @@ body {
 #markdown-toc li a::before {
     content: counters(item, ".") ". "; /* Zählt und fügt die Nummer zum Link hinzu */
     color: #3498db;
+}
+
+body.section-prefix #markdown-toc > li > a::before {
+    content: "\00A7 " counters(item, ".") " ";
 }
 
 #markdown-toc ul {

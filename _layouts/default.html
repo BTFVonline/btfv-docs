@@ -6,7 +6,7 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 </head>
-<body>
+<body class="{% if page.section_prefix %}section-prefix{% endif %}">
     <div class="wrapper">
         {{ content }}
     </div>

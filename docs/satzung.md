@@ -1,7 +1,9 @@
 ---
 title: "Satzung des BTFV e.V."
 author: "![BTFV Logo](images/btfv-logo.png)"
-date: {{ site.time | date: "%d-%m-%Y" }}
+date: 23.11.2025
+layout: default
+section_prefix: "§"
 ---
 <div class="html-only" style="text-align: center;">
     <div class="title" style="text-align: center;">
@@ -10,7 +12,7 @@ date: {{ site.time | date: "%d-%m-%Y" }}
     </div>
 
     <p style="text-align: center;">
-        Zuletzt geändert am:  {{ site.time | date: "%d-%m-%Y" }}
+        Zuletzt geändert am: 23.11.2025
     </p>
     <p>
         <a href="./../assets/pdf/satzung.pdf" target="_blank">Download als PDF</a><br />
@@ -269,8 +271,8 @@ Der BTFV ist für den Schaden verantwortlich, den der Vorstand, die Mitglieder d
 
 # Inkrafttreten
 
-1. Die Satzung wurde durch die Mitgliederversammlung am 26.11.2023 in Nürnberg beschlossen.
+1. Die Satzung wurde durch die Mitgliederversammlung am 23.11.2025 in Nürnberg beschlossen.
 
 2. Sie tritt mit der Eintragung in das Vereinsregister des Amtsgerichts in Kraft.
 
-3. Damit verliert die bisherige Satzung vom 05.11.2016 beim Amtsgericht Passau ihre Wirkung.
+3. Damit verliert die bisherige Satzung vom 26.11.2023 beim Amtsgericht Passau ihre Wirkung.
