@@ -12,6 +12,25 @@ for file in docs/*.md; do
     filename=$(basename -- "$file")
     name="${filename%.*}" # Extract file name without extension
     cp "$file" "temp/${name}_temp.md"
+    header_file="temp/${name}_header.tex"
+    number_sections=""
+
+    # Enable section prefixing for documents that request it
+    if grep -q '^section_prefix:' "$file"; then
+        number_sections="--number-sections"
+        cat > "$header_file" <<'EOF'
+\usepackage{enumitem}
+\renewcommand{\thesection}{\S\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\ifcsname the#1\endcsname\csname the#1\endcsname\hspace{0.4em}\fi}
+\renewcommand{\numberline}[1]{#1\hspace{0.6em}}
+\makeatother
+EOF
+    else
+        echo "\\usepackage{enumitem}" > "$header_file"
+    fi
     
     # Replace date placeholder in Markdown content
     sed -i "s/{{ site.time | date: \"%d-%m-%Y\" }}/$CURRENT_DATE/g" "temp/${name}_temp.md"
@@ -35,10 +54,11 @@ for file in docs/*.md; do
     
     # Convert Markdown to PDF
     pandoc "temp/${name}_temp.md" -o "assets/pdf/${name}.pdf" \
+      $number_sections \
       --toc-depth=2 \
       --pdf-engine=xelatex \
       -V geometry:margin=1in \
-      -V header-includes="\\usepackage{enumitem}" \
+      --include-in-header="$header_file" \
       --resource-path=./docs
 done
 

@@ -2,6 +2,8 @@
 title: "Satzung des BTFV e.V."
 author: "![BTFV Logo](images/btfv-logo.png)"
 date: 23.11.2025
+layout: default
+section_prefix: "§"
 ---
 <div class="html-only" style="text-align: center;">
     <div class="title" style="text-align: center;">
