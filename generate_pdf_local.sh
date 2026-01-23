@@ -24,12 +24,21 @@ for file in docs/*.md; do
     
     # Remove HTML-only blocks for PDF generation
     sed -i '/<div class="html-only"/,/^<\/div>$/d' "temp/${name}_temp.md"
+
+    # Convert HTML ordered lists (type="a") to LaTeX enumerate with alphabetic labels
+    sed -i '
+    s|<ol type="a">|\\begin{enumerate}[label=\\alph*.]|g;
+    s|</ol>|\\end{enumerate}|g;
+    s|<li>|\\item |g;
+    s|</li>||g;
+    ' "temp/${name}_temp.md"
     
     # Convert Markdown to PDF
     pandoc "temp/${name}_temp.md" -o "assets/pdf/${name}.pdf" \
       --toc-depth=2 \
       --pdf-engine=xelatex \
       -V geometry:margin=1in \
+      -V header-includes="\\usepackage{enumitem}" \
       --resource-path=./docs
 done
 
