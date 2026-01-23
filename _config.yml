@@ -3,3 +3,7 @@ description: "Spielordnung des BTFV"
 theme: jekyll-theme-minimal
 plugins:
   - jekyll-toc
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true

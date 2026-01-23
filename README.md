@@ -146,6 +146,18 @@ Voraussetzungen:
 
 ---
 
+## Lokale Jekyll-Vorschau
+
+Für eine lokale Vorschau kannst du dieses Skript verwenden (installiert fehlende Dependencies automatisch):
+
+```sh
+bash run_jekyll.sh
+```
+
+Danach im Browser öffnen: `http://localhost:4000/`
+
+---
+
 ## Lizenz
 
 [UNLICENSE](LICENSE) – Public Domain

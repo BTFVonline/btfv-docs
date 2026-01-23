@@ -2,6 +2,7 @@
 title: "Spielordnung des BTFV e.V."
 author: "![BTFV Logo](images/btfv-logo.png)"
 date: {{ site.time | date: "%d-%m-%Y" }}
+layout: default
 ---
 <div class="html-only" style="text-align: center;">
     <div class="title" style="text-align: center;">

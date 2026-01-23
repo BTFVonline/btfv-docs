@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Verbandsdokumente"
+---
+
 # Verbandsdokumente
 
 - [Satzung](docs/satzung.md)

@@ -1,1 +1,4 @@
 /temp/*
+/_site/temp/*
+.jekyll/
+_site/
