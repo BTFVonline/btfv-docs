@@ -7,6 +7,8 @@ pdf: /assets/pdf/example.pdf
 source: https://github.com/deluxeGitHub/btfv-docs/blob/main/docs/example.md
 ---
 
+<a class="dtfb-home-button" href="{{ "/" | relative_url }}">Home</a>
+
 * TOC
 {:toc}
 

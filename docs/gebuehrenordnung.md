@@ -7,6 +7,8 @@ pdf: /assets/pdf/gebuehrenordnung.pdf
 source: https://github.com/BTFVonline/btfv-docs/blob/main/docs/gebuehrenordnung.md
 ---
 
+<a class="dtfb-home-button" href="{{ "/" | relative_url }}">Home</a>
+
 * TOC
 {:toc}
 
