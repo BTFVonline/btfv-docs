@@ -8,8 +8,6 @@ pdf: /assets/pdf/satzung.pdf
 source: https://github.com/BTFVonline/btfv-docs/blob/main/docs/satzung.md
 ---
 
-<a class="dtfb-home-button" href="{{ "/" | relative_url }}">Home</a>
-
 * TOC
 {:toc}
 

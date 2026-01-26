@@ -1,13 +1,11 @@
 ---
 title: "Example"
-date: {{ site.time | date: "%d-%m-%Y" }}
+date: "{{ site.time | date: '%d.%m.%Y' }}"
 layout: default
 template: DTFB
 pdf: /assets/pdf/example.pdf
 source: https://github.com/deluxeGitHub/btfv-docs/blob/main/docs/example.md
 ---
-
-<a class="dtfb-home-button" href="{{ "/" | relative_url }}">Home</a>
 
 * TOC
 {:toc}
