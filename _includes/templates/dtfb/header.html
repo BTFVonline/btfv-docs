@@ -1,0 +1,32 @@
+{% assign template_date = page.date | default: "" %}
+<header class="dtfb-hero">
+    <div class="dtfb-hero__band">
+        <img class="dtfb-hero__band-image" src="{{ "/templates/dtfb/images/dtfb-header.png" | relative_url }}" alt="">
+    </div>
+    <div class="dtfb-hero__content">
+        <div class="dtfb-hero__brand">
+            <img class="dtfb-hero__logo" src="{{ "/templates/dtfb/images/dtfb-logo.png" | relative_url }}" alt="DTFB Logo">
+            <div class="dtfb-hero__titles">
+                <div class="dtfb-hero__title">{{ page.title }}</div>
+                {% if page.subtitle %}
+                    <div class="dtfb-hero__subtitle">{{ page.subtitle }}</div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="dtfb-hero__meta">
+            {% if template_date != "" %}
+                <div class="dtfb-hero__meta-item">Stand: {{ template_date }}</div>
+            {% endif %}
+            {% if page.pdf or page.source %}
+                <div class="dtfb-hero__links">
+                    {% if page.pdf %}
+                        <a href="{{ page.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>
+                    {% endif %}
+                    {% if page.source %}
+                        <a href="{{ page.source }}" target="_blank" rel="noopener">Quelle</a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</header>

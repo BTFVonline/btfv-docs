@@ -1,0 +1,39 @@
+% DTFB PDF header styling
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{lastpage}
+\usepackage{titling}
+\usepackage{hyperref}
+
+\definecolor{DTFBRed}{HTML}{7F070D}
+\definecolor{DTFBGold}{HTML}{8A6A11}
+\definecolor{DTFBGray}{HTML}{5A5450}
+
+\geometry{bottom=1.8in}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{40pt}
+\setlength{\footskip}{34pt}
+\fancyhead[L]{}
+\fancyhead[R]{\includegraphics[height=50pt]{templates/dtfb/images/DTFB-logo.png}}
+\fancyfoot[L]{\hspace*{15pt}\raisebox{-10pt}{\textcolor{DTFBGray}{\small \thedate}}}
+\fancyfoot[C]{\raisebox{0pt}{\includegraphics[width=\textwidth]{templates/dtfb/images/DTFB-wave.png}}}
+\fancyfoot[R]{\raisebox{-10pt}{\textcolor{DTFBGray}{\small Seite \thepage\ von \pageref{LastPage}}}}
+
+\titleformat{\section}{\Large\bfseries\color{DTFBRed}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{DTFBRed}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{DTFBRed}}{\thesubsubsection}{0.6em}{}
+
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{0pt}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=DTFBRed,
+  urlcolor=DTFBRed
+}
