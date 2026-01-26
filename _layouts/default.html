@@ -93,5 +93,70 @@
             }
         };
     </script>
+
+    <script>
+        const dtfbSlugify = (text) => text.toLowerCase()
+            .replace(/[^\w\s-]/g, "")
+            .trim()
+            .replace(/\s+/g, "-");
+
+        const dtfbCopyText = async (text) => {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(text);
+                return true;
+            }
+            const temp = document.createElement("textarea");
+            temp.value = text;
+            temp.setAttribute("readonly", "");
+            temp.style.position = "absolute";
+            temp.style.left = "-9999px";
+            document.body.appendChild(temp);
+            temp.select();
+            const success = document.execCommand("copy");
+            document.body.removeChild(temp);
+            return success;
+        };
+
+        const initHeadingLinks = () => {
+            const wrapper = document.querySelector(".wrapper");
+            if (!wrapper) return;
+            const headings = wrapper.querySelectorAll("h1, h2, h3, h4");
+
+            headings.forEach((heading) => {
+                if (heading.querySelector(".dtfb-heading-link")) return;
+                let id = heading.getAttribute("id");
+                if (!id) {
+                    id = dtfbSlugify(heading.textContent || "section");
+                    let unique = id;
+                    let counter = 2;
+                    while (document.getElementById(unique)) {
+                        unique = `${id}-${counter++}`;
+                    }
+                    heading.setAttribute("id", unique);
+                }
+
+                const link = document.createElement("a");
+                link.className = "dtfb-heading-link";
+                link.href = `#${id}`;
+                link.setAttribute("aria-label", "Link kopieren");
+                link.innerHTML = "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10.5 13.5l3-3\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M7 17a4 4 0 0 1 0-5.66l2.34-2.34a4 4 0 0 1 5.66 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M17 7a4 4 0 0 1 0 5.66l-2.34 2.34a4 4 0 0 1-5.66 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>";
+
+                link.addEventListener("click", async (event) => {
+                    event.preventDefault();
+                    const url = `${window.location.origin}${window.location.pathname}#${id}`;
+                    await dtfbCopyText(url);
+                    history.replaceState(null, "", `#${id}`);
+                });
+
+                heading.appendChild(link);
+            });
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initHeadingLinks);
+        } else {
+            initHeadingLinks();
+        }
+    </script>
 </body>
 </html>
