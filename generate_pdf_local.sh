@@ -6,11 +6,7 @@ mkdir -p temp
 
 # Get the current date
 CURRENT_DATE=$(date +%Y-%m-%d)
-CURRENT_MONTH=$(date +%m)
-CURRENT_YEAR=$(date +%Y)
-MONTH_NAMES=(Januar Februar März April Mai Juni Juli August September Oktober November Dezember)
-MONTH_INDEX=$((10#$CURRENT_MONTH - 1))
-CURRENT_MONTH_YEAR="${MONTH_NAMES[$MONTH_INDEX]} $CURRENT_YEAR"
+CURRENT_DATE_DE=$(date +%d.%m.%Y)
 
 # Loop through all Markdown files in the docs directory
 for file in docs/*.md; do
@@ -74,11 +70,16 @@ EOF
         cat "$template_dir/pdf-header.tex" >> "$header_file"
     fi
     
+    # Map title2 to subtitle for PDF rendering
+    sed -i "s/^title2:/subtitle:/" "temp/${name}_temp.md"
+
     # Replace date placeholder in Markdown content
     if [ "$template_name" = "dtfb" ]; then
-        sed -i "s/{{ site.time | date: \"%d-%m-%Y\" }}/$CURRENT_MONTH_YEAR/g" "temp/${name}_temp.md"
-        sed -i "s/date: {{ site.time | date: \"%d-%m-%Y\" }}/date: $CURRENT_MONTH_YEAR/g" "temp/${name}_temp.md"
-        sed -i "s/^date: .*/date: $CURRENT_MONTH_YEAR/" "temp/${name}_temp.md"
+        sed -i "s/{{ site.time | date: \"%d-%m-%Y\" }}/$CURRENT_DATE_DE/g" "temp/${name}_temp.md"
+        sed -i "s/{{ site.time | date: '%d.%m.%Y' }}/$CURRENT_DATE_DE/g" "temp/${name}_temp.md"
+        sed -i "s/date: {{ site.time | date: \"%d-%m-%Y\" }}/date: $CURRENT_DATE_DE/g" "temp/${name}_temp.md"
+        sed -i "s/date: {{ site.time | date: '%d.%m.%Y' }}/date: $CURRENT_DATE_DE/g" "temp/${name}_temp.md"
+        sed -i "s/^date: .*/date: $CURRENT_DATE_DE/" "temp/${name}_temp.md"
     else
         sed -i "s/{{ site.time | date: \"%d-%m-%Y\" }}/$CURRENT_DATE/g" "temp/${name}_temp.md"
         sed -i "s/date: {{ site.time | date: \"%d-%m-%Y\" }}/date: $CURRENT_DATE/g" "temp/${name}_temp.md"

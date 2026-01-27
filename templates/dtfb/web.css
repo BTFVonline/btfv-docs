@@ -177,7 +177,7 @@ body.template-dtfb .dtfb-hero__links {
 }
 
 body.template-dtfb .dtfb-hero__links a {
-    font-family: "acumin-pro-extra-condensed", "Work Sans", "Lato", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -203,11 +203,12 @@ body.template-dtfb h1,
 body.template-dtfb h2,
 body.template-dtfb h3,
 body.template-dtfb h4 {
-    font-family: "acumin-pro-extra-condensed", "Work Sans", "Lato", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
     color: var(--dtfb-green);
     margin-top: 30px;
     margin-bottom: 12px;
     line-height: 1.2;
+    font-weight: 700;
 }
 
 body.template-dtfb h1 {
@@ -227,11 +228,12 @@ body.template-dtfb .dtfb-doc-heading {
 }
 
 body.template-dtfb .dtfb-doc-title {
-    font-family: "acumin-pro-extra-condensed", "Work Sans", "Lato", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Oswald", "Lato", "Helvetica Neue", Arial, sans-serif;
     font-size: 30px;
     letter-spacing: 0.01em;
     color: var(--dtfb-green);
     text-transform: none;
+    font-weight: 500;
 }
 
 body.template-dtfb .dtfb-doc-subtitle {
@@ -356,7 +358,7 @@ body.template-dtfb #back-to-top {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     display: none;
     transition: background-color 0.3s ease;
-    font-family: "acumin-pro-extra-condensed", "Work Sans", "Lato", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
 }
 
 body.template-dtfb #back-to-top:hover {
