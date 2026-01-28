@@ -44,7 +44,18 @@ jobs:
             fi
             
             # Replace TOC syntax for LaTeX
-            sed -i '/^\* TOC$/{N;s|.*\n.*$|\\clearpage\\renewcommand{\\contentsname}{Inhaltsverzeichnis}\n\\tableofcontents\n\\clearpage|}' "temp/${name}_temp.md"
+            awk '
+              { sub(/\r$/, ""); }
+              $0 == "* TOC" || $0 == "TOC {:toc}" || $0 == "* TOC {:toc}" {
+                print "\\clearpage\\renewcommand{\\contentsname}{Inhaltsverzeichnis}";
+                print "\\tableofcontents";
+                print "\\clearpage";
+                skip = 1;
+                next;
+              }
+              skip && $0 == "{:toc}" { skip = 0; next; }
+              { print; }
+            ' "temp/${name}_temp.md" > "temp/${name}_temp.md.tmp" && mv "temp/${name}_temp.md.tmp" "temp/${name}_temp.md"
             
             # Remove HTML-only blocks for PDF generation
             sed -i '/<div class="html-only"/,/^<\/div>$/d' "temp/${name}_temp.md"
