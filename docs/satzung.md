@@ -75,7 +75,7 @@ Der BTFV verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke im Sinne
 1. Die Mitgliedschaft kann aus ordentlichen, außerordentlichen (fördernden) Mitgliedern und Ehrenmitgliedern bestehen.
 2. Ordentliche Mitglieder sind Tischfußballvereinigungen oder Abteilungen von Vereinigungen mit Sitz in Bayern.
 3. Außerordentliche (fördernde) Mitglieder sind Institutionen und Einzelpersonen, die die Bestrebungen des BTFV fördern.
-4. Ehrenmitglieder sind Einzelpersonen, die sich um den Tischfußballsport hervorragende Verdienste erworben haben und von der Mitgliederversammlung hierzu ernannt werden.
+4. Ehrenmitglieder sind Einzelpersonen, die sich um den Tischfußballsport hervorragende Verdienste erworben haben und die von der Mitgliederversammlung hierzu ernannt werden.
 5. Rechtsform, Gemeinnützigkeit und Übergangsfristen
 
     5.1 Ordentliche Mitglieder des BTFV können sowohl eingetragene Vereine (e.V.) als auch nicht eingetragene Vereine sein.  
@@ -245,11 +245,13 @@ Der BTFV ist für den Schaden verantwortlich, den der Vorstand, die Mitglieder d
 # Datenschutz
 
 1. Mit dem Beitritt einer Tischfußballvereinigung nimmt der Verband den Vereinssitz und den Namen der Tischfußballvereinigung sowie die Namen, Vornamen und Geburtsdaten der Mitglieder auf. Diese Informationen werden in dem verbandseigenen EDV-System gespeichert. Außerdem können die Daten auf den Computern der Vorstandsmitglieder gespeichert werden. Jedem Vereinsmitglied wird dabei eine Mitgliedsnummer zugeordnet. Die personenbezogenen Daten werden dabei durch geeignete technische und organisatorische Maßnahmen vor der Kenntnisnahme Dritter geschützt.
-2. Sonstige Informationen und Informationen über Nichtmitglieder werden von dem Vorstand grundsätzlich nur intern verarbeitet, wenn sie der Förderung des Vereinszwecks nützlich sind (z.B.: Speicherung von Telefon- und Faxnummern einzelner Mitglieder) und keine Anhaltspunkte bestehen, dass die betHere is the rest of the document reformatted according to the requirements:
 
-3. Mit dem Beitritt einer Tischfußballvereinigung nimmt der Verband den Vereinssitz und den Namen der Tischfußballvereinigung sowie die Namen, Vornamen und Geburtsdaten der Mitglieder auf. Diese Informationen werden in dem verbandseigenen EDV-System gespeichert. Außerdem können die Daten auf den Computern der Vorstandsmitglieder gespeichert werden. Jedem Vereinsmitglied wird dabei eine Mitgliedsnummer zugeordnet. Die personenbezogenen Daten werden dabei durch geeignete technische und organisatorische Maßnahmen vor der Kenntnisnahme Dritter geschützt.
+2.	Sonstige Informationen und Informationen über Nichtmitglieder werden von dem Vorstand grundsätzlich nur intern verarbeitet, wenn sie der Förderung des Vereinszwecks nützlich sind (z.B.: Speicherung von Telefon- und Faxnummern einzelner Mitglieder) und keine Anhaltspunkte bestehen, dass die betroffene Person ein schutzwürdiges Interesse hat, das der Verarbeitung entgegensteht.
 
-4. Sonstige Informationen und Informationen über Nichtmitglieder werden von dem Vorstand grundsätzlich nur intern verarbeitet, wenn sie der Förderung des Vereinszwecks nützlich sind (z.B.: Speicherung von Telefon- und Faxnummern einzelner Mitglieder) und keine Anhaltspunkte bestehen, dass die betroffene Person ein schutzwürdiges Interesse hat, das der Verarbeitung entgegensteht.
+3.	Als Mitglied des DTFB ist der Verband verpflichtet, seine Mitglieder an diese Organisation zu melden. Übermittelt werden dabei Name, Alter und Vereinsmitlgliedsnummer bei Mitgliedern mit besonderen Aufgaben (z.B.: Vorstandsmitglieder) die vollständige Adresse mit Telefonnummer, Mailadresse sowie der Bezeichnung ihrer Funktion im Verband. Im Rahmen von Ligaspielen oder Turnieren kann der Verband Ergebnisse und besondere Ereignisse an die entsprechende Organisation weiterleiten.
+
+4. Der Verband informiert die Tagespresse sowie die nationalen und internationalen Agenturen über Turnierergebnisse und besondere Ereignisse. Solche Informationen werden überdies auf der Internetseite des Verbandes veröffentlicht. Das einzelne Mitglied kann jederzeit gegenüber dem Vorstand einer solchen Veröffentlichung widersprechen. Im Falle des Widerspruchs unterbleiben in Bezug auf das widersprechende Mitglied weitere Veröffentlichungen. Personenbezogene Daten des widersprechenden Mitglieds werden von der Homepage entfernt. Der Verband benachrichtigt die entsprechenden Organisationen, denen der Verband abgehört von dem Widerspruch des Mitglieds.
+
 
 # Ordnungen
 
