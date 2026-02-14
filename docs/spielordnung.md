@@ -323,26 +323,45 @@ Der Auf- und Abstieg ist in zwei Fällen unterteilt und funktioniert wie folgt:
 
   Die letztplatzierten Mannschaften der **Bezirksliga** steigen direkt ab. Die erstplatzierten Mannschaften der **Kreisliga** steigen direkt auf.
 
+## Relegation Landesliga / Verbandsliga
+
+Wenn eine Relegation zwischen Landesliga und Verbandsliga erforderlich ist, gelten folgende Regeln:
+
+- Gespielt wird ein vollständiger Spieltag mit vier Spielblöcken.
+- Ein Heim- oder Gastrecht besteht nicht. Wer zuerst aufstellt, wird per Münzwurf entschieden.
+- Die Relegation muss einen Sieger ergeben. Bei Punktgleichheit entscheidet:
+  1. das Satzverhältnis  
+  2. der direkte Vergleich
+- Der Spielort wird vom Ligakoordinator festgelegt und soll für beide Teams eine möglichst vergleichbare Anfahrt gewährleisten.
+- Der Tag der Relegation wird zu Beginn des Jahres festgelegt. Die infrage kommenden Teams sollen sich diesen Termin frühzeitig freihalten.
+- Als Tischmodell wird Leonhart festgelegt.
+
 
 ## Relegation in unteren Ligen
 
-Sind nicht genügend Aufstiegsplätze in die nächst höhere Liga vorhanden, so kann der Aufstieg über eine Relegation erfolgen.
+Sind nicht genügend Aufstiegsplätze in der nächsthöheren Liga vorhanden, kann der Aufstieg über eine Relegation erfolgen.
 
-Folgende Regeln sollen hier gelten:
+Es gelten folgende Regeln:
 
-- Der letzt Platzierte der nächst höheren Liga steigt direkt ab
-- Der vorletzt Platzierte und die ersten Plätze der unteren Liga spielen eine Relegation – jeder gegen jeden.
+- Der letztplatzierte der nächsthöheren Liga steigt direkt ab.
+- Der vorletztplatzierte der nächsthöheren Liga sowie die erstplatzierten Mannschaften der unteren Liga nehmen an der Relegation teil.
+- Die Relegation wird im Modus „jeder gegen jeden“ ausgetragen.
 - Die Begegnungen werden zufällig ausgelost.
-- Der Spielplan soll halbiert werden. Es werden also zwei Blöcke gespielt.
-- Spiele können Unentschieden ausgehen.
-- Falls manche Teams gleich viele Punkte haben, entscheidet das Satzverhältnis, wenn dieses auch gleich ist kommt es zum direkten Vergleich.
-- Wer zuerst aufstellt wird durch Münzwurf entschieden, da es kein „Heim – und Gastrecht gibt“.
-- Optimalerweise ist der Ligakoordinator am Spieltag anwesend, um eventuell aufkommende Fragen zu klären.
-- Der Spielort braucht pro zwei Teams jeweils zwei Tische (3 Teams = 2 Tische, 4 Teams  = 4 Tische).
-- Der Spielort wird vom Ligakoordinator festgelegt und sollte so gelegen sein, dass alle Teams eine ähnlich weite Anfahrt haben.
-- Als Tischmodell wird Leonhart festgelegt, da dieser am weitesten verbreitet ist.
+- Der Spieltag wird in der Regel in reduzierter Form mit zwei Spielblöcken ausgetragen. Bei einer Relegation mit nur zwei Mannschaften wird ein vollständiger Spieltag mit vier Spielblöcken gespielt.
+-  Die Relegation wird als Platzierungsrunde ausgetragen. Die Platzierung entscheidet über den Aufstieg. Bei Punktgleichheit entscheidet:
+   1. das Satzverhältnis  
+   2. der direkte Vergleich
+- Ein Heim- oder Gastrecht besteht nicht. Wer zuerst aufstellt, wird per Münzwurf entschieden.
+- Der Spielort wird vom Ligakoordinator festgelegt und soll für alle Teams eine möglichst vergleichbare Anfahrt gewährleisten.
+- Der Spielort muss eine ausreichende Anzahl an Tischen bereitstellen. Dabei gilt:
+  - Pro gleichzeitig spielender Begegnung müssen mindestens zwei Tische zur Verfügung stehen.
+  - Bei drei teilnehmenden Mannschaften sind mindestens zwei Tische erforderlich.
+  - Bei vier teilnehmenden Mannschaften sind mindestens vier Tische erforderlich.
+- Optimalerweise ist der Ligakoordinator am Spieltag anwesend, um eventuelle Fragen zu klären.
+- Als Tischmodell wird Leonhart festgelegt.
 
-**Zeitplan für Relegation:**
+
+**Zeitplan für die Relegation:**
 
 - 10 Uhr Öffnung des Spielortes
 - 11 Uhr Beginn 1. Begegnung
