@@ -289,75 +289,79 @@ Falls alle Teams der Landesliga bereits ein Bundesliga Team stellen, kann auch i
 
 ## Auf- und Abstieg
 
+### Ausscheiden einer Mannschaft
+
 Sollte eine Mannschaft aus dem Spielbetrieb aussteigen oder durch die Ligaleitung davon ausgeschlossen werden, so wird diese Mannschaft als Tabellenletzter weitergeführt und steht als Absteiger fest. Alle bisher ausgetragenen und noch ausstehenden Spiele werden als verloren gewertet.
 
-Landesliga (Sammelspieltage)
+### Regelung in der Landesliga und Verbandsliga (Sammelspieltage)
 
-Der Auf- und Abstieg ist in vier Fällen unterteilt und funktioniert wie folgt:
+Der Auf- und Abstieg ist in zwei Fälle unterteilt und funktioniert wie folgt:
 
-**Fall 1:**
+* **Fall 1:**
 
-Landesliga: Der am schlechtesten-platzierte Landesligist einer Region (Nord/Süd) befindet sich auf einem direkten Abstiegsplatz (5. oder 6. Platz).
+  **Landesliga**: Der am schlechtesten platzierte Landesligist einer Region (Nord/Süd) liegt auf einem direkten Abstiegsplatz (5. oder 6. Platz).
 
-Verbandsliga: Der Meister der Verbandsliga (1. Platz) der entsprechenden Region (Nord/Süd) nimmt sein Aufstiegsrecht wahr.
+  **Verbandsliga**: Der Meister der Verbandsliga (1. Platz) der entsprechenden Region (Nord/Süd) steigt auf.
 
-Es wird **_keine_** Relegation gespielt. Der Landesligist steigt ab, der Verbandsligist steigt auf.
+  Es wird **_keine_** Relegation gespielt. Der Landesligist steigt ab, der Verbandsligist steigt auf.
 
-**Fall 2:**
+* **Fall 2:**
 
-Landesliga: Der am schlechtesten-platzierte Landesligist einer Region (Nord/Süd) befindet sich **_nicht_** auf einem direkten Abstiegsplatz (3. oder 4. Platz).
+  **Landesliga**: Der am schlechtesten platzierte Landesligist einer Region (Nord/Süd) liegt **_nicht_** auf einem direkten Abstiegsplatz (3. oder 4. Platz).
 
-Verbandsliga: Der Meister der Verbandsliga (1. Platz) der entsprechenden Region (Nord/Süd) nimmt sein Aufstiegsrecht wahr.
+  **Verbandsliga**: Der Meister der Verbandsliga (1. Platz) der entsprechenden Region (Nord/Süd) steigt über die Relegation auf.
 
-Es wird **_eine_** Relegation gespielt. Der Landesligist erhält auf Grund seiner guten Platzierung die Chance sich in der Landesliga zu halten. Auf- und Abstieg erfolgt nach dem Ergebnis des Relegationsspiels.
+  Es wird **_eine_** Relegation gespielt. Der Landesligist erhält aufgrund seiner guten Platzierung die Chance, sich in der Landesliga zu halten. Der Auf- und Abstieg richtet sich nach dem Ergebnis des Relegationsspiels.
 
-**Fall 3:**
+### Regelung in anderen Ligen
 
-Landesliga: Der am schlechtesten-platzierte Landesligist einer Region (Nord/Süd) befindet sich auf einem direkten Abstiegsplatz (5. oder 6. Platz).
+* **Verbandsliga**
 
-Verbandsliga: Der Meister der Verbandsliga (1. Platz) der entsprechenden Region (Nord/Süd) nimmt sein Aufstiegsrecht **_nicht_** wahr.
+  Die letztplatzierten Mannschaften der **Verbandsliga** steigen direkt ab. Die erstplatzierten der **Bezirksliga** steigen direkt auf.
 
-Das Aufstiegsrecht fällt an den Nächstplatzierten der Verbandsliga. Es wird **_eine_** Relegation gespielt. Der Landesligist erhält die Chance sich in der Landesliga zu halten, der Verbandsligist muss sich in einem Relegationsspiel beweisen. Auf- und Abstieg erfolgt nach dem Ergebnis des Relegationsspiels.
+* **Bezirksliga**
 
-**Fall 4:**
+  Die letztplatzierten Mannschaften der **Bezirksliga** steigen direkt ab. Die erstplatzierten der **Kreisliga** steigen direkt auf.
 
-Landesliga: Der am schlechtesten-platzierte Landeligist einer Region (Nord/Süd) befindet sich **_nicht_** auf einem direkten Abstiegsplatz (3. oder 4. Platz).
+## Relegation Landesliga / Verbandsliga
 
-Verbandsliga: Der Meister der Verbandsliga (1. Platz) der entsprechenden Region (Nord/Süd) nimmt sein Aufstiegsrecht **_nicht_** wahr.
+Wenn eine Relegation zwischen Landesliga und Verbandsliga erforderlich ist, gelten folgende Regeln:
 
-Es wird **_keine_** Relegation gespielt. Es findet kein Auf- und Abstieg statt. Der Landesligist bleibt in der Landesliga.
+- Gespielt wird ein vollständiger Spieltag mit vier Spielblöcken.
+- Ein Heim- oder Gastrecht besteht nicht. Wer zuerst aufstellt, wird per Münzwurf ermittelt.
+- Die Relegation muss einen Sieger ergeben. Bei Punktgleichheit entscheidet:
+  1. das Satzverhältnis  
+  2. der direkte Vergleich
+- Der Spielort wird vom Ligakoordinator festgelegt und soll für beide Teams eine möglichst vergleichbare Anfahrt gewährleisten.
+- Der Termin der Relegation wird zu Beginn des Jahres festgelegt. Die infrage kommenden Teams sollen sich diesen Termin frühzeitig freihalten.
+- Als Tischmodell wird Leonhart festgelegt.
 
-Verbandsliga
 
-Die letzte Mannschaft der Verbandsliga steigt direkt ab. Die erste Mannschaft der Bezirksliga steigt direkt auf.
+## Relegation in unteren Ligen
 
-Bezirksliga
+Sind nicht genügend Aufstiegsplätze in der nächsthöheren Liga vorhanden, kann der Aufstieg über eine Relegation erfolgen.
 
-Die beiden letzten Mannschaften der Bezirksliga steigen direkt ab. Die erstplatzierte Mannschaft steigt auf.
+Es gelten folgende Regeln:
 
-Kreisliga
-
-Die ersten beiden Mannschaften der Kreisliga steigen direkt auf.
-
-## Relegation Kreisliga und Bezirksliga
-
-Sollte es mehrere Kreisligen geben, wird eine Relegation gespielt, um zu entscheiden wer aufsteigt.
-
-Folgende Regeln sollen hier gelten:
-
-- Der letzt Platzierte der Bezirksliga steigt direkt ab
-- Der vorletzt Platzierte und die ersten Plätze der Kreisliga spielen eine Relegation – jeder gegen jeden.
+- Der letztplatzierte der nächsthöheren Liga steigt direkt ab.
+- Der vorletztplatzierte der nächsthöheren Liga sowie die erstplatzierten Mannschaften der unteren Liga nehmen an der Relegation teil.
+- Die Relegation wird im Modus „jeder gegen jeden“ ausgetragen.
 - Die Begegnungen werden zufällig ausgelost.
-- Der Spielplan soll halbiert werden. Es werden also zwei Blöcke gespielt.
-- Spiele können Unentschieden ausgehen.
-- Falls manche Teams gleich viele Punkte haben, entscheidet das Satzverhältnis, wenn dieses auch gleich direkten Vergleich.
-- Wer zuerst aufstellt wird durch Münzwurf entschieden, da es kein „Heim – und Gastrecht gibt“.
-- Optimalerweise ist der Ligakoordinator am Spieltag anwesend, um eventuell aufkommende Fragen zu klären.
-- Der Spielort braucht pro zwei Teams jeweils zwei Tische (bei 4 Teams mindestens 4 Tische).
-- Der Spielort wird vom Ligakoordinator festgelegt und sollte so gelegen sein, dass alle Teams eine ähnlich weite Anfahrt haben.
-- Als Tischmodell wird Leonhart festgelegt, da dieser am weitesten verbreitet ist.
+- Der Spieltag wird in der Regel in reduzierter Form mit zwei Spielblöcken ausgetragen. Bei einer Relegation mit nur zwei Mannschaften wird ein vollständiger Spieltag mit vier Spielblöcken gespielt.
+-  Die Relegation wird als Platzierungsrunde ausgetragen. Die Platzierung entscheidet über den Aufstieg. Bei Punktgleichheit entscheidet:
+   1. das Satzverhältnis  
+   2. der direkte Vergleich
+- Ein Heim- oder Gastrecht besteht nicht. Wer zuerst aufstellt, wird per Münzwurf entschieden.
+- Der Spielort wird vom Ligakoordinator festgelegt und soll für alle Teams eine möglichst vergleichbare Anfahrt gewährleisten.
+- Der Spielort muss eine ausreichende Anzahl an Tischen bereitstellen. Dabei gilt:
+  - Pro gleichzeitig spielender Begegnung müssen mindestens zwei Tische zur Verfügung stehen.
+  - Bei drei teilnehmenden Mannschaften sind mindestens zwei Tische erforderlich.
+  - Bei vier teilnehmenden Mannschaften sind mindestens vier Tische erforderlich.
+- Optimalerweise ist der Ligakoordinator am Spieltag anwesend, um eventuelle Fragen zu klären.
+- Als Tischmodell wird Leonhart festgelegt.
 
-**Zeitplan für Relegation:**
+
+**Zeitplan für die Relegation:**
 
 - 10 Uhr Öffnung des Spielortes
 - 11 Uhr Beginn 1. Begegnung
