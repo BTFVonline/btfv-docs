@@ -25,7 +25,7 @@ section_prefix: "§"
 
 
 # Name, Rechtsform und Sitz des Vereins
-1. Der Verein führt den Namen: Bayerischer Tischfußballverband e.V. Die Abkürzung lautet: BTFV.
+1. Der Verein führt den Namen: Bayrischer Tischfußballverband e.V. Die Abkürzung lautet: BTFV.
 1. Der BTFV ist ein eingetragener Verein und hat seinen Sitz in 94032 Passau.
 
 # Zweck und Mitgliedschaften
