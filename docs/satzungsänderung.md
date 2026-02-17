@@ -9,9 +9,6 @@ layout: default
 - Formatiertung und Einrückungen angepasst
 - redaktionelle Vereinheitlichung der Typografie (keine inhaltlichen Änderungen)
 - Seitenzahlen eingefügt
-
-- Textänderung: hierbei muss es sich um einen Schreibfehler handeln. Leider wurde dies anscheinend als Namensänderung im VR eingetragen.
-  - §1.1 Bayrischer -> Bayerischer 
   
 - Textänderung: Grammatik korrigiert
   - §6.1. (fördernde) Mitglieder -> (fördernden) Mitgliedern
