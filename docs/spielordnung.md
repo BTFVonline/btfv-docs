@@ -293,13 +293,13 @@ Falls alle Teams der Landesliga bereits ein Bundesliga Team stellen, kann auch i
 
 Sollte eine Mannschaft aus dem Spielbetrieb aussteigen oder durch die Ligaleitung davon ausgeschlossen werden, so wird diese Mannschaft als Tabellenletzter weitergeführt und steht als Absteiger fest. Alle bisher ausgetragenen und noch ausstehenden Spiele werden als verloren gewertet.
 
-### Regelung in der Landesliga/Verbandsliga (Sammelspieltage)
+### Regelung in der Landesliga und Verbandsliga (Sammelspieltage)
 
-Der Auf- und Abstieg ist in zwei Fällen unterteilt und funktioniert wie folgt:
+Der Auf- und Abstieg ist in zwei Fälle unterteilt und funktioniert wie folgt:
 
 * **Fall 1:**
 
-  **Landesliga**: Der am schlechtesten platzierte Landesligist einer Region (Nord/Süd) befindet sich auf einem direkten Abstiegsplatz (5. oder 6. Platz).
+  **Landesliga**: Der am schlechtesten platzierte Landesligist einer Region (Nord/Süd) liegt auf einem direkten Abstiegsplatz (5. oder 6. Platz).
 
   **Verbandsliga**: Der Meister der Verbandsliga (1. Platz) der entsprechenden Region (Nord/Süd) steigt auf.
 
@@ -307,33 +307,33 @@ Der Auf- und Abstieg ist in zwei Fällen unterteilt und funktioniert wie folgt:
 
 * **Fall 2:**
 
-  **Landesliga**: Der am schlechtesten platzierte Landesligist einer Region (Nord/Süd) befindet sich **_nicht_** auf einem direkten Abstiegsplatz (3. oder 4. Platz).
+  **Landesliga**: Der am schlechtesten platzierte Landesligist einer Region (Nord/Süd) liegt **_nicht_** auf einem direkten Abstiegsplatz (3. oder 4. Platz).
 
-  **Verbandsliga**: Der Meister der Verbandsliga (1. Platz) der entsprechenden Region (Nord/Süd) steigt mit Relegation auf.
+  **Verbandsliga**: Der Meister der Verbandsliga (1. Platz) der entsprechenden Region (Nord/Süd) steigt über die Relegation auf.
 
-  Es wird **_eine_** Relegation gespielt. Der Landesligist erhält aufgrund seiner guten Platzierung die Chance, sich in der Landesliga zu halten. Der Auf- und Abstieg erfolgt nach dem Ergebnis des Relegationsspiels.
+  Es wird **_eine_** Relegation gespielt. Der Landesligist erhält aufgrund seiner guten Platzierung die Chance, sich in der Landesliga zu halten. Der Auf- und Abstieg richtet sich nach dem Ergebnis des Relegationsspiels.
 
 ### Regelung in anderen Ligen
 
 * **Verbandsliga**
 
-  Die letztplatzierten Mannschaften der **Verbandsliga** steigen direkt ab. Die erstplatzierten Mannschaften der **Bezirksliga** steigen direkt auf.
+  Die letztplatzierten Mannschaften der **Verbandsliga** steigen direkt ab. Die erstplatzierten der **Bezirksliga** steigen direkt auf.
 
 * **Bezirksliga**
 
-  Die letztplatzierten Mannschaften der **Bezirksliga** steigen direkt ab. Die erstplatzierten Mannschaften der **Kreisliga** steigen direkt auf.
+  Die letztplatzierten Mannschaften der **Bezirksliga** steigen direkt ab. Die erstplatzierten der **Kreisliga** steigen direkt auf.
 
 ## Relegation Landesliga / Verbandsliga
 
 Wenn eine Relegation zwischen Landesliga und Verbandsliga erforderlich ist, gelten folgende Regeln:
 
 - Gespielt wird ein vollständiger Spieltag mit vier Spielblöcken.
-- Ein Heim- oder Gastrecht besteht nicht. Wer zuerst aufstellt, wird per Münzwurf entschieden.
+- Ein Heim- oder Gastrecht besteht nicht. Wer zuerst aufstellt, wird per Münzwurf ermittelt.
 - Die Relegation muss einen Sieger ergeben. Bei Punktgleichheit entscheidet:
   1. das Satzverhältnis  
   2. der direkte Vergleich
 - Der Spielort wird vom Ligakoordinator festgelegt und soll für beide Teams eine möglichst vergleichbare Anfahrt gewährleisten.
-- Der Tag der Relegation wird zu Beginn des Jahres festgelegt. Die infrage kommenden Teams sollen sich diesen Termin frühzeitig freihalten.
+- Der Termin der Relegation wird zu Beginn des Jahres festgelegt. Die infrage kommenden Teams sollen sich diesen Termin frühzeitig freihalten.
 - Als Tischmodell wird Leonhart festgelegt.
 
 
