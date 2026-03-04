@@ -22,7 +22,7 @@ layout: default
 * TOC
 {:toc}
 
-## Ausschreibung
+# Ausschreibung
 
 - Spätestens 2 Wochen vor Turnierstart
 - Bezeichnung des Turniers (**BTFV Challenger**)
@@ -37,7 +37,7 @@ layout: default
 - Höhe der Gebühren (Organisationspauschale, Startgeld)
 - Preise (Pokale, Medaillen oder Sachpreise)
 
-## Modus
+# Modus
 
 - Alle Teilnehmer spielen Qualifikationsrunden Jeder gegen Jeden oder nach dem Schweizer System und Buchholzzahl. Anschließend folgen Playoffs als Single- oder Doppel-KO, um die Endplatzierungen auszuspielen. Bei Single-KO wird ein dritter Platz ausgespielt.
 - Das Feld darf in bis zu 3 Divisionen aufgeteilt werden (Profi, Amateur und Neuling).
@@ -48,11 +48,11 @@ layout: default
 - In der untergeordneten Division muss mindestens die gleiche Anzahl oder mehr Aktive starten als in der übergeordneten.
 - In den Playoffs werden die Spieler gemäß ihrer Platzierung aus der Vorrunde gesetzt (z. B. 1–8, 2–7, …).
 
-## Regeln
+# Regeln
 
 Es wird nach den offiziellen Tischfußballregeln des **ITSF** gespielt.
 
-## Spielgeräte
+# Spielgeräte
 
 - Bei Challengerturnieren dürfen nur Tische von den aktuellen BTFV-Tischpartnern genutzt werden.
 - Es müssen mindestens zwei Tische eingesetzt werden.
@@ -62,7 +62,7 @@ Es wird nach den offiziellen Tischfußballregeln des **ITSF** gespielt.
 - Es ist auf ausreichende Ausleuchtung der Tische zu achten.
 - Bälle sind vom Veranstalter/Ausrichter bereitzustellen.
 
-## Preise
+# Preise
 
 Die 3 Erstplatzierten jeder Disziplin des Profifeldes erhalten Ehrungen (Pokale, Medaillen, Bargeld oder vergleichbare Sachpreise), die vom Ausrichter zu stellen sind.
 
@@ -72,7 +72,7 @@ Ehrungen für andere Felder sind optional. Hier liegt die Entscheidung beim Ausr
 
 Bei Nichtanwesenheit kann der Anspruch auf die Preise verfallen.
 
-## Ergebnismeldung
+# Ergebnismeldung
 
 Die Ergebnisse sind über das Formular auf der BTFV-Seite  
 `btfv.de/challenger-ergebnisse-hochladen/`  
