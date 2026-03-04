@@ -74,6 +74,5 @@ Bei Nichtanwesenheit kann der Anspruch auf die Preise verfallen.
 
 # Ergebnismeldung
 
-Die Ergebnisse sind über das Formular auf der BTFV-Seite  
-`btfv.de/challenger-ergebnisse-hochladen/`  
-oder alternativ als E-Mail an `challenger@btfv.de` zu senden.
+Die Ergebnisse sind über das Formular auf der [BTFV-Seite](btfv.de/challenger-ergebnisse-hochladen/)
+oder alternativ als [E-Mail](mailto:challenger@btfv.de) zu senden.
