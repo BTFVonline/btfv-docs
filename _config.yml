@@ -1,9 +1,22 @@
-title: "Spielordnung"
-description: "Spielordnung des BTFV"
-theme: jekyll-theme-minimal
+title: "BTFV Dokumente"
+description: "Offizielle Verbandsdokumente des Bayerischen Tischfußballverbandes e.V."
+
 plugins:
   - jekyll-toc
   - jekyll-relative-links
 
 relative_links:
   enabled: true
+
+defaults:
+  - scope:
+      path: "docs"
+    values:
+      layout: default
+      template: btfv
+
+exclude:
+  - scripts/
+  - temp/
+  - README.md
+  - LICENSE
