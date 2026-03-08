@@ -3,7 +3,8 @@ name: PDFs generieren und Website deployen
 on:
   push:
     branches:
-      - '**'
+      - main
+      - staging
   workflow_dispatch:
 
 jobs:
