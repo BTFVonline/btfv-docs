@@ -10,7 +10,7 @@ relative_links:
 
 defaults:
   - scope:
-      path: "docs"
+      path: ""
     values:
       layout: default
       template: btfv

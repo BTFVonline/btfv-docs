@@ -1,8 +1,6 @@
 ---
-layout: default
 title: "BTFV Dokumente"
 subtitle: "Offizielle Verbandsdokumente des Bayerischen Tischfußballverbandes e.V."
-template: btfv
 ---
 
 | Dokument | PDF |
@@ -11,4 +9,3 @@ template: btfv
 | [Spielordnung](docs/spielordnung.html) | [PDF](assets/pdf/spielordnung.pdf) |
 | [Gebührenordnung](docs/gebuehrenordnung.html) | [PDF](assets/pdf/gebuehrenordnung.pdf) |
 | [Challenger Turnierordnung](docs/btfv-challengerordnung.html) | [PDF](assets/pdf/btfv-challengerordnung.pdf) |
-| [Änderungsprotokoll Satzung](docs/satzungsänderung.html) | - |
