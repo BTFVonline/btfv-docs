@@ -2,6 +2,7 @@
 template: btfv
 title: "Gebührenordnung des BTFV e.V."
 date: '{{ site.time | date: "%d.%m.%Y" }}'
+section_numbering: arabic
 pdf: /assets/pdf/gebuehrenordnung.pdf
 source: https://github.com/BTFVonline/btfv-docs/blob/main/docs/gebuehrenordnung.md
 ---

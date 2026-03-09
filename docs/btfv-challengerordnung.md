@@ -2,6 +2,7 @@
 template: btfv
 title: "BTFV Challenger Turnierordnung"
 date: '{{ site.time | date: "%d.%m.%Y" }}'
+section_numbering: arabic
 pdf: /assets/pdf/btfv-challengerordnung.pdf
 source: https://github.com/BTFVonline/btfv-docs/blob/main/docs/btfv-challengerordnung.md
 ---

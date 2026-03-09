@@ -1,6 +1,7 @@
 ---
 template: btfv
 title: "Änderungsprotokoll (2026-02-14)"
+section_numbering: arabic
 ---
 
 # Änderungen der Satzung:
