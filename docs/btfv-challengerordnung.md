@@ -1,6 +1,6 @@
 ---
 title: "BTFV Challenger Turnierordnung"
-date: {{ site.time | date: "%d.%m.%Y" }}
+date: '{{ site.time | date: "%d.%m.%Y" }}'
 pdf: /assets/pdf/btfv-challengerordnung.pdf
 source: https://github.com/BTFVonline/btfv-docs/blob/main/docs/btfv-challengerordnung.md
 ---
