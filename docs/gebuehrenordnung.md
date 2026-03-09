@@ -1,4 +1,5 @@
 ---
+template: btfv
 title: "Gebührenordnung des BTFV e.V."
 date: '{{ site.time | date: "%d.%m.%Y" }}'
 pdf: /assets/pdf/gebuehrenordnung.pdf

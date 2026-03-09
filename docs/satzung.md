@@ -1,4 +1,5 @@
 ---
+template: btfv
 title: "Satzung des BTFV e.V."
 date: 23.11.2025
 section_numbering: paragraph

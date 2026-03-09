@@ -1,4 +1,5 @@
 ---
+template: btfv
 title: "BTFV Challenger Turnierordnung"
 date: '{{ site.time | date: "%d.%m.%Y" }}'
 pdf: /assets/pdf/btfv-challengerordnung.pdf

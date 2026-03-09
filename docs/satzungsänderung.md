@@ -1,4 +1,5 @@
 ---
+template: btfv
 title: "Änderungsprotokoll (2026-02-14)"
 ---
 
