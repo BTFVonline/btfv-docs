@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Spielordnung des BTFV e.V.</title>
+    
+    
+    
+    
+    
+        <meta name="theme-color" content="#f4f4f2">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/btfv-docs/templates/btfv/images/favicon.png">
+        <link rel="apple-touch-icon" href="/btfv-docs/templates/btfv/images/logo.png">
+        <link rel="manifest" href="/btfv-docs/manifest.webmanifest">
+        <link rel="stylesheet" href="/btfv-docs/templates/shared/web.css?v=1773014517">
+        <link rel="stylesheet" href="/btfv-docs/templates/btfv/web.css?v=1773014517">
+    
+</head>
+<body class=" template-btfv">
+    
+        
+<header class="base-hero"></header>
+<script>
+(() => {
+    const initThemeToggle = () => {
+        const root = document.documentElement;
+        const toggle = document.querySelector('[data-theme-toggle]');
+        const icon = document.querySelector('[data-theme-icon]');
+        if (!toggle || !icon) return;
+
+        const renderIcon = (mode) => {
+            if (mode === 'dark') {
+                icon.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
+            } else {
+                icon.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5.5"/><line x1="12" y1="18.5" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5.5" y2="12"/><line x1="18.5" y1="12" x2="21.5" y2="12"/><line x1="4.5" y1="4.5" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.5" y2="19.5"/><line x1="17.2" y1="6.8" x2="19.5" y2="4.5"/><line x1="4.5" y1="19.5" x2="6.8" y2="17.2"/></g></svg>';
+            }
+        };
+
+        const updateThemeColor = () => {
+            const meta = document.querySelector('meta[name="theme-color"]');
+            if (!meta) return;
+            const color = getComputedStyle(root).getPropertyValue('--color-surface-page').trim();
+            if (color) meta.setAttribute('content', color);
+        };
+
+        const applyTheme = (mode) => {
+            root.setAttribute('data-theme', mode);
+            toggle.setAttribute('aria-pressed', mode === 'dark' ? 'true' : 'false');
+            renderIcon(mode);
+            updateThemeColor();
+        };
+
+        const stored = localStorage.getItem('base-theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'light' || stored === 'dark') {
+            applyTheme(stored);
+        } else if (prefersDark) {
+            applyTheme('dark');
+        } else {
+            applyTheme('light');
+        }
+
+        toggle.addEventListener('click', () => {
+            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            applyTheme(next);
+            localStorage.setItem('base-theme', next);
+        });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initThemeToggle);
+    } else {
+        initThemeToggle();
+    }
+})();
+</script>
+
+    
+    
+        
+        
+        
+        
+        
+        <div class="base-doc-heading">
+            <div class="base-doc-heading__top">
+                
+                <a class="base-doc-brand-link" href="/btfv-docs/">
+                    <svg class="base-doc-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                
+                    <img class="base-doc-logo" src="/btfv-docs/templates/btfv/images/logo.png" alt="Logo">
+                    <span class="base-doc-sitename">BTFV Dokumente</span>
+                
+                </a>
+                
+                <div class="base-doc-titles">
+                    <div class="base-doc-title">Spielordnung des BTFV e.V.</div>
+                    
+                </div>
+                <div class="base-doc-actions">
+                    <div class="base-hero__links">
+                        
+                            <a href="/btfv-docs/assets/pdf/spielordnung.pdf" target="_blank" rel="noopener">PDF</a>
+                        
+                        
+                            <a href="https://github.com/BTFVonline/btfv-docs/blob/main/docs/spielordnung.md" target="_blank" rel="noopener">Quelle</a>
+                        
+                    </div>
+                    
+                        <div class="base-doc-date">Stand: {"%d.%m.%Y"=>nil}</div>
+                    
+                </div>
+                <button class="base-theme-toggle" type="button" data-theme-toggle aria-label="Theme wechseln" aria-pressed="false">
+                    <span class="base-theme-toggle__icon" data-theme-icon>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <line x1="12" y1="2.5" x2="12" y2="5.5"/>
+                                <line x1="12" y1="18.5" x2="12" y2="21.5"/>
+                                <line x1="2.5" y1="12" x2="5.5" y2="12"/>
+                                <line x1="18.5" y1="12" x2="21.5" y2="12"/>
+                                <line x1="4.5" y1="4.5" x2="6.8" y2="6.8"/>
+                                <line x1="17.2" y1="17.2" x2="19.5" y2="19.5"/>
+                                <line x1="17.2" y1="6.8" x2="19.5" y2="4.5"/>
+                                <line x1="4.5" y1="19.5" x2="6.8" y2="17.2"/>
+                            </g>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    
+    <div class="wrapper">
+        <ul id="markdown-toc">
+  <li><a href="#die-grundstruktur-der-ligen" id="markdown-toc-die-grundstruktur-der-ligen">Die Grundstruktur der Ligen</a>    <ul>
+      <li><a href="#ligaleitung" id="markdown-toc-ligaleitung">Ligaleitung</a></li>
+      <li><a href="#start-der-liga" id="markdown-toc-start-der-liga">Start der Liga</a></li>
+      <li><a href="#einteilung-in-ligen" id="markdown-toc-einteilung-in-ligen">Einteilung in Ligen</a></li>
+      <li><a href="#startrecht" id="markdown-toc-startrecht">Startrecht</a></li>
+    </ul>
+  </li>
+  <li><a href="#teilnahme-am-ligabetrieb" id="markdown-toc-teilnahme-am-ligabetrieb">Teilnahme am Ligabetrieb</a>    <ul>
+      <li><a href="#anmeldungen" id="markdown-toc-anmeldungen">Anmeldungen</a></li>
+      <li><a href="#mitgliedschaft-im-btfv" id="markdown-toc-mitgliedschaft-im-btfv">Mitgliedschaft im BTFV</a></li>
+      <li><a href="#spielzeiten" id="markdown-toc-spielzeiten">Spielzeiten</a></li>
+      <li><a href="#angabe-der-spieldaten" id="markdown-toc-angabe-der-spieldaten">Angabe der Spieldaten</a></li>
+    </ul>
+  </li>
+  <li><a href="#voraussetzungen-zur-teilnahme" id="markdown-toc-voraussetzungen-zur-teilnahme">Voraussetzungen zur Teilnahme</a>    <ul>
+      <li><a href="#mannschaft-und-verein" id="markdown-toc-mannschaft-und-verein">Mannschaft und Verein</a></li>
+      <li><a href="#spielstätte" id="markdown-toc-spielstätte">Spielstätte</a></li>
+      <li><a href="#spielgeräte" id="markdown-toc-spielgeräte">Spielgeräte</a></li>
+      <li><a href="#trikots" id="markdown-toc-trikots">Trikots</a></li>
+    </ul>
+  </li>
+  <li><a href="#ablauf-der-liga" id="markdown-toc-ablauf-der-liga">Ablauf der Liga</a>    <ul>
+      <li><a href="#hin--und-rückrunde" id="markdown-toc-hin--und-rückrunde">Hin- und Rückrunde</a></li>
+      <li><a href="#verlegen-eines-spieltages" id="markdown-toc-verlegen-eines-spieltages">Verlegen eines Spieltages</a></li>
+      <li><a href="#spielregeln" id="markdown-toc-spielregeln">Spielregeln</a></li>
+      <li><a href="#schiedsrichter" id="markdown-toc-schiedsrichter">Schiedsrichter</a></li>
+      <li><a href="#aushilfsregel" id="markdown-toc-aushilfsregel">Aushilfsregel</a></li>
+      <li><a href="#transferzeit" id="markdown-toc-transferzeit">Transferzeit</a></li>
+    </ul>
+  </li>
+  <li><a href="#spielsystem-btfv-regulär" id="markdown-toc-spielsystem-btfv-regulär">Spielsystem BTFV regulär</a>    <ul>
+      <li><a href="#grundsystem" id="markdown-toc-grundsystem">Grundsystem</a></li>
+      <li><a href="#spielblöcke" id="markdown-toc-spielblöcke">Spielblöcke</a></li>
+      <li><a href="#wechsel-zwischen-doppel--und-einzelblock" id="markdown-toc-wechsel-zwischen-doppel--und-einzelblock">Wechsel zwischen Doppel- und Einzelblock</a></li>
+      <li><a href="#reduzierter-antritt" id="markdown-toc-reduzierter-antritt">Reduzierter Antritt</a></li>
+    </ul>
+  </li>
+  <li><a href="#spielsystem-btfv-sammelspieltage" id="markdown-toc-spielsystem-btfv-sammelspieltage">Spielsystem BTFV Sammelspieltage</a>    <ul>
+      <li><a href="#grundsystem-1" id="markdown-toc-grundsystem-1">Grundsystem</a></li>
+      <li><a href="#spielblöcke-1" id="markdown-toc-spielblöcke-1">Spielblöcke</a></li>
+      <li><a href="#wechsel-zwischen-doppel--und-einzelblock-1" id="markdown-toc-wechsel-zwischen-doppel--und-einzelblock-1">Wechsel zwischen Doppel- und Einzelblock</a></li>
+      <li><a href="#reduzierter-antritt-1" id="markdown-toc-reduzierter-antritt-1">Reduzierter Antritt</a></li>
+      <li><a href="#ablauf-des-sammelspieltags" id="markdown-toc-ablauf-des-sammelspieltags">Ablauf des Sammelspieltags</a></li>
+    </ul>
+  </li>
+  <li><a href="#ablauf-des-spieltags" id="markdown-toc-ablauf-des-spieltags">Ablauf des Spieltags</a>    <ul>
+      <li><a href="#der-spielberichtsbogen" id="markdown-toc-der-spielberichtsbogen">Der Spielberichtsbogen</a></li>
+      <li><a href="#ergebnis-des-spieltags" id="markdown-toc-ergebnis-des-spieltags">Ergebnis des Spieltags</a></li>
+      <li><a href="#einreichen-des-spielberichts" id="markdown-toc-einreichen-des-spielberichts">Einreichen des Spielberichts</a></li>
+      <li><a href="#teilnahme-bundesliga" id="markdown-toc-teilnahme-bundesliga">Teilnahme Bundesliga</a></li>
+      <li><a href="#auf--und-abstieg" id="markdown-toc-auf--und-abstieg">Auf- und Abstieg</a>        <ul>
+          <li><a href="#ausscheiden-einer-mannschaft" id="markdown-toc-ausscheiden-einer-mannschaft">Ausscheiden einer Mannschaft</a></li>
+          <li><a href="#regelung-in-der-landesliga-und-verbandsliga-sammelspieltage" id="markdown-toc-regelung-in-der-landesliga-und-verbandsliga-sammelspieltage">Regelung in der Landesliga und Verbandsliga (Sammelspieltage)</a></li>
+          <li><a href="#regelung-in-anderen-ligen" id="markdown-toc-regelung-in-anderen-ligen">Regelung in anderen Ligen</a></li>
+        </ul>
+      </li>
+      <li><a href="#relegation-landesliga--verbandsliga" id="markdown-toc-relegation-landesliga--verbandsliga">Relegation Landesliga / Verbandsliga</a></li>
+      <li><a href="#relegation-in-unteren-ligen" id="markdown-toc-relegation-in-unteren-ligen">Relegation in unteren Ligen</a></li>
+      <li><a href="#nachrücken" id="markdown-toc-nachrücken">Nachrücken</a></li>
+      <li><a href="#sonderfälle" id="markdown-toc-sonderfälle">Sonderfälle</a></li>
+    </ul>
+  </li>
+  <li><a href="#verwarnungen-gebühren-und-pflichten" id="markdown-toc-verwarnungen-gebühren-und-pflichten">Verwarnungen, Gebühren und Pflichten</a>    <ul>
+      <li><a href="#gebühren-des-btfv" id="markdown-toc-gebühren-des-btfv">Gebühren des BTFV</a></li>
+      <li><a href="#verspätungen-am-spieltag" id="markdown-toc-verspätungen-am-spieltag">Verspätungen am Spieltag</a></li>
+      <li><a href="#spielabsage-bzw-nichtantreten-einer-mannschaft" id="markdown-toc-spielabsage-bzw-nichtantreten-einer-mannschaft">Spielabsage bzw. Nichtantreten einer Mannschaft</a></li>
+      <li><a href="#pflichtverletzung" id="markdown-toc-pflichtverletzung">Pflichtverletzung</a></li>
+      <li><a href="#übergriffiges-verhalten" id="markdown-toc-übergriffiges-verhalten">Übergriffiges Verhalten</a></li>
+      <li><a href="#einlegen-von-protest" id="markdown-toc-einlegen-von-protest">Einlegen von Protest</a></li>
+      <li><a href="#spielführerversammlungen" id="markdown-toc-spielführerversammlungen">Spielführerversammlungen</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="die-grundstruktur-der-ligen">Die Grundstruktur der Ligen</h1>
+
+<h2 id="ligaleitung">Ligaleitung</h2>
+
+<p>Die Leitung der Ligen obliegt der Vorstandschaft des Bayerischen Tischfußballverbandes e. V. (BTFV). Federführend sind der Sportwart und die Ligakoordinatoren. Der Sportwart nimmt die Anmeldungen und Änderungen der Mannschaften für die jeweilige Saison entgegen und erstellt den Spielplan für alle Ligen.</p>
+
+<p>Die Ligakoordinatoren koordinieren die Spielverschiebungen und werten die Spielberichte aus. Weiterhin sind sie erster Ansprechpartner bei Problemen.</p>
+
+<h2 id="start-der-liga">Start der Liga</h2>
+
+<p>Alle Ligen des BTFV starten am 01. Januar nach Beendigung der vergangenen Saison.</p>
+
+<h2 id="einteilung-in-ligen">Einteilung in Ligen</h2>
+
+<p>Die Ligen bestehen aus Landesliga, Verbandsliga, Bezirksliga und Kreisliga. Grundsätzlich sollen alle Ligen aus maximal 8 Mannschaften bestehen. Die Ligaleitung kann aber in eigener Zuständigkeit bei Bedarf von diesem Grundsatz abweichen.</p>
+
+<h2 id="startrecht">Startrecht</h2>
+
+<p>Das Startrecht einer im Ligabetrieb aktiven Mannschaft liegt bei der Spielgemeinschaft. Kann eine Mannschaft zu Beginn einer neuen Saison nicht antreten, verfällt das entsprechende Startrecht.</p>
+
+<p>Entscheiden einige Spieler die Spielgemeinschaft zu verlassen, so müssen <em>über</em> 50 % der Besetzung dieser Mannschaft die neue Mannschaft bilden. Gelingt dies nicht, verbleibt das Startrecht bei der Spielgemeinschaft.</p>
+
+<h1 id="teilnahme-am-ligabetrieb">Teilnahme am Ligabetrieb</h1>
+
+<h2 id="anmeldungen">Anmeldungen</h2>
+
+<p>Die Anmeldung muss eine Woche vor der Spielführersitzung, welche im Anschluss an die Jahreshauptversammlung des BTFV stattfindet, eingehen.</p>
+
+<p>Neue Vereine müssen sich bei der Vorstandschaft des BTFV anmelden. Hierzu sind die auf der Homepage des BTFV zur Verfügung gestellten Formulare zu verwenden.</p>
+
+<p>In Ausnahmefällen behält sich der BTFV-Vorstand das Recht vor, zusätzliche Mannschaften anzumelden.</p>
+
+<h2 id="mitgliedschaft-im-btfv">Mitgliedschaft im BTFV</h2>
+
+<p>Jede für die Teilnahme am Ligabetrieb gemeldete Mannschaft muss Mitglied im BTFV sein und vor Beginn des Ligabetriebs die Beitrittserklärung unterschreiben.</p>
+
+<h2 id="spielzeiten">Spielzeiten</h2>
+
+<p>Bei der Anmeldung entscheidet sich jede Mannschaft für eine zugelassene Spielzeit und Spieltag. Zugelassene Spieltage und Spielanfangszeiten werden auf der zum Jahresende hin stattfindenden Spielführersitzung bekannt gegeben.</p>
+
+<p>Diese sind aktuell: Freitag 20:00, Samstag 18:00, Sonntag 14:00, Sonntag 15:00 oder Sammelspieltag.</p>
+
+<h2 id="angabe-der-spieldaten">Angabe der Spieldaten</h2>
+
+<p>Ohne vollständige und korrekte Angabe der Daten über Spielstätte, Spielführer und Spieler ist eine Teilnahme am Ligabetrieb nicht möglich.</p>
+
+<p>Spielstätte</p>
+
+<p>Adresse, Telefonnummer, verständliche Wegbeschreibung, Spieltag/- Uhrzeit, Bewirtung</p>
+
+<p>Spielführer/ Vertreter</p>
+
+<p>Vorname, Name, Adresse, Telefonnummer, E-Mailadresse</p>
+
+<p>Alle Spieler</p>
+
+<p>Vorname, Name, Geburtsdatum, Geschlecht</p>
+
+<h1 id="voraussetzungen-zur-teilnahme">Voraussetzungen zur Teilnahme</h1>
+
+<h2 id="mannschaft-und-verein">Mannschaft und Verein</h2>
+
+<p>Eine Mannschaft setzt sich aus mindestens 4 Spielern zusammen. Der Name einer Mannschaft muss auf die Spielgemeinschaft hinweisen. Jede Mannschaft muss einen Spielführer und einen vertretenden Spielführer bestimmen. Dieser dient als Ansprechpartner für die Spielführer der gegnerischen Mannschaften und der Ligaleitung. Er vertritt seine Mannschaft auch gegenüber dem BTFV ist für die Korrektheit des Spielberichts und dessen pünktliche Weitergabe an die Ligaleitung verantwortlich. Weiter ist er verpflichtet, alle den Spielbetrieb betreffenden Änderungen umgehend dem Sportwart zu melden.</p>
+
+<p>Neue Spieler können jederzeit nachgemeldet werden. Diese dürfen in der laufenden Saison bei keiner anderen Mannschaft des BTFV angemeldet sein.</p>
+
+<h2 id="spielstätte">Spielstätte</h2>
+
+<p>Ausreichende Beleuchtung und Platz zum Spielen müssen gegeben sein. Musik ist am Spieltag im Spielbereich nur in gemäßigter Lautstärke gestattet. Die Spielstätte muss der Gastmannschaft eine Stunde vor Spielbeginn zugänglich sein. Die Spielstätte muss Spielern unter 18 Jahren zugänglich sein.</p>
+
+<h2 id="spielgeräte">Spielgeräte</h2>
+
+<p>Zur Teilnahme müssen zwei mit Hohlstangen ausgestattete Tische des gleichen Modells in der Spielstätte vorhanden sein. Erlaubt sind alle vom BTFV zugelassenen Modelle.</p>
+
+<p>Die Heimmannschaft hat dafür zu sorgen, dass das kostenlose Spielen auf beiden zur Ausführung des Spieltages benötigten Tischen gewährleistet ist. Das Warmspielen ist von der Gastmannschaft selbst zu tragen. Die Tische müssen in ordentlich bespielbarem Zustand mit Originalkomponenten und den vom BTFV zugelassenen Ball für das vorhandene Tischmodell ausgestattet sein. Ist eine Gastmannschaft unzufrieden mit den von der Heimmannschaft gestellten Bällen, kann sie darauf bestehen, eigene, unbespielte Bälle an dem Spieltag zu verwenden. Dies muss der gegnerischen Mannschaft vor Spielbeginn mitgeteilt werden.</p>
+
+<p>Eine Änderung der Spieltische sowie Änderungen von Tischkomponenten müssen vom Ligakoordinator genehmigt werden. Die Veränderung der Spieleigenschaften durch den Gebrauch von Magnesia, Zinkoxid oder ähnlichen Hilfsmitteln ist grundsätzlich verboten.<br />
+Der BTFV-Vorstand behält sich das Recht vor neu gegründeten Mannschaften eine Frist einzuräumen, um sich an diese Vorgaben zu halten. Bis zu der genannten Frist können auch andere Modelle zugelassen sein. Folgende Spielgeräte sind zugelassen:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tischmodell</th>
+      <th>Puppen</th>
+      <th>Ball</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bonzini B90 ITSF</td>
+      <td>Player with standard screw</td>
+      <td>Official ITSF-B ball</td>
+    </tr>
+    <tr>
+      <td>Leonhart leo_pro Tournament</td>
+      <td>Leo_player, ausgewichtet KL  <br />ttB_player, BANG</td>
+      <td>1st_ITSF-Ball „official“</td>
+    </tr>
+    <tr>
+      <td>Ullrich-Sport Tournament</td>
+      <td>Ullrich Soccer mit Gewicht</td>
+      <td>Ullrich Sport Kickerball - für P4P und DTFB Turniere, Ball “SoccerPro 1st”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="trikots">Trikots</h2>
+
+<p>Jede Mannschaft ist verpflichtet, Mannschaftstrikots zu tragen. Auf ihnen muss der vorher gemeldete Mannschaftsname ersichtlich sein. Sofern ein Spieler einen Spieltag ohne Trikot antritt, ist er von vornherein nicht spielberechtigt.</p>
+
+<p>Neu gemeldete Spieler erhalten eine Kulanz von 30 Tagen ab offizieller Anmeldung, um sich ein Trikot zu besorgen. Bei Spieltagen, die vor Ablauf der 30-Tages-Frist gespielt werden, bedarf es insofern keines Trikots dieser Spieler.</p>
+
+<h1 id="ablauf-der-liga">Ablauf der Liga</h1>
+
+<h2 id="hin--und-rückrunde">Hin- und Rückrunde</h2>
+
+<p>Eine Saison besteht aus einer Hin- und Rückrunde. Aufgrund der gewünschten Spieltage/ Uhrzeiten der jeweiligen Heimmannschaft wird der Spielplan erstellt. Berücksichtigt werden dabei auch offizielle Termine des BTFV, ITSF und des DTFB.</p>
+
+<h2 id="verlegen-eines-spieltages">Verlegen eines Spieltages</h2>
+
+<p><strong>Diese Regelung gilt nicht für Mannschaften, die in Sammelspieltagen spielen.</strong></p>
+
+<p>Jeder Mannschaft sind pro Saison <strong>zwei</strong> Spielverschiebungen gestattet, die nicht aus taktischen Gründen, sondern nur aus einer Ausnahmesituation heraus genutzt werden dürfen. Sollten taktische Gründe nachgewiesen werden, so kann der Ligakoordinator die Verschiebung untersagen. Ein Spiel kann stattfinden, sobald mindestens 3 Spieler antreten.</p>
+
+<p><strong>Definition:</strong></p>
+
+<ul>
+  <li><strong>Team A:</strong> Das Team, welches die Verschiebung beantragt hat.</li>
+  <li><strong>Team B:</strong> Das Team, welches spielen hätte können.</li>
+</ul>
+
+<p><strong>Folgende Regeln gelten:</strong></p>
+
+<ul>
+  <li>Der letzte Spieltag darf nicht nach hinten verschoben werden.</li>
+  <li>Es darf kein vorheriger Spieltag nach dem letzten Spieltag stattfinden.</li>
+  <li><strong>Team A</strong> muss die Verschiebung <strong>bis zum Montag 20:00 vor dem Spieltag</strong> beantragen.</li>
+  <li>Die Beantragung der Verschiebung muss sowohl <strong>schriftlich</strong> (E-Mail, Messenger) als auch <strong>mündlich</strong> (Telefonat o.ä.) an <strong>Team B</strong> und die <strong>Ligaleitung</strong> erfolgen.</li>
+  <li><strong>Team A</strong> schlägt 3 Ausweichtermine innerhalb von <strong>5 Tagen</strong> vor. D.h. spätestens bis <strong>Samstag 20:00</strong> müssen die Termine vorliegen.</li>
+  <li>Die Termine müssen im Zeitraum von <strong>30 Tagen</strong> nach dem <strong>ursprünglichen Datum</strong> des Spieltages liegen.</li>
+  <li>Die Termine sind für den jeweiligen Heimspieltag anzusetzen.
+    <ul>
+      <li>Bsp. Spieltag war ursprünglich Fr. 20:00, so muss der Ersatzspieltermin auch Fr. 20:00 sein.</li>
+    </ul>
+  </li>
+  <li><strong>Team B</strong> muss einen dieser Termine <strong>5 Tage</strong> nach der Deadline von <strong>Samstag 20:00</strong> Empfang annehmen. Das wäre dann spätestens <strong>Donnerstag 20:00</strong></li>
+  <li>Bei der Kommunikation ist der Ligakoordinator bei jedem Schritt zu informieren, damit die Verschiebung ins EDV-System eingetragen werden kann.</li>
+  <li>Wird keine Einigung innerhalb der Fristen erzielt, so wird in folgender Reihenfolge über Sieg oder Niederlage entschieden:
+    <ul>
+      <li><strong>Team A</strong> schlägt die Ausweichtermine nicht rechtzeitig vor: <strong>Niederlage Team A</strong></li>
+      <li><strong>Team B</strong> nimmt von den vorgeschlagenen Terminen keine Option innerhalb der Frist an: <strong>Niederlage Team B</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Sonderregelungen:</strong></p>
+
+<ul>
+  <li>Besteht <strong>Team B</strong> darauf, die Termine vorzuschlagen, so ist dies zulässig. Sie müssen weiterhin am Heimspieltag stattfinden. Dieser Antrag muss sofort nach der Verschiebung telefonisch <strong>Ligakoordinator</strong> und <strong>Team A</strong> gestellt werden. Es gelten die gleichen Fristen (5 Tage / 5 Tage).</li>
+  <li>Lässt sich lange vorher absehen, dass ein Spiel nicht stattfinden kann, so kann es auch vorverlegt werden.</li>
+  <li>Sind beide Teams einverstanden, kann die Ligaleitung einen anderen Ausweichtermin (anderer Tag und Uhrzeit) zulassen.</li>
+  <li>Bei besonderen Gründen kann ein Antrag beim Ligakoordinator gestellt werden. Die Ligaleitung (Sportwart und zuständiger Ligakoordinator) entscheidet über eine mögliche Verschiebung.</li>
+  <li>Verschobene Termine am selben Wochenende gelten nicht als Spielverlegung, sofern diese 7 Tage vorher angekündigt werden (beide Teams müssen dem zustimmen).</li>
+</ul>
+
+<p><strong>Ahndungen:</strong></p>
+
+<ul>
+  <li>Spiel wird nicht nach 30 Tagen nachgeholt:
+    <ul>
+      <li>Es obliegt dem Ligakoordinator, festzulegen, welches Team verloren hat.</li>
+      <li>Gebühren werden zur Last gelegt.</li>
+    </ul>
+  </li>
+  <li>Verschobenes Spiel kann nicht stattfinden:
+    <ul>
+      <li>Team, welches nicht antreten kann, hat das Spiel verloren.</li>
+      <li>Gebühren werden zur Last gelegt.</li>
+    </ul>
+  </li>
+  <li>Nimmt ein Team keinen der vorgeschlagenen Termine an oder meldet sich nicht innerhalb der gesetzten Fristen:
+    <ul>
+      <li>Team, welches in der Bringschuld war, hat das Spiel verloren.</li>
+      <li>Gebühren werden zur Last gelegt.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="spielregeln">Spielregeln</h2>
+
+<p>Gespielt wird nach den offiziellen Spielregeln der International Table Soccer Federation (ITSF) Stand Mai 2016, Übersetzung vom 17. Mai. Die Kleiderordnung aus Punkt 29 der ITSF-Spielregeln besitzt bei Ligaspielen keine Gültigkeit, jedoch ist das Tragen von Sportkleidung erwünscht.</p>
+
+<h2 id="schiedsrichter">Schiedsrichter</h2>
+
+<p>Jeder Spieler kann jederzeit während einer Begegnung einen anerkannten Schiedsrichter anfordern. Ist kein Schiedsrichter anwesend, müssen die beiden Spielführer eine faire sportliche Lösung finden. Die Entscheidung eines anwesenden Schiedsrichters oder der beiden Spielführer sind endgültig und können nicht mehr rückgängig gemacht werden.</p>
+
+<p>Jede Mannschaft kann zu jedem Spiel einen neutralen Schiedsrichter anfordern. Dieser ist rechtzeitig (2 Wochen) vor dem betreffenden Spiel beim Sportwart anzufordern. Hierfür wird eine Aufwandsentschädigung fällig, die vom beantragenden Verein vollständig getragen wird.</p>
+
+<h2 id="aushilfsregel">Aushilfsregel</h2>
+
+<p>Spieler dürfen unter Berücksichtigung folgender Bedingungen bei einer anderen Mannschaft aushelfen:</p>
+
+<ul>
+  <li>Die Mannschaft, bei der ausgeholfen wird, gehört zum selben Verein.</li>
+  <li>Die Mannschaft spielt in einer höheren Liga und nicht in einer niedrigeren oder parallelen Liga.</li>
+  <li>Jeder Spieler darf an maximal drei Spieltagen pro Saison im regulären Spielbetrieb aushelfen.</li>
+  <li>Jeder Spieler darf an maximal zwei Spieltagen pro Saison bei Sammelspieltagen aushelfen. Das entspricht einem ganzen Sammelspieltag.</li>
+  <li>Aushilfsberechtigte Spieler dürfen auch am gleichen Spieltag aushelfen, jedoch nicht am gleichen Wochentag.</li>
+  <li>Die Gesamtanzahl der Aushilfen eines Spielers – unabhängig von der Mannschaft – ist auf drei Einsätze pro Saison beschränkt.</li>
+</ul>
+
+<h2 id="transferzeit">Transferzeit</h2>
+
+<p>Ein Vereins- oder Mannschaftswechsel eines Spielers ist nur innerhalb der Transferzeit möglich. Ein Transfer kann genau in der Halbzeit der Spieltage stattfinden (zwischen Vor- und Rückrunde). Dabei ist der offizielle Spielplan maßgebend. Will ein Spieler den Verein wechseln, muss dieser Wechsel dem Ligakoordinator mitgeteilt werden. Ein Wechsel innerhalb der laufenden Saison ist pro Spieler nur einmal möglich. Vor der Transferzeit verlegte Spiele sind spielergebunden, das heißt es dürfen in dem Nachholspiel nur die Spieler eingesetzt werden, die zum Zeitpunkt des regulären Spieltages gemeldet waren.</p>
+
+<h1 id="spielsystem-btfv-regulär">Spielsystem BTFV regulär</h1>
+
+<h2 id="grundsystem">Grundsystem</h2>
+
+<p>Es werden insgesamt pro Spieltag 16 Einzel und 8 Doppel gespielt. Ein Einzelspiel wird nach zwei für einen Spieler gewonnenen Sätzen mit zwei Punkten gewertet. Ein Doppelspiel wird nach zwei für ein Team gewonnenen Sätzen mit drei Punkten gewertet Eine Einzelpaarung darf sich im Laufe eines Spieltages nicht wiederholen. Eine Doppelpaarung darf sich im Laufe eines Spieltages nur zwei Mal wiederholen.</p>
+
+<p>Im Einzel und im Doppel werden nach Sätzen “Best of Three“ gespielt. Der letzte Satz einer Partie geht bis 5, aber man muss mit einer Tordifferenz von 2 Punkten gewinnen. Das Erzielen des 8. Punktes führt zum Sieg – auch ohne 2 Tore Differenz.</p>
+
+<p>Die Mannschaft, welche am Spieltag mit mehr Spielern vertreten ist, ist verantwortlich dafür, dass die Aufstellung im letzten Spielblock aufgeht.</p>
+
+<h2 id="spielblöcke">Spielblöcke</h2>
+
+<p>In jedem Spielblock steht es beiden Mannschaften frei ihre Spieler auf die zu spielenden Einheiten aufzuteilen (Einzel 1-4, Doppel 1-2). Es werden pro Block zuerst die beiden Doppel gespielt, anschließend die vier eingetragen Einzel.</p>
+
+<p>Im ersten und dritten Spielblock werden zuerst die Spieler der Gastmannschaft eingetragen, im zweiten und vierten Block zuerst die Spieler der Heimmannschaft.</p>
+
+<h2 id="wechsel-zwischen-doppel--und-einzelblock">Wechsel zwischen Doppel- und Einzelblock</h2>
+
+<p>Jede Mannschaft kann pro Spieltag zwei Spieler ein- bzw. auswechseln. Auswechslungen dürfen nur vor Spielbeginn erfolgen. Das Wechseln zwischen zwei Sätzen oder zwischen Toren ist nicht erlaubt.</p>
+
+<p>Im Spielbericht werden Auswechslungen durch Streichung und Ersetzung der Spielernummer (z.B. H1 durch H5) gekennzeichnet.</p>
+
+<h2 id="reduzierter-antritt">Reduzierter Antritt</h2>
+
+<p>Kann eine Mannschaft mit nur drei Spielern ein Ligaspiel antreten, so entfällt der letzte Spielblock (Spielblock 4). Alle gestrichenen Spiele werden der vollständig angetretenen Mannschaft gutgeschrieben. In jedem Spielblock muss ein Spieler, der reduziert antretenden Mannschaft zwei Einzel und zwei Doppel bestreiten. Ein Spieler, der in einem Block auf diese Weise doppelt antritt ist, darf in keinen weiteren Block doppelt antreten.</p>
+
+<p>Können beide Mannschaften nur reduziert antreten, so werden die Punkte des Spielblocks 4 beiden Mannschaften je zur Hälfte gutgeschrieben.</p>
+
+<h1 id="spielsystem-btfv-sammelspieltage">Spielsystem BTFV Sammelspieltage</h1>
+
+<h2 id="grundsystem-1">Grundsystem</h2>
+
+<p>Es werden pro Sammelspieltag zwei Begegnungen gespielt. Der Spieltag gleicht dem Grundsystem des regulären Spieltags, mit dem Unterschied, dass drei anstatt vier Blöcke gespielt werden.</p>
+
+<p>Es werden insgesamt pro Begegnung 12 Einzel und 6 Doppel gespielt. Ein Einzelspiel wird nach zwei für einen Spieler gewonnenen Sätzen mit zwei Punkten gewertet. Ein Doppelspiel wird nach zwei für ein Team gewonnenen Sätzen mit drei Punkten gewertet. Eine Einzelpaarung darf sich im Laufe einer Begegnung nicht wiederholen. Eine Doppelpaarung darf sich im Laufe einer Begegnung nur zwei Mal wiederholen.</p>
+
+<p>Im Einzel und im Doppel werden nach Sätzen “Best of Three“ gespielt. Der letzte Satz einer Partie geht bis 5, aber man muss mit einer Tordifferenz von 2 Punkten gewinnen. Das Erzielen des 8. Punktes führt zum Sieg – auch ohne 2 Tore Differenz.</p>
+
+<p>Die Mannschaft, welche in der Begegnung mit mehr Spielern vertreten ist, ist verantwortlich dafür, dass die Aufstellung im letzten Spielblock aufgeht.</p>
+
+<h2 id="spielblöcke-1">Spielblöcke</h2>
+
+<p>In jedem Spielblock steht es beiden Mannschaften frei ihre Spieler auf die zu spielenden Einheiten aufzuteilen (Einzel 1-4, Doppel 1-2). Es werden pro Block zuerst die beiden Doppel gespielt, anschließend die vier eingetragen Einzel.</p>
+
+<p>Der erste Block wird verdeckt von beiden Mannschaften gesetzt.</p>
+
+<p>Im zweiten Spielblock werden zuerst die Spieler der Heimmannschaft eingetragen, im dritten Block zuerst die Spieler der Gastmannschaft.</p>
+
+<p>Heim- und Gastrecht werden zu Beginn der Saison von der Ligakoordination vorgegeben.</p>
+
+<h2 id="wechsel-zwischen-doppel--und-einzelblock-1">Wechsel zwischen Doppel- und Einzelblock</h2>
+
+<p>Jede Mannschaft kann pro Begegnung zwei Spieler ein- bzw. auswechseln. Auswechslungen dürfen nur vor Spielbeginn erfolgen. Das Wechseln zwischen zwei Sätzen oder zwischen Toren ist nicht erlaubt.</p>
+
+<p>Im Spielbericht werden Auswechslungen durch Streichung und Ersetzung der Spielernummer (z.B. H1 durch H5) gekennzeichnet.</p>
+
+<h2 id="reduzierter-antritt-1">Reduzierter Antritt</h2>
+
+<p>Reduzierter Antritt ist bei Sammelspieltagen nicht möglich.</p>
+
+<h2 id="ablauf-des-sammelspieltags">Ablauf des Sammelspieltags</h2>
+
+<p>Sammelspieltage finden an fünf Samstagen im Jahr statt. Jedes Team spielt zwei Begegnungen pro Sammelspieltag. Folglich gibt es pro Team zehn Begegnungen in der Saison. Die 6 Teams spielen alle gemeinsam in den vor Beginn der Liga festgelegten Spielorten. Der Spielort stellt 6 Tische. Die Begegnungen finden auf zwei ausgelosten Tischpaaren statt. Es wird auf allen vom BTFV zugelassenen Tischen gespielt. Eine Begegnung kann auch auf zwei unterschiedlichen Tischmodellen gespielt werden.</p>
+
+<p><strong>Zeitplan für Sammelspieltage:</strong></p>
+
+<ul>
+  <li>10 Uhr Öffnung des Spielortes</li>
+  <li>11 Uhr Beginn 1. Begegnung</li>
+  <li>Ca. 15 Uhr Pause</li>
+  <li>Ca. 16 Uhr Beginn 2. Begegnung</li>
+  <li>Ca. 19 Uhr Ende</li>
+</ul>
+
+<h1 id="ablauf-des-spieltags">Ablauf des Spieltags</h1>
+
+<h2 id="der-spielberichtsbogen">Der Spielberichtsbogen</h2>
+
+<p>Alle am Spieltag aktiven Spieler werden in den Spielberichtsbogen eingetragen. Einfügen eines weiteren Spielers ist jederzeit während der Begegnung möglich. Die maximale Spielerzahl pro Team ist 8. Spieler dürfen nicht im Nachhinein aus der Liste der Spieler entfernt oder ausgetauscht werden.</p>
+
+<p>Spielberechtigt sind nur Spieler die eine Spielernummer des BTFV (hinterlegt in der BTFV-Datenbank) besitzen.</p>
+
+<p>Die Spielführer der Heimmannschaften sind verpflichtet einen Spielberichtsbogen zu führen (digital oder analog). Beide Spielführer sind für dessen Richtigkeit verantwortlich. Ist der Spieltag beendet, muss der vollständig ausgefüllte Spielbogen von beiden Spielführern überprüft werden.</p>
+
+<h2 id="ergebnis-des-spieltags">Ergebnis des Spieltags</h2>
+
+<p>Sind alle Spiele bestritten, wird das Gesamtergebnis errechnet und eingetragen. Das Ligaspiel muss immer bis zum Endergebnis ausgespielt werden. Die Mannschaft, die mehr Punkte erzielt hat, gewinnt den Spieltag. Ihr werden drei Punkte in der Tabelle gutgeschrieben. Bei Punktgleichheit wird das Spiel als unentschieden gewertet und beiden Mannschaften wird je ein Punkt in der Tabelle gutgeschrieben.</p>
+
+<h2 id="einreichen-des-spielberichts">Einreichen des Spielberichts</h2>
+
+<p>Das Spielergebnis muss bis zum <strong>Sonntag 24:00 Uhr</strong> <strong>des Spieltags</strong> auf der BTFV-Homepage von der Heimmannschaft eingetragen werden. Die auswärtige Mannschaft kann das Ergebnis bis zum darauffolgenden Freitag 20:00 Uhr überprüfen und bei Unstimmigkeiten Einspruch einlegen. Wird kein Einspruch eingelegt, so gilt das von der Heimmannschaft eingetragene Ergebnis. Auszeichnungen, Auf- u. Abstieg</p>
+
+<h2 id="teilnahme-bundesliga">Teilnahme Bundesliga</h2>
+
+<p>Die Bestplatzierte Mannschaft der Landesliga, welche noch nicht in der Bundesliga spielberechtigt ist, hat die Berechtigung an der Aufstiegsrunde des DTFB teilzunehmen. Sollte diese Mannschaft dieses Privileg nicht wahrnehmen so geht es an die nächst Bestplatzierte weiter.</p>
+
+<p>Falls alle Teams der Landesliga bereits ein Bundesliga Team stellen, kann auch in den unteren Ligen nach einem Anwärter gesucht werden. Sollten zwei Mannschaften, die teilnehmen möchten, dieselbe Platzierung belegen, so wird ein Entscheidungsspiel ausgetragen.</p>
+
+<h2 id="auf--und-abstieg">Auf- und Abstieg</h2>
+
+<h3 id="ausscheiden-einer-mannschaft">Ausscheiden einer Mannschaft</h3>
+
+<p>Sollte eine Mannschaft aus dem Spielbetrieb aussteigen oder durch die Ligaleitung davon ausgeschlossen werden, so wird diese Mannschaft als Tabellenletzter weitergeführt und steht als Absteiger fest. Alle bisher ausgetragenen und noch ausstehenden Spiele werden als verloren gewertet.</p>
+
+<h3 id="regelung-in-der-landesliga-und-verbandsliga-sammelspieltage">Regelung in der Landesliga und Verbandsliga (Sammelspieltage)</h3>
+
+<p>Der Auf- und Abstieg ist in zwei Fälle unterteilt und funktioniert wie folgt:</p>
+
+<ul>
+  <li>
+    <p><strong>Fall 1:</strong></p>
+
+    <p><strong>Landesliga</strong>: Der am schlechtesten platzierte Landesligist einer Region (Nord/Süd) liegt auf einem direkten Abstiegsplatz (5. oder 6. Platz).</p>
+
+    <p><strong>Verbandsliga</strong>: Der Meister der Verbandsliga (1. Platz) der entsprechenden Region (Nord/Süd) steigt auf.</p>
+
+    <p>Es wird <strong><em>keine</em></strong> Relegation gespielt. Der Landesligist steigt ab, der Verbandsligist steigt auf.</p>
+  </li>
+  <li>
+    <p><strong>Fall 2:</strong></p>
+
+    <p><strong>Landesliga</strong>: Der am schlechtesten platzierte Landesligist einer Region (Nord/Süd) liegt <strong><em>nicht</em></strong> auf einem direkten Abstiegsplatz (3. oder 4. Platz).</p>
+
+    <p><strong>Verbandsliga</strong>: Der Meister der Verbandsliga (1. Platz) der entsprechenden Region (Nord/Süd) steigt über die Relegation auf.</p>
+
+    <p>Es wird <strong><em>eine</em></strong> Relegation gespielt. Der Landesligist erhält aufgrund seiner guten Platzierung die Chance, sich in der Landesliga zu halten. Der Auf- und Abstieg richtet sich nach dem Ergebnis des Relegationsspiels.</p>
+  </li>
+</ul>
+
+<h3 id="regelung-in-anderen-ligen">Regelung in anderen Ligen</h3>
+
+<ul>
+  <li>
+    <p><strong>Verbandsliga</strong></p>
+
+    <p>Die letztplatzierten Mannschaften der <strong>Verbandsliga</strong> steigen direkt ab. Die erstplatzierten der <strong>Bezirksliga</strong> steigen direkt auf.</p>
+  </li>
+  <li>
+    <p><strong>Bezirksliga</strong></p>
+
+    <p>Die letztplatzierten Mannschaften der <strong>Bezirksliga</strong> steigen direkt ab. Die erstplatzierten der <strong>Kreisliga</strong> steigen direkt auf.</p>
+  </li>
+</ul>
+
+<h2 id="relegation-landesliga--verbandsliga">Relegation Landesliga / Verbandsliga</h2>
+
+<p>Wenn eine Relegation zwischen Landesliga und Verbandsliga erforderlich ist, gelten folgende Regeln:</p>
+
+<ul>
+  <li>Gespielt wird ein vollständiger Spieltag mit vier Spielblöcken.</li>
+  <li>Ein Heim- oder Gastrecht besteht nicht. Wer zuerst aufstellt, wird per Münzwurf ermittelt.</li>
+  <li>Die Relegation muss einen Sieger ergeben. Bei Punktgleichheit entscheidet:
+    <ol>
+      <li>das Satzverhältnis</li>
+      <li>der direkte Vergleich</li>
+    </ol>
+  </li>
+  <li>Der Spielort wird vom Ligakoordinator festgelegt und soll für beide Teams eine möglichst vergleichbare Anfahrt gewährleisten.</li>
+  <li>Der Termin der Relegation wird zu Beginn des Jahres festgelegt. Die infrage kommenden Teams sollen sich diesen Termin frühzeitig freihalten.</li>
+  <li>Als Tischmodell wird Leonhart festgelegt.</li>
+</ul>
+
+<h2 id="relegation-in-unteren-ligen">Relegation in unteren Ligen</h2>
+
+<p>Sind nicht genügend Aufstiegsplätze in der nächsthöheren Liga vorhanden, kann der Aufstieg über eine Relegation erfolgen.</p>
+
+<p>Es gelten folgende Regeln:</p>
+
+<ul>
+  <li>Der letztplatzierte der nächsthöheren Liga steigt direkt ab.</li>
+  <li>Der vorletztplatzierte der nächsthöheren Liga sowie die erstplatzierten Mannschaften der unteren Liga nehmen an der Relegation teil.</li>
+  <li>Die Relegation wird im Modus „jeder gegen jeden“ ausgetragen.</li>
+  <li>Die Begegnungen werden zufällig ausgelost.</li>
+  <li>Der Spieltag wird in der Regel in reduzierter Form mit zwei Spielblöcken ausgetragen. Bei einer Relegation mit nur zwei Mannschaften wird ein vollständiger Spieltag mit vier Spielblöcken gespielt.</li>
+  <li>Die Relegation wird als Platzierungsrunde ausgetragen. Die Platzierung entscheidet über den Aufstieg. Bei Punktgleichheit entscheidet:
+    <ol>
+      <li>das Satzverhältnis</li>
+      <li>der direkte Vergleich</li>
+    </ol>
+  </li>
+  <li>Ein Heim- oder Gastrecht besteht nicht. Wer zuerst aufstellt, wird per Münzwurf entschieden.</li>
+  <li>Der Spielort wird vom Ligakoordinator festgelegt und soll für alle Teams eine möglichst vergleichbare Anfahrt gewährleisten.</li>
+  <li>Der Spielort muss eine ausreichende Anzahl an Tischen bereitstellen. Dabei gilt:
+    <ul>
+      <li>Pro gleichzeitig spielender Begegnung müssen mindestens zwei Tische zur Verfügung stehen.</li>
+      <li>Bei drei teilnehmenden Mannschaften sind mindestens zwei Tische erforderlich.</li>
+      <li>Bei vier teilnehmenden Mannschaften sind mindestens vier Tische erforderlich.</li>
+    </ul>
+  </li>
+  <li>Optimalerweise ist der Ligakoordinator am Spieltag anwesend, um eventuelle Fragen zu klären.</li>
+  <li>Als Tischmodell wird Leonhart festgelegt.</li>
+</ul>
+
+<p><strong>Zeitplan für die Relegation:</strong></p>
+
+<ul>
+  <li>10 Uhr Öffnung des Spielortes</li>
+  <li>11 Uhr Beginn 1. Begegnung</li>
+  <li>Ca. 13 Uhr Pause</li>
+  <li>Ca. 14 Uhr Beginn 2. Begegnung</li>
+  <li>Ca. 16 Uhr Pause</li>
+  <li>Ca. 17 Uhr Beginn 3. Begegnung</li>
+  <li>Ca. 19 Uhr Ende</li>
+</ul>
+
+<h2 id="nachrücken">Nachrücken</h2>
+
+<p>Können vor Saisonstart weniger Mannschaften in der Landes-, Verbands-, oder Bezirksliga antreten, so haben zuerst die höchst platzierten Absteiger aus der betreffenden Liga die Möglichkeit in dieser Liga weiterzuspielen. Den nächsten Startplatz erhält die bestplatzierte nichtaufgestiegene Mannschaft aus der Liga darunter. Sind aus zwei getrennten Ligen Mannschaften gleichfalls aufstiegsberechtigt und aufstiegsbereit, wird dies durch ein kurzfristig angesetztes Relegationsspiel entschieden.</p>
+
+<h2 id="sonderfälle">Sonderfälle</h2>
+
+<p>In extremen Fällen kann der BTFV-Vorstand zur Harmonisierung des Ligabetriebs von den Auf- und Abstiegsregelungen abweichen.</p>
+
+<h1 id="verwarnungen-gebühren-und-pflichten">Verwarnungen, Gebühren und Pflichten</h1>
+
+<h2 id="gebühren-des-btfv">Gebühren des BTFV</h2>
+
+<p>Für sämtliche Gebühren und Strafen gilt die Gebührenordnung des BTFV in der aktuellen Fassung.</p>
+
+<h2 id="verspätungen-am-spieltag">Verspätungen am Spieltag</h2>
+
+<p>Für jede Begegnung pro Spieltag ist der Spielbeginn im Spielplan festgelegt. Sollte eine Mannschaft mit mehr als 60 Minuten Verspätung erscheinen, gilt der ganze Spieltag als verloren und nicht angetreten.</p>
+
+<h2 id="spielabsage-bzw-nichtantreten-einer-mannschaft">Spielabsage bzw. Nichtantreten einer Mannschaft</h2>
+
+<p>Eine Spielabsage einer Mannschaft hat zur Folge, dass dieses Spiel mit 0:56 für die absagende Mannschaft gewertet wird.</p>
+
+<p>Bei einem Sammelspieltag werden die Begegnungen mit 0:42 für die absagende Mannschaft gewertet.</p>
+
+<p>Der Spielführer der dadurch siegreichen Mannschaft teilt daraufhin dem Ligakoordinator die Spieler mit, welche die Punkte für die Einzel- und Doppelrangliste bekommen sollen.</p>
+
+<p>Ab dem 2. Nichtantreten einer Mannschaft behält sich die Ligaleitung vor, diese Mannschaft gegebenenfalls vom weiteren Spielbetrieb auszuschließen.</p>
+
+<h2 id="pflichtverletzung">Pflichtverletzung</h2>
+
+<p>Sollte ein Spieler bzw. eine Mannschaft durch Unsportlichkeit auffallen, so ist die Ligaleitung berechtigt Verwarnungen, Geldstrafen (entsprechend der Gebührenordnung) und Punktabzüge auszusprechen. Über Spielersperrungen für einen oder auch mehrere Spieltage oder Ausschluss vom Ligabetrieb entscheidet das Schiedsgericht.</p>
+
+<h2 id="übergriffiges-verhalten">Übergriffiges Verhalten</h2>
+
+<p>Sollte ein Spieler durch übergriffiges Verhalten, also Diskriminierung, Beleidigungen, Rassismus, Sexismus oder ähnliches, auffallen, so wird bei erstmaligem Bekanntwerden eine Spielsperre über einen oder mehrere Tage verhängt. Bei erneutem Verstoß droht eine Sperre für die gesamte Saison und bei einem weiteren Fall eine Sperre auf Lebenszeit.</p>
+
+<h2 id="einlegen-von-protest">Einlegen von Protest</h2>
+
+<p>Eine Mannschaft hat das Recht, bei Unstimmigkeiten oder Unzufriedenheit bei der Ligaleitung per E-Mail, Protest einzulegen. Dies kann nur nachträglich geschehen, d.h. der Spieltag muss zuerst gespielt werden. Die Begründung des Protestes muss auf dem Spielberichtsbogen vermerkt sein. Sollte der Spielberichtsbogen ohne Bemerkung sein, so ist ein nachträglicher Protest unzulässig. Der Protest muss dem Ligakoordinator binnen einer Woche nach dem betreffenden Spiel zugehen.</p>
+
+<h2 id="spielführerversammlungen">Spielführerversammlungen</h2>
+
+<p>Die Spielführerversammlungen dienen allen Interessierten und Spielführern dazu, neue Informationen und Änderungen zur laufenden oder kommenden Saison zu bekommen. Zudem werden wichtige Entscheidungen bzw. Regeländerungen für eine Saison besprochen.</p>
+
+<p>Die Übertragung des Stimmrechts kann nur innerhalb des Vereins gewährt werden.</p>
+
+    </div>
+    
+    <!-- Nach oben Button -->
+    <a href="#markdown-toc" id="back-to-top">Nach oben</a>
+
+    <!-- Staging-Banner -->
+    
+    
+
+    <!-- Link-kopiert-Toast -->
+    <div id="base-toast" role="status" aria-live="polite">Link kopiert</div>
+
+    <script>
+        // Script, um den Button bei Scrollen einzublenden
+        const backToTopButton = document.getElementById("back-to-top");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopButton.style.display = "block"; // Zeigt den Button nach Scrollen an
+            } else {
+                backToTopButton.style.display = "none"; // Versteckt den Button, wenn man oben ist
+            }
+        };
+    </script>
+
+    <script>
+        const baseSlugify = (text) => text.toLowerCase()
+            .replace(/[^\w\s-]/g, "")
+            .trim()
+            .replace(/\s+/g, "-");
+
+        const baseCopyText = async (text) => {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(text);
+                return true;
+            }
+            const temp = document.createElement("textarea");
+            temp.value = text;
+            temp.setAttribute("readonly", "");
+            temp.style.position = "absolute";
+            temp.style.left = "-9999px";
+            document.body.appendChild(temp);
+            temp.select();
+            const success = document.execCommand("copy");
+            document.body.removeChild(temp);
+            return success;
+        };
+
+        let toastTimer = null;
+        const showCopyToast = () => {
+            const toast = document.getElementById("base-toast");
+            if (!toast) return;
+            clearTimeout(toastTimer);
+            toast.classList.add("base-toast--visible");
+            toastTimer = setTimeout(() => toast.classList.remove("base-toast--visible"), 2000);
+        };
+
+        const initHeadingLinks = () => {
+            const wrapper = document.querySelector(".wrapper");
+            if (!wrapper) return;
+            const headings = wrapper.querySelectorAll("h1, h2, h3, h4");
+
+            headings.forEach((heading) => {
+                if (heading.querySelector(".base-heading-link")) return;
+                let id = heading.getAttribute("id");
+                if (!id) {
+                    id = baseSlugify(heading.textContent || "section");
+                    let unique = id;
+                    let counter = 2;
+                    while (document.getElementById(unique)) {
+                        unique = `${id}-${counter++}`;
+                    }
+                    heading.setAttribute("id", unique);
+                }
+
+                const link = document.createElement("a");
+                link.className = "base-heading-link";
+                link.href = `#${id}`;
+                link.setAttribute("aria-label", "Link kopieren");
+                link.innerHTML = "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10.5 13.5l3-3\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M7 17a4 4 0 0 1 0-5.66l2.34-2.34a4 4 0 0 1 5.66 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M17 7a4 4 0 0 1 0 5.66l-2.34 2.34a4 4 0 0 1-5.66 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>";
+
+                link.addEventListener("click", async (event) => {
+                    event.preventDefault();
+                    const url = `${window.location.origin}${window.location.pathname}#${id}`;
+                    await baseCopyText(url);
+                    history.replaceState(null, "", `#${id}`);
+                    showCopyToast();
+                });
+
+                heading.appendChild(link);
+            });
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initHeadingLinks);
+        } else {
+            initHeadingLinks();
+        }
+    </script>
+</body>
+</html>
+
