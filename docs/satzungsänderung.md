@@ -1,6 +1,5 @@
 ---
-title: "Äderungsprotokoll (2026-02-14)"
-layout: default
+title: "Änderungsprotokoll (2026-02-14)"
 ---
 
 # Änderungen der Satzung:

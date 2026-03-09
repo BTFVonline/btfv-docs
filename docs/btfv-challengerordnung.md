@@ -1,24 +1,9 @@
 ---
 title: "BTFV Challenger Turnierordnung"
-author: "![BTFV Logo](images/btfv-logo.png)"
-date: {{ site.time | date: "%d-%m-%Y" }}
-layout: default
+date: {{ site.time | date: "%d.%m.%Y" }}
+pdf: /assets/pdf/btfv-challengerordnung.pdf
+source: https://github.com/BTFVonline/btfv-docs/blob/main/docs/btfv-challengerordnung.md
 ---
-<div class="html-only" style="text-align: center;">
-    <div class="title" style="text-align: center;">
-        <img src="images/btfv-logo.png" alt="BTFV Logo" style="display: block; margin: 0 auto;" />
-        BTFV Challenger Turnierordnung
-    </div>
-
-    <p style="text-align: center;">
-        Zuletzt geändert am:  {{ site.time | date: "%d-%m-%Y" }}
-    </p>
-    <p>
-        <a href="./../assets/pdf/btfv-challengerordnung.pdf" target="_blank">Download als PDF</a><br />
-        <a href="https://github.com/BTFVonline/btfv-docs/blob/main/docs/btfv-challengerordnung.md" target="_blank">GitHub Repository</a>
-    </p>
-</div>
-
 * TOC
 {:toc}
 

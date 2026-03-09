@@ -1,0 +1,19 @@
+name: PDFs generieren und Website deployen
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: deluxeGitHub/md-to-web-and-pdf/.github/workflows/reusable-build.yml@main
+    with:
+      source_dir: docs
+      baseurl: /btfv-docs
+      framework_ref: main
+      staging_branch: staging
+    permissions:
+      contents: write
