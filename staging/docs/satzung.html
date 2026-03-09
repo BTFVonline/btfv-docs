@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Satzung des BTFV e.V.</title>
+    
+    
+    
+    
+    
+        <meta name="theme-color" content="#f4f4f2">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/btfv-docs/staging/templates/btfv/images/favicon.png">
+        <link rel="apple-touch-icon" href="/btfv-docs/staging/templates/btfv/images/logo.png">
+        <link rel="manifest" href="/btfv-docs/staging/manifest.webmanifest">
+        <link rel="stylesheet" href="/btfv-docs/staging/templates/shared/web.css?v=1773015471">
+        <link rel="stylesheet" href="/btfv-docs/staging/templates/btfv/web.css?v=1773015471">
+    
+</head>
+<body class="section-prefix template-btfv">
+    
+        
+<header class="base-hero"></header>
+<script>
+(() => {
+    const initThemeToggle = () => {
+        const root = document.documentElement;
+        const toggle = document.querySelector('[data-theme-toggle]');
+        const icon = document.querySelector('[data-theme-icon]');
+        if (!toggle || !icon) return;
+
+        const renderIcon = (mode) => {
+            if (mode === 'dark') {
+                icon.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
+            } else {
+                icon.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5.5"/><line x1="12" y1="18.5" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5.5" y2="12"/><line x1="18.5" y1="12" x2="21.5" y2="12"/><line x1="4.5" y1="4.5" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.5" y2="19.5"/><line x1="17.2" y1="6.8" x2="19.5" y2="4.5"/><line x1="4.5" y1="19.5" x2="6.8" y2="17.2"/></g></svg>';
+            }
+        };
+
+        const updateThemeColor = () => {
+            const meta = document.querySelector('meta[name="theme-color"]');
+            if (!meta) return;
+            const color = getComputedStyle(root).getPropertyValue('--color-surface-page').trim();
+            if (color) meta.setAttribute('content', color);
+        };
+
+        const applyTheme = (mode) => {
+            root.setAttribute('data-theme', mode);
+            toggle.setAttribute('aria-pressed', mode === 'dark' ? 'true' : 'false');
+            renderIcon(mode);
+            updateThemeColor();
+        };
+
+        const stored = localStorage.getItem('base-theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'light' || stored === 'dark') {
+            applyTheme(stored);
+        } else if (prefersDark) {
+            applyTheme('dark');
+        } else {
+            applyTheme('light');
+        }
+
+        toggle.addEventListener('click', () => {
+            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            applyTheme(next);
+            localStorage.setItem('base-theme', next);
+        });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initThemeToggle);
+    } else {
+        initThemeToggle();
+    }
+})();
+</script>
+
+    
+    
+        
+        
+        
+        
+        
+        <div class="base-doc-heading">
+            <div class="base-doc-heading__top">
+                
+                <a class="base-doc-brand-link" href="/btfv-docs/staging/">
+                    <svg class="base-doc-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                
+                    <img class="base-doc-logo" src="/btfv-docs/staging/templates/btfv/images/logo.png" alt="Logo">
+                    <span class="base-doc-sitename">BTFV Dokumente</span>
+                
+                </a>
+                
+                <div class="base-doc-titles">
+                    <div class="base-doc-title">Satzung des BTFV e.V.</div>
+                    
+                </div>
+                <div class="base-doc-actions">
+                    <div class="base-hero__links">
+                        
+                            <a href="/btfv-docs/staging/assets/pdf/satzung.pdf" target="_blank" rel="noopener">PDF</a>
+                        
+                        
+                            <a href="https://github.com/BTFVonline/btfv-docs/blob/main/docs/satzung.md" target="_blank" rel="noopener">Quelle</a>
+                        
+                    </div>
+                    
+                        <div class="base-doc-date">Stand: 23.11.2025</div>
+                    
+                </div>
+                <button class="base-theme-toggle" type="button" data-theme-toggle aria-label="Theme wechseln" aria-pressed="false">
+                    <span class="base-theme-toggle__icon" data-theme-icon>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <line x1="12" y1="2.5" x2="12" y2="5.5"/>
+                                <line x1="12" y1="18.5" x2="12" y2="21.5"/>
+                                <line x1="2.5" y1="12" x2="5.5" y2="12"/>
+                                <line x1="18.5" y1="12" x2="21.5" y2="12"/>
+                                <line x1="4.5" y1="4.5" x2="6.8" y2="6.8"/>
+                                <line x1="17.2" y1="17.2" x2="19.5" y2="19.5"/>
+                                <line x1="17.2" y1="6.8" x2="19.5" y2="4.5"/>
+                                <line x1="4.5" y1="19.5" x2="6.8" y2="17.2"/>
+                            </g>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    
+    <div class="wrapper">
+        <ul id="markdown-toc">
+  <li><a href="#name-rechtsform-und-sitz-des-vereins" id="markdown-toc-name-rechtsform-und-sitz-des-vereins">Name, Rechtsform und Sitz des Vereins</a></li>
+  <li><a href="#zweck-und-mitgliedschaften" id="markdown-toc-zweck-und-mitgliedschaften">Zweck und Mitgliedschaften</a></li>
+  <li><a href="#aufgaben" id="markdown-toc-aufgaben">Aufgaben</a></li>
+  <li><a href="#geschäftsjahr" id="markdown-toc-geschäftsjahr">Geschäftsjahr</a></li>
+  <li><a href="#gemeinnützigkeit" id="markdown-toc-gemeinnützigkeit">Gemeinnützigkeit</a></li>
+  <li><a href="#mitgliedschaft" id="markdown-toc-mitgliedschaft">Mitgliedschaft</a></li>
+  <li><a href="#aufnahme" id="markdown-toc-aufnahme">Aufnahme</a></li>
+  <li><a href="#rechte-und-pflichten-der-mitglieder" id="markdown-toc-rechte-und-pflichten-der-mitglieder">Rechte und Pflichten der Mitglieder</a></li>
+  <li><a href="#ende-der-mitgliedschaft" id="markdown-toc-ende-der-mitgliedschaft">Ende der Mitgliedschaft</a></li>
+  <li><a href="#organe-des-verbandes" id="markdown-toc-organe-des-verbandes">Organe des Verbandes</a></li>
+  <li><a href="#mitgliederversammlung" id="markdown-toc-mitgliederversammlung">Mitgliederversammlung</a></li>
+  <li><a href="#vorstand" id="markdown-toc-vorstand">Vorstand</a></li>
+  <li><a href="#ehrenamtliche-tätigkeit" id="markdown-toc-ehrenamtliche-tätigkeit">Ehrenamtliche Tätigkeit</a></li>
+  <li><a href="#wahlen-und-abstimmungen" id="markdown-toc-wahlen-und-abstimmungen">Wahlen und Abstimmungen</a></li>
+  <li><a href="#gremien" id="markdown-toc-gremien">Gremien</a></li>
+  <li><a href="#satzungsänderungen" id="markdown-toc-satzungsänderungen">Satzungsänderungen</a></li>
+  <li><a href="#schiedsgericht" id="markdown-toc-schiedsgericht">Schiedsgericht</a></li>
+  <li><a href="#kassenprüfer" id="markdown-toc-kassenprüfer">Kassenprüfer</a></li>
+  <li><a href="#schadenshaftung" id="markdown-toc-schadenshaftung">Schadenshaftung</a></li>
+  <li><a href="#datenschutz" id="markdown-toc-datenschutz">Datenschutz</a></li>
+  <li><a href="#ordnungen" id="markdown-toc-ordnungen">Ordnungen</a></li>
+  <li><a href="#auflösung-des-verbandes" id="markdown-toc-auflösung-des-verbandes">Auflösung des Verbandes</a></li>
+  <li><a href="#inkrafttreten" id="markdown-toc-inkrafttreten">Inkrafttreten</a></li>
+</ul>
+
+<h1 id="name-rechtsform-und-sitz-des-vereins">Name, Rechtsform und Sitz des Vereins</h1>
+<ol>
+  <li>Der Verein führt den Namen: Bayrischer Tischfußballverband e.V. Die Abkürzung lautet: BTFV.</li>
+  <li>Der BTFV ist ein eingetragener Verein und hat seinen Sitz in 94032 Passau.</li>
+</ol>
+
+<h1 id="zweck-und-mitgliedschaften">Zweck und Mitgliedschaften</h1>
+
+<ol>
+  <li>
+    <p>Zweck des BTFV ist die Förderung des Tischfußballsports im Rahmen der Leibesübungen nach besten Kräften zu pflegen, zu fördern und seinen ideellen Charakter zu wahren.</p>
+  </li>
+  <li>
+    <p>Zweck des BTFV ist die besondere Förderung der Jugendarbeit im
+ Bereich des Tischfußballsports.</p>
+  </li>
+  <li>
+    <p>Der BTFV schafft mit seinen Mitgliedern die Voraussetzungen zur
+ Förderung des Breiten, Freizeit- und Gesundheitssports, ebenso wie des Leistungs- und Spitzensports.</p>
+  </li>
+  <li>
+    <p>Der BTFV verfolgt keine politischen Ziele und vertritt den Grundsatz
+ religiöser und weltanschaulicher Toleranz.</p>
+  </li>
+  <li>
+    <p>Der BTFV ist Mitglied des Deutschen Tischfußballbundes e.V. (DTFB)
+ mit Sitz in 65510 Hünstetten.</p>
+  </li>
+</ol>
+
+<h1 id="aufgaben">Aufgaben</h1>
+
+<ol>
+  <li>
+    <p>Der BTFV wird zu diesem Zweck bestrebt sein, den Gemeinschaftsgeist und die Sportkameradschaft durch freiwillige Unterordnung unter die geschriebenen und ungeschriebenen sportlichen Gesetze zu fördern.</p>
+  </li>
+  <li>
+    <p>Der BTFV vertritt die gemeinschaftlichen Interessen seiner Mitglieder und Anhänger von allgemeiner und grundsätzlicher Bedeutung gegenüber der Öffentlichkeit, allen Behörden, Verbänden und Organisationen.</p>
+  </li>
+  <li>
+    <p>Die Zuständigkeit im Tischfußballsport in Bayern liegt beim BTFV.</p>
+  </li>
+  <li>Zu den Aufgaben des Landesverbandes gehören insbesondere:
+    <ol type="a">
+   <li>Landesmeisterschaften, sowie ein geregelter Ligabetrieb</li>
+   <li>Zusammenarbeit mit dem DTFB</li>
+   <li>Unterrichtung der Öffentlichkeit und Förderung der Öffentlichkeitsarbeit</li>
+   <li>Mitwirkung bei der Gewährung von Zuschüssen für sportliche Zwecke</li>
+ </ol>
+  </li>
+  <li>Der BTFV hat das Recht, über Fernseh- und Hörfunkübertragungen von seinen Veranstaltungen mit Rundfunkveranstaltern Verträge zu schließen. Für Veranstaltungen seiner Mitglieder können diese Rechte übertragen werden. Schließt der BTFV für seine Mitglieder solche Verträge, so hat er die Vergütung für die Mitglieder treuhänderisch zu vereinnahmen und an diese zu verteilen. Dies gilt auch bezüglich aller anderen Bild- und Tonträger sowie möglicher Vertragspartner. Der BTFV kann dieses Recht Dritten übertragen.</li>
+</ol>
+
+<h1 id="geschäftsjahr">Geschäftsjahr</h1>
+
+<p>Das Geschäftsjahr beginnt mit dem 1. Januar und endet mit dem 31. Dezember des Kalenderjahres.</p>
+
+<h1 id="gemeinnützigkeit">Gemeinnützigkeit</h1>
+
+<p>Der BTFV verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke im Sinne des Abschnitts „Steuerbegünstigte Zwecke” der Abgabenordnung. Der BTFV ist selbstlos tätig; er verfolgt nicht in erster Linie eigenwirtschaftliche Zwecke. Mittel des Verbandes dürfen nur für die satzungsmäßigen Zwecke verwendet werden. Die Mitglieder erhalten keine Zuwendungen aus Mitteln des Verbandes. Es darf keine Person durch Ausgaben, die dem Zweck des Verbandes fremd sind, oder durch unverhältnismäßig hohe Vergütungen begünstigt werden.</p>
+
+<h1 id="mitgliedschaft">Mitgliedschaft</h1>
+
+<ol>
+  <li>Die Mitgliedschaft kann aus ordentlichen, außerordentlichen (fördernden) Mitgliedern und Ehrenmitgliedern bestehen.</li>
+  <li>Ordentliche Mitglieder sind Tischfußballvereinigungen oder Abteilungen von Vereinigungen mit Sitz in Bayern.</li>
+  <li>Außerordentliche (fördernde) Mitglieder sind Institutionen und Einzelpersonen, die die Bestrebungen des BTFV fördern.</li>
+  <li>Ehrenmitglieder sind Einzelpersonen, die sich um den Tischfußballsport hervorragende Verdienste erworben haben und die von der Mitgliederversammlung hierzu ernannt werden.</li>
+  <li>
+    <p>Rechtsform, Gemeinnützigkeit und Übergangsfristen</p>
+
+    <p>5.1 Ordentliche Mitglieder des BTFV können sowohl eingetragene Vereine (e.V.) als auch nicht eingetragene Vereine sein.</p>
+
+    <p>5.2 Vereine mit mehr als 15 Mitgliedern müssen als eingetragener Verein (e.V.) organisiert sein und einen Nachweis der Gemeinnützigkeit gemäß §§ 51–68 AO erbringen.</p>
+
+    <p>5.3 Vereine mit 15 oder weniger Mitgliedern können als nicht eingetragene Vereine aufgenommen werden, sofern sie in ihrer Satzung die Förderung des Tischfußballsports verankert haben und die Voraussetzungen der Gemeinnützigkeit grundsätzlich erfüllen können.</p>
+
+    <p>5.4 Für Vereine, die zum Zeitpunkt der Aufnahme die Anforderungen an die Eintragung als e.V. oder die anerkannte Gemeinnützigkeit noch nicht erfüllen, kann der Vorstand eine Übergangsfrist von bis zu einem Jahr gewähren. Erfolgt die Eintragung als e.V. oder die Anerkennung der Gemeinnützigkeit nicht innerhalb dieser Frist, kann die Aufnahme rückgängig gemacht oder der Verein aus dem Verband ausgeschlossen werden.</p>
+  </li>
+</ol>
+
+<h1 id="aufnahme">Aufnahme</h1>
+
+<ol>
+  <li>Die Mitgliedschaft im BTFV wird durch Aufnahme erworben.</li>
+  <li>Der Aufnahmeantrag ist schriftlich an den Vorstand des BTFV einzureichen. Dem Aufnahmeantrag ist die Satzung und die Gebührenordnung des Antragstellers sowie die schriftliche Anerkennung der Satzung und Ordnungen des BTFV beizufügen.</li>
+  <li>Aus der Satzung des Antragstellers muss hervorgehen, dass sich der Antragsteller die Förderung und Pflege des Tischfußballsports zur Aufgabe gestellt hat und den Vorschriften der Gemeinnützigkeitsordnung entspricht. Die Satzung des Antragstellers darf der Satzung des BTFV nicht widersprechen.</li>
+  <li>Über die Aufnahme entscheidet der Vorstand mit einfacher Mehrheit der Vorstandsmitglieder. Die Entscheidung ist dem Antragsteller schriftlich und im Falle einer Aufnahme auch den Mitgliedern in geeigneter Form bekanntzugeben.</li>
+  <li>Gegen die ablehnende Entscheidung steht dem Antragsteller Beschwerde an die Delegiertenversammlung zu. Diese Beschwerde ist innerhalb eines Monats nach der Bekanntgabe der Entscheidung schriftlich unter Angabe von Gründen an den Vorstand zu richten. Über die Beschwerde entscheidet die nächste Mitgliederversammlung endgültig. Die Beschwerde ist erfolgreich, wenn sich die einfache Stimmmehrheit für die Aufnahme ausspricht.</li>
+</ol>
+
+<h1 id="rechte-und-pflichten-der-mitglieder">Rechte und Pflichten der Mitglieder</h1>
+
+<ol>
+  <li>Mit der Aufnahme in den Verband erkennen alle Mitglieder diese Satzung und die Beschlüsse des Vorstandes des BTFV und der Mitgliederversammlung sowie die jeweils geltende Spielordnung und die Gebührenordnung an.</li>
+  <li>Alle Mitglieder sind verpflichtet, die Interessen des BTFV zu wahren und zu fördern, bei der Erreichung seiner Ziele mitzuwirken und die Anordnung seiner Organe zu befolgen.</li>
+  <li>Von den Mitgliedern wird ein Jahresbeitrag erhoben, dessen Höhe in der Geschäftsordnung geregelt ist. Näheres hierzu regelt die Gebührenordnung (GO), in der jeweils geltenden Fassung.</li>
+  <li>Alle ordentlichen Mitglieder sind wahl- und stimmberechtigt. Jedes ordentliche Mitglied ist in der Mitgliederversammlung mit der ihm zustehenden Anzahl an Delegierten stimmberechtigt. Die Stimmübertragung ist zulässig. Das Stimmrecht eines Delegierten kann nicht auf eine Person aus einem anderen Verein übertragen werden. Die von den einzelnen Mitgliedern entsandten Delegierten zur Mitgliederversammlung des BTFV müssen vollumfänglich geschäftsfähig sein.</li>
+  <li>Die Festlegung der Anzahl der Delegierten richtet sich nach der Anzahl der gemeldeten Tischfußballmannschaften im Ligabetrieb. Für jede gemeldete Mannschaft im Ligabetrieb des aktuellen Geschäftsjahres kann von den Mitgliedern ein Delegierter entsandt werden.</li>
+  <li>Außerordentliche (fördernde) Mitglieder und Ehrenmitglieder haben keine Stimme.</li>
+  <li>Vorstandsmitglieder des BTFV haben je eine Stimme. Die Stimme ist nicht übertragbar.</li>
+  <li>Kein Mitglied hat Anspruch auf das Vermögen des BTFV.</li>
+</ol>
+
+<h1 id="ende-der-mitgliedschaft">Ende der Mitgliedschaft</h1>
+
+<ol>
+  <li>Die Mitgliedschaft endet durch:
+    <ol type="a">
+     <li>Auflösung des BTFV</li>
+     <li>Austritt</li>
+     <li>Ausschluss</li>
+     <li>Auflösung des unmittelbaren Mitglieds</li>
+ </ol>
+  </li>
+  <li>Die Austrittserklärung ist schriftlich an den Vorstand des BTFV zu stellen. Hierbei muss eine dreimonatige Kündigungsfrist zum Ende des Geschäftsjahres eingehalten werden.</li>
+  <li>Der Ausschluss kann erfolgen:
+    <ol type="a">
+     <li>wenn das Verbandsmitglied mit der Bezahlung der Mitgliedsbeiträge trotz einmaliger Mahnung mehr als zwei Monate im Rückstand ist</li>
+     <li>bei grobem und wiederholtem Verstoß gegen die Satzung oder die Interessen des Verbandes</li>
+     <li>bei grobem unsportlichen Verhalten</li>
+     <li>aus sonstigen schwerwiegenden, die Verbandsdisziplin gefährdenden Gründen</li>
+ </ol>
+  </li>
+  <li>Über den Ausschluss, der mit sofortiger Wirkung erfolgt, entscheidet der Vorstand mit einfacher Stimmmehrheit. Ein Angehöriger des ausgeschlossenen Mitglieds kann gegen den Ausschluss innerhalb eines Monats nach in Kenntnissetzung des Ausschlusses Berufung zur Delegiertenversammlung einlegen. Der Widerspruch hat keine aufschiebende Wirkung.</li>
+  <li>Dem ausgeschlossenen Mitglied ist vor der Delegiertenversammlung Gelegenheit zur Erklärung zu geben.</li>
+  <li>Die Delegiertenversammlung entscheidet endgültig über den Ausschluss mit einfacher Stimmmehrheit.</li>
+  <li>Wird der Ausschließungsbeschluss vom Mitglied nicht oder nicht rechtzeitig angefochten, so kann auch gerichtlich nicht mehr geltend gemacht werden, der Ausschluss sei unrechtmäßig.</li>
+  <li>Mit der Beendigung der Mitgliedschaft erlöschen alle Ansprüche aus dem Mitgliedsverhältnis.</li>
+  <li>Die Beendigung der Mitgliedschaft befreit nicht von der Erfüllung der dem Verband gegenüber bestehenden Verpflichtungen.</li>
+</ol>
+
+<h1 id="organe-des-verbandes">Organe des Verbandes</h1>
+
+<p>Die Organe des BTFV sind:</p>
+<ol type="a">
+    <li>Die Mitgliederversammlung</li>
+    <li>Der Vorstand</li>
+    <li>Das Schiedsgericht</li>
+    <li>Die Gremien</li>
+</ol>
+
+<h1 id="mitgliederversammlung">Mitgliederversammlung</h1>
+
+<ol>
+  <li>Die Mitgliederversammlung ist das oberste Verbandsorgan.</li>
+  <li>Die Mitgliederversammlung ist zuständig für:
+    <ol type="a">
+     <li>Entgegennahme der Berichte des Vorstands</li>
+     <li>Wahl und Abberufung der Vorstandmitglieder</li>
+     <li>Wahl zweier vom Vorstand unabhängiger Kassenprüfer</li>
+     <li>Beschlussfassung über Änderung der Satzung und über die Auflösung des Verbandes</li>
+     <li>Beschlussfassung über die Gebührenordnung</li>
+     <li>Beschlussfassung über die Beschwerde gegen einen Beschluss des Vorstandes über einen abgelehnten Aufnahmeantrag und über einen Ausschluss</li>
+     <li>Entlastung des Vorstandes</li>
+     <li>Wahl des Schiedsgerichts</li>
+ </ol>
+  </li>
+  <li>
+    <p>Die Mitgliederversammlung soll einmal jährlich zusammentreten. Außerdem muss die Mitgliederversammlung einberufen werden, wenn der Vorstand es im Interesse des Verbandes für erforderlich hält oder die Einberufung von einem Fünftel der Mitglieder unter Angabe des Zwecks und der Gründe vom Vorstand schriftlich verlangt wird.</p>
+  </li>
+  <li>
+    <p>Die Mitgliederversammlung wird unter Bekanntgabe der Tagesordnung schriftlich einberufen und vom 1. oder 2. Vorsitzenden, bei deren Verhinderung von einem anderen Mitglied des Vorstandes, geleitet. Die Einladungsfrist beträgt vier Wochen. Der schriftlichen Einladung an die Mitglieder sind Ort und Zeit der Zusammenkunft sowie die Tagesordnung beizufügen.</p>
+  </li>
+  <li>
+    <p>Beschlussfähig ist jede ordnungsgemäß einberufene Mitgliederversammlung, wenn mindestens ein Viertel der Mitglieder erschienen ist. Für den Fall, dass die erste Mitgliederversammlung nicht beschlussfähig ist, kann der Vorstand eine Mitgliederversammlung mit gleicher Tagesordnung für den gleichen Tag und Ort ohne Einhaltung einer Ladungsfrist eine Stunde später einberufen. Diese weitere Mitgliederversammlung ist mit den vorhandenen Mitgliedern beschlussfähig.</p>
+  </li>
+  <li>
+    <p>Anträge zu einer Mitgliederversammlung können von den Mitgliedern und dem Vorstand gestellt werden. Anträge von Mitgliedern müssen mindestens zwei Wochen vor deren Beginn beim Vorstand des BTFV unter Angabe von Gründen eingereicht werden. Über die Zulassung später eingehender Anträge und gestellte Dringlichkeitsanträge entscheidet die Mitgliederversammlung mit einfacher Stimmmehrheit.</p>
+  </li>
+  <li>
+    <p>Die Art der Abstimmung wird grundsätzlich vom Versammlungsleiter festgesetzt. Die Abstimmung muss jedoch geheim durchgeführt werden, wenn ein Fünftel der erschienenen Mitglieder dies beantragt. Bei Personenwahlen ist gewählt, wer mehr als die Hälfte der abgegebenen Stimmen erhält. Leere Stimmzettel sind ungültig. Stimmenthaltungen bleiben außer Betracht. Wird die Mehrheit im ersten Wahlgang nicht erreicht, wird eine Stichwahl zwischen den beiden Bewerbern mit den höchsten Stimmzahlen durchgeführt.</p>
+  </li>
+  <li>
+    <p>Über den Verlauf der Mitgliederversammlung ist vom Schriftführer eine Niederschrift zu fertigen, die vom Versammlungsleiter mit zu unterzeichnen ist. Die Niederschrift soll Ort und Zeit der Versammlung, eine Anwesenheitsliste der erschienen Mitglieder, die Person des Versammlungsleiters, die Tagesordnung, die Beschlüsse, die Abstimmungsergebnisse und die Art der Abstimmung enthalten.</p>
+  </li>
+  <li>Die Niederschrift der Mitgliederversammlung ist mit einer Frist von vier Wochen auf der Homepage des Verbandes zu veröffentlichen.</li>
+</ol>
+
+<h1 id="vorstand">Vorstand</h1>
+
+<ol>
+  <li>
+    <p>Der BTFV wird vom Vorstand geleitet und verwaltet. Dem Vorstand gehören an:</p>
+
+    <p>geschäftsführender Vorstand:</p>
+    <ol type="a">
+     <li>1. Vorsitzender</li>
+     <li>2. Vorsitzender</li>
+     <li>Schatzmeister/Kassier</li>
+     <li>Sportwart </li>
+ </ol>
+
+    <p>erweiterter Vorstand:</p>
+    <ol type="a">
+     <li>Schriftführer</li>
+     <li>Jugendwart</li>
+     <li>Ligakoordinator Süd</li>
+     <li>Ligakoordinator Nord</li>
+ </ol>
+  </li>
+  <li>Vorstand im Sinne des § 26 BGB ist der geschäftsführende Vorstand, wobei jeder alleine berechtigt ist, den BTFV gerichtlich und außergerichtlich zu vertreten.</li>
+  <li>Die Ämter des geschäftsführenden Vorstandes dürfen nicht in Personalunion geführt werden. Im Übrigen ist Personalunion der weiteren Vorstandsämter zulässig.</li>
+  <li>Die Mitglieder des Vorstandes werden von der Mitgliederversammlung auf die Dauer von zwei Jahren gewählt. Sie üben ihre Aufgaben bis zum Zeitpunkt der Wiederwahl aus. Die Wahl des 1. und 2. Vorsitzenden ist getrennt vorzunehmen.</li>
+  <li>Sitzungen und Versammlungen der Organe werden vom 1. Vorsitzenden und im Falle seiner Verhinderung durch den 2. Vorsitzenden einberufen und geleitet. Eine Sitzung ist einzuberufen, wenn drei Vorstandsmitglieder dies verlangen.</li>
+  <li>Das Vermögen wird vom Vorstand verwaltet. Dem Schatzmeister obliegt insbesondere die Überwachung der Einnahmen und Ausgaben. Einzelheiten regelt die Gebührenordnung in der jeweils geltenden Fassung. Für eine ordnungsgemäße Buchführung ist Sorge zu tragen. Die Buchführung ist mindestens einmal jährlich durch zwei gewählte Kassenprüfer zu prüfen. Alle Prüfungsberichte sind den Vorstandsmitgliedern innerhalb von zwei Wochen nach Beendigung der Prüfung schriftlich mitzuteilen.</li>
+  <li>Die Mitglieder des Vorstandes sind berechtigt, an allen Sitzungen der Mitglieder teilzunehmen.</li>
+  <li>Der Vorstand fasst seine Beschlüsse mit einfacher Stimmmehrheit, bei Stimmgleichheit entscheidet die Stimme des 1. Vorsitzenden. Enthält sich dieser, gilt der Antrag als abgelehnt.</li>
+  <li>Bei Ausscheiden eines Vorstandsmitgliedes kann der Vorstand ein Mitglied berufen, welches die Aufgabe kommissarisch bis zur nächsten Mitgliederversammlung übernimmt.</li>
+  <li>Die Abberufung eines Vorstandsmitgliedes bedarf einer Mehrheit von 2/3 der abgegebenen Stimmen.</li>
+  <li>Über sämtliche Sitzungen müssen vom Schriftführer oder von einem Protokollführer Niederschriften gefertigt werden, die vom Sitzungsleiter zu unterzeichnen sind. Die Vorstandsmitglieder erhalten spätestens bei der nächsten Sitzung eine Protokollabschrift.</li>
+</ol>
+
+<h1 id="ehrenamtliche-tätigkeit">Ehrenamtliche Tätigkeit</h1>
+
+<p>Sämtliche Mitglieder der Organe des BTFV üben ihre Tätigkeit ehrenamtlich aus. Die im Interesse des Verbandes entstandenen Kosten werden entsprechend den Regelungen in der Gebührenordnung ersetzt.</p>
+
+<h1 id="wahlen-und-abstimmungen">Wahlen und Abstimmungen</h1>
+
+<p>Grundsätzlich entscheidet die einfache Stimmenmehrheit, wobei ungültige Stimmen und Stimmenthaltungen nicht mitgezählt werden. Bei Stimmengleichheit entscheidet die Stimme des Sitzungsleiters. Enthält sich dieser, gilt der Antrag als abgelehnt.</p>
+
+<h1 id="gremien">Gremien</h1>
+
+<ol>
+  <li>Zur Erledigung besonderer Aufgaben des Bundes können Gremien gebildet werden.</li>
+  <li>Dem Vorsitzenden des Gremiums obliegen die Einberufung, die Festsetzung der Tagesordnung und die Leitung der Sitzung. Das Gremium ist bei ordnungsgemäßer Einladung unter Bekanntgabe der Tagesordnung ohne Rücksicht auf die Zahl der anwesenden Mitglieder beschlussfähig. Es entscheidet mit einfacher Stimmenmehrheit. Bei Stimmengleichheit zählt die Stimme des Vorsitzenden. Enthält sich dieser, gilt der Antrag als abgelehnt.</li>
+  <li>Es ist eine Niederschrift anzufertigen und vom Vorsitzenden des Gremiums zu unterzeichnen und dem Vorstand sowie den Mitgliedern des Ausschusses zu unterbreiten.</li>
+</ol>
+
+<h1 id="satzungsänderungen">Satzungsänderungen</h1>
+
+<p>Satzungsänderungen bedürfen einer 2/3-Mehrheit der abgegebenen Stimmen.</p>
+
+<h1 id="schiedsgericht">Schiedsgericht</h1>
+
+<ol>
+  <li>Das Schiedsgericht regelt Streitigkeiten im Liga- und Turnierbetrieb des BTFV und verhängt gegebenenfalls Sanktionen.</li>
+  <li>Das Schiedsgericht besteht aus dem Sportwart sowie je zwei Beisitzern aus dem Ligabetrieb Süd und Nord.</li>
+  <li>Das Schiedsgericht beschließt mit einfacher Mehrheit und ist beschlussfähig bei Anwesenheit von mindestens der Hälfte der Schiedsgerichtsmitglieder.</li>
+  <li>Die Entscheidung ist den jeweiligen Personen nach der Schiedsgerichtssitzung schriftlich mitzuteilen.</li>
+  <li>Mitglieder des Vorstandes oder des Schiedsgerichts sind nicht stimmberechtigt, wenn Belange des eigenen Vereins oder des Verbandes verhandelt werden.</li>
+  <li>Einspruch gegen ein vom Schiedsgericht gefälltes Urteil ist nicht zulässig.</li>
+  <li>Es können folgende Strafen ausgesprochen werden:
+    <ol type="a">
+     <li>Verweis</li>
+     <li>Sperre</li>
+     <li>Geldstrafe bis zu 200 €</li>
+     <li>Punktabzug</li>
+     <li>Zwangsabstieg</li>
+     <li>Ausschluss aus dem BTFV</li>
+ </ol>
+  </li>
+</ol>
+
+<h1 id="kassenprüfer">Kassenprüfer</h1>
+
+<ol>
+  <li>Von der Mitgliederversammlung werden zwei Kassenprüfer auf die Dauer von zwei Jahren gewählt. Die Kassenprüfer dürfen nicht dem Vorstand angehören.</li>
+  <li>Den von der Mitgliederversammlung gewählten Kassenprüfern ist jederzeit Einblick in die Geschäftsbücher und die Kasse des Verbandes zu gewähren. Sie haben die Buchführung, den Jahresabschluss und das Vermögen des Verbandes zu prüfen. Das Ergebnis ist schriftlich niederzulegen und der Mitgliederversammlung vorzulegen.</li>
+</ol>
+
+<h1 id="schadenshaftung">Schadenshaftung</h1>
+
+<p>Der BTFV ist für den Schaden verantwortlich, den der Vorstand, die Mitglieder des Vorstandes oder ein anderer satzungsgemäß berufener Vertreter durch eine in Ausführung der ihm zustehenden Verrichtungen begangene, zum Schadensersatz verpflichtende Handlung, einem Dritten zufügt.</p>
+
+<h1 id="datenschutz">Datenschutz</h1>
+
+<ol>
+  <li>
+    <p>Mit dem Beitritt einer Tischfußballvereinigung nimmt der Verband den Vereinssitz und den Namen der Tischfußballvereinigung sowie die Namen, Vornamen und Geburtsdaten der Mitglieder auf. Diese Informationen werden in dem verbandseigenen EDV-System gespeichert. Außerdem können die Daten auf den Computern der Vorstandsmitglieder gespeichert werden. Jedem Vereinsmitglied wird dabei eine Mitgliedsnummer zugeordnet. Die personenbezogenen Daten werden dabei durch geeignete technische und organisatorische Maßnahmen vor der Kenntnisnahme Dritter geschützt.</p>
+  </li>
+  <li>
+    <p>Sonstige Informationen und Informationen über Nichtmitglieder werden von dem Vorstand grundsätzlich nur intern verarbeitet, wenn sie der Förderung des Vereinszwecks nützlich sind (z.B.: Speicherung von Telefon- und Faxnummern einzelner Mitglieder) und keine Anhaltspunkte bestehen, dass die betroffene Person ein schutzwürdiges Interesse hat, das der Verarbeitung entgegensteht.</p>
+  </li>
+  <li>
+    <p>Als Mitglied des DTFB ist der Verband verpflichtet, seine Mitglieder an diese Organisation zu melden. Übermittelt werden dabei Name, Alter und Vereinsmitlgliedsnummer bei Mitgliedern mit besonderen Aufgaben (z.B.: Vorstandsmitglieder) die vollständige Adresse mit Telefonnummer, Mailadresse sowie der Bezeichnung ihrer Funktion im Verband. Im Rahmen von Ligaspielen oder Turnieren kann der Verband Ergebnisse und besondere Ereignisse an die entsprechende Organisation weiterleiten.</p>
+  </li>
+  <li>
+    <p>Der Verband informiert die Tagespresse sowie die nationalen und internationalen Agenturen über Turnierergebnisse und besondere Ereignisse. Solche Informationen werden überdies auf der Internetseite des Verbandes veröffentlicht. Das einzelne Mitglied kann jederzeit gegenüber dem Vorstand einer solchen Veröffentlichung widersprechen. Im Falle des Widerspruchs unterbleiben in Bezug auf das widersprechende Mitglied weitere Veröffentlichungen. Personenbezogene Daten des widersprechenden Mitglieds werden von der Homepage entfernt. Der Verband benachrichtigt die entsprechenden Organisationen, denen der Verband abgehört von dem Widerspruch des Mitglieds.</p>
+  </li>
+</ol>
+
+<h1 id="ordnungen">Ordnungen</h1>
+
+<ol>
+  <li>
+    <p>Ordnungen werden vom Vorstand beschlossen und sind nicht Bestandteil dieser Satzung. Für eine Änderung ist die einfache Mehrheit ausreichend. Die Mitglieder können eine vom Vorstand beschlossene Änderung bei der nächsten Mitgliederversammlung mit einfacher Stimmmehrheit rückgängig machen.</p>
+  </li>
+  <li>
+    <p>Änderungen der Ordnungen treten mit ihrer Bekanntgabe in Kraft.</p>
+  </li>
+  <li>
+    <p>Der BTFV hat folgende Ordnungen:</p>
+    <ol type="a">
+     <li>Spielordnung</li>
+     <li>Gebührenordnung</li>
+ </ol>
+  </li>
+</ol>
+
+<h1 id="auflösung-des-verbandes">Auflösung des Verbandes</h1>
+
+<ol>
+  <li>
+    <p>Die Auflösung des Verbandes erfolgt durch Beschluss der Mitgliederversammlung, wobei ¾ der abgegebenen Stimmen für die Auflösung stimmen müssen.</p>
+  </li>
+  <li>
+    <p>Bei Auflösung des Verbandes, bei seinem Erlöschen oder Wegfall seines bisherigen Zwecks fällt das Vermögen der Jugendarbeit im Tischfußballsport zu, wobei der Beschluss über die künftige Verwendung des Vermögens erst nach Einwilligung des Finanzamtes ausgeführt werden darf.</p>
+  </li>
+</ol>
+
+<h1 id="inkrafttreten">Inkrafttreten</h1>
+
+<ol>
+  <li>
+    <p>Die Satzung wurde durch die Mitgliederversammlung am 23.11.2025 in Nürnberg beschlossen.</p>
+  </li>
+  <li>
+    <p>Sie tritt mit der Eintragung in das Vereinsregister des Amtsgerichts in Kraft.</p>
+  </li>
+  <li>
+    <p>Damit verliert die bisherige Satzung vom 26.11.2023 beim Amtsgericht Passau ihre Wirkung.</p>
+  </li>
+</ol>
+
+    </div>
+    
+    <!-- Nach oben Button -->
+    <a href="#markdown-toc" id="back-to-top">Nach oben</a>
+
+    <!-- Staging-Banner -->
+    
+    
+    <div id="staging-banner">
+        Vorschau-Version – kein offizieller Stand
+    </div>
+    
+
+    <!-- Link-kopiert-Toast -->
+    <div id="base-toast" role="status" aria-live="polite">Link kopiert</div>
+
+    <script>
+        // Script, um den Button bei Scrollen einzublenden
+        const backToTopButton = document.getElementById("back-to-top");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopButton.style.display = "block"; // Zeigt den Button nach Scrollen an
+            } else {
+                backToTopButton.style.display = "none"; // Versteckt den Button, wenn man oben ist
+            }
+        };
+    </script>
+
+    <script>
+        const baseSlugify = (text) => text.toLowerCase()
+            .replace(/[^\w\s-]/g, "")
+            .trim()
+            .replace(/\s+/g, "-");
+
+        const baseCopyText = async (text) => {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(text);
+                return true;
+            }
+            const temp = document.createElement("textarea");
+            temp.value = text;
+            temp.setAttribute("readonly", "");
+            temp.style.position = "absolute";
+            temp.style.left = "-9999px";
+            document.body.appendChild(temp);
+            temp.select();
+            const success = document.execCommand("copy");
+            document.body.removeChild(temp);
+            return success;
+        };
+
+        let toastTimer = null;
+        const showCopyToast = () => {
+            const toast = document.getElementById("base-toast");
+            if (!toast) return;
+            clearTimeout(toastTimer);
+            toast.classList.add("base-toast--visible");
+            toastTimer = setTimeout(() => toast.classList.remove("base-toast--visible"), 2000);
+        };
+
+        const initHeadingLinks = () => {
+            const wrapper = document.querySelector(".wrapper");
+            if (!wrapper) return;
+            const headings = wrapper.querySelectorAll("h1, h2, h3, h4");
+
+            headings.forEach((heading) => {
+                if (heading.querySelector(".base-heading-link")) return;
+                let id = heading.getAttribute("id");
+                if (!id) {
+                    id = baseSlugify(heading.textContent || "section");
+                    let unique = id;
+                    let counter = 2;
+                    while (document.getElementById(unique)) {
+                        unique = `${id}-${counter++}`;
+                    }
+                    heading.setAttribute("id", unique);
+                }
+
+                const link = document.createElement("a");
+                link.className = "base-heading-link";
+                link.href = `#${id}`;
+                link.setAttribute("aria-label", "Link kopieren");
+                link.innerHTML = "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10.5 13.5l3-3\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M7 17a4 4 0 0 1 0-5.66l2.34-2.34a4 4 0 0 1 5.66 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M17 7a4 4 0 0 1 0 5.66l-2.34 2.34a4 4 0 0 1-5.66 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>";
+
+                link.addEventListener("click", async (event) => {
+                    event.preventDefault();
+                    const url = `${window.location.origin}${window.location.pathname}#${id}`;
+                    await baseCopyText(url);
+                    history.replaceState(null, "", `#${id}`);
+                    showCopyToast();
+                });
+
+                heading.appendChild(link);
+            });
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initHeadingLinks);
+        } else {
+            initHeadingLinks();
+        }
+    </script>
+</body>
+</html>
+

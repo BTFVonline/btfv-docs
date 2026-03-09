@@ -1,0 +1,46 @@
+:root {
+    /* Text und Flaechen */
+    --color-text-primary: #2b2b2b;
+    --color-text-primary-rgb: 43, 43, 43;
+    --color-text-muted: #6a6a6a;
+    --color-surface-page: #f4f4f2;
+    --color-surface-card: #ffffff;
+    --color-border-default: #e0e0e0;
+    --color-shadow-card: rgba(0, 0, 0, 0.08);
+
+    /* Akzent- und Funktionsfarben */
+    --color-ink-strong: #111111;
+    --color-danger: #f05a28;
+    --color-brand-primary: #f28c28; /* h1-h4, Links, Buttons, Tabellenkopf */
+    --color-brand-primary-hover: #cc6d1f;
+    --color-brand-rgb: 242, 140, 40;
+    --color-brand-contrast: #4a4a49; /* Hover fuer CTA/Back-to-top */
+    --color-brand-contrast-rgb: 74, 74, 73;
+    --color-header-band-bg: #4a4a49;
+    --color-header-band-text: #ffffff;
+    --color-link-underline: rgba(var(--color-brand-rgb), 0.35);
+
+}
+
+:root[data-theme='dark'] {
+    /* Text und Flaechen */
+    --color-text-primary: #f3f3f3;
+    --color-text-primary-rgb: 243, 243, 243;
+    --color-text-muted: #b0b0b0;
+    --color-surface-page: #1f1f1f;
+    --color-surface-card: #2b2b2b;
+    --color-border-default: #3a3a3a;
+    --color-shadow-card: rgba(0, 0, 0, 0.5);
+
+    /* Akzent- und Funktionsfarben */
+    --color-danger: #ff7a3c;
+    --color-brand-primary: #ff9a3c;
+    --color-brand-primary-hover: #e37f2b;
+    --color-brand-rgb: 255, 154, 60;
+    --color-brand-contrast: #8d8d8d;
+    --color-brand-contrast-rgb: 141, 141, 141;
+    --color-header-band-bg: #111111;
+    --color-header-band-text: #ffffff;
+    --color-link-underline: rgba(var(--color-brand-rgb), 0.45);
+}
+

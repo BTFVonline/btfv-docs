@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>BTFV Challenger Turnierordnung</title>
+    
+    
+    
+    
+    
+        <meta name="theme-color" content="#f4f4f2">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/btfv-docs/staging/templates/btfv/images/favicon.png">
+        <link rel="apple-touch-icon" href="/btfv-docs/staging/templates/btfv/images/logo.png">
+        <link rel="manifest" href="/btfv-docs/staging/manifest.webmanifest">
+        <link rel="stylesheet" href="/btfv-docs/staging/templates/shared/web.css?v=1773015471">
+        <link rel="stylesheet" href="/btfv-docs/staging/templates/btfv/web.css?v=1773015471">
+    
+</head>
+<body class=" template-btfv">
+    
+        
+<header class="base-hero"></header>
+<script>
+(() => {
+    const initThemeToggle = () => {
+        const root = document.documentElement;
+        const toggle = document.querySelector('[data-theme-toggle]');
+        const icon = document.querySelector('[data-theme-icon]');
+        if (!toggle || !icon) return;
+
+        const renderIcon = (mode) => {
+            if (mode === 'dark') {
+                icon.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
+            } else {
+                icon.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5.5"/><line x1="12" y1="18.5" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5.5" y2="12"/><line x1="18.5" y1="12" x2="21.5" y2="12"/><line x1="4.5" y1="4.5" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.5" y2="19.5"/><line x1="17.2" y1="6.8" x2="19.5" y2="4.5"/><line x1="4.5" y1="19.5" x2="6.8" y2="17.2"/></g></svg>';
+            }
+        };
+
+        const updateThemeColor = () => {
+            const meta = document.querySelector('meta[name="theme-color"]');
+            if (!meta) return;
+            const color = getComputedStyle(root).getPropertyValue('--color-surface-page').trim();
+            if (color) meta.setAttribute('content', color);
+        };
+
+        const applyTheme = (mode) => {
+            root.setAttribute('data-theme', mode);
+            toggle.setAttribute('aria-pressed', mode === 'dark' ? 'true' : 'false');
+            renderIcon(mode);
+            updateThemeColor();
+        };
+
+        const stored = localStorage.getItem('base-theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'light' || stored === 'dark') {
+            applyTheme(stored);
+        } else if (prefersDark) {
+            applyTheme('dark');
+        } else {
+            applyTheme('light');
+        }
+
+        toggle.addEventListener('click', () => {
+            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            applyTheme(next);
+            localStorage.setItem('base-theme', next);
+        });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initThemeToggle);
+    } else {
+        initThemeToggle();
+    }
+})();
+</script>
+
+    
+    
+        
+        
+        
+        
+        
+        <div class="base-doc-heading">
+            <div class="base-doc-heading__top">
+                
+                <a class="base-doc-brand-link" href="/btfv-docs/staging/">
+                    <svg class="base-doc-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                
+                    <img class="base-doc-logo" src="/btfv-docs/staging/templates/btfv/images/logo.png" alt="Logo">
+                    <span class="base-doc-sitename">BTFV Dokumente</span>
+                
+                </a>
+                
+                <div class="base-doc-titles">
+                    <div class="base-doc-title">BTFV Challenger Turnierordnung</div>
+                    
+                </div>
+                <div class="base-doc-actions">
+                    <div class="base-hero__links">
+                        
+                            <a href="/btfv-docs/staging/assets/pdf/btfv-challengerordnung.pdf" target="_blank" rel="noopener">PDF</a>
+                        
+                        
+                            <a href="https://github.com/BTFVonline/btfv-docs/blob/main/docs/btfv-challengerordnung.md" target="_blank" rel="noopener">Quelle</a>
+                        
+                    </div>
+                    
+                        <div class="base-doc-date">Stand: 09.03.2026</div>
+                    
+                </div>
+                <button class="base-theme-toggle" type="button" data-theme-toggle aria-label="Theme wechseln" aria-pressed="false">
+                    <span class="base-theme-toggle__icon" data-theme-icon>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <line x1="12" y1="2.5" x2="12" y2="5.5"/>
+                                <line x1="12" y1="18.5" x2="12" y2="21.5"/>
+                                <line x1="2.5" y1="12" x2="5.5" y2="12"/>
+                                <line x1="18.5" y1="12" x2="21.5" y2="12"/>
+                                <line x1="4.5" y1="4.5" x2="6.8" y2="6.8"/>
+                                <line x1="17.2" y1="17.2" x2="19.5" y2="19.5"/>
+                                <line x1="17.2" y1="6.8" x2="19.5" y2="4.5"/>
+                                <line x1="4.5" y1="19.5" x2="6.8" y2="17.2"/>
+                            </g>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    
+    <div class="wrapper">
+        <ul id="markdown-toc">
+  <li><a href="#ausschreibung" id="markdown-toc-ausschreibung">Ausschreibung</a></li>
+  <li><a href="#modus" id="markdown-toc-modus">Modus</a></li>
+  <li><a href="#regeln" id="markdown-toc-regeln">Regeln</a></li>
+  <li><a href="#spielgeräte" id="markdown-toc-spielgeräte">Spielgeräte</a></li>
+  <li><a href="#preise" id="markdown-toc-preise">Preise</a></li>
+  <li><a href="#ergebnismeldung" id="markdown-toc-ergebnismeldung">Ergebnismeldung</a></li>
+</ul>
+
+<h1 id="ausschreibung">Ausschreibung</h1>
+
+<ul>
+  <li>Spätestens 2 Wochen vor Turnierstart</li>
+  <li>Bezeichnung des Turniers (<strong>BTFV Challenger</strong>)</li>
+  <li>Name des Veranstalters/Ausrichters inkl. Kontaktmöglichkeit (E-Mail/Telefon)</li>
+  <li>Beginn des Turniers</li>
+  <li>Ort der Austragung (Name und Adresse)</li>
+  <li>Anzahl und der Typ der Spieltische</li>
+  <li>verwendete Figuren und Bälle</li>
+  <li>Disziplin (Doppel und/oder Einzel)</li>
+  <li>maximale Anzahl der Teilnehmer (wenn es eine gibt)</li>
+  <li>Tag und Zeit des Meldeschlusses (wenn es einen gibt)</li>
+  <li>Höhe der Gebühren (Organisationspauschale, Startgeld)</li>
+  <li>Preise (Pokale, Medaillen oder Sachpreise)</li>
+</ul>
+
+<h1 id="modus">Modus</h1>
+
+<ul>
+  <li>Alle Teilnehmer spielen Qualifikationsrunden Jeder gegen Jeden oder nach dem Schweizer System und Buchholzzahl. Anschließend folgen Playoffs als Single- oder Doppel-KO, um die Endplatzierungen auszuspielen. Bei Single-KO wird ein dritter Platz ausgespielt.</li>
+  <li>Das Feld darf in bis zu 3 Divisionen aufgeteilt werden (Profi, Amateur und Neuling).</li>
+  <li>Ab 16 teilnehmenden Teams muss in 2 Divisionen aufgeteilt werden.</li>
+  <li>Ab 32 teilnehmenden Teams muss in 3 Divisionen aufgeteilt werden.</li>
+  <li>Im Gewinnerfeld der Profirunde wird <strong>Best of 5</strong> mit Verlängerung im Entscheidungssatz bis maximal 8 Tore gespielt.</li>
+  <li>In allen anderen Feldern wird <strong>Best of 3</strong> mit Verlängerung im Entscheidungssatz bis maximal 8 Tore empfohlen.</li>
+  <li>In der untergeordneten Division muss mindestens die gleiche Anzahl oder mehr Aktive starten als in der übergeordneten.</li>
+  <li>In den Playoffs werden die Spieler gemäß ihrer Platzierung aus der Vorrunde gesetzt (z. B. 1–8, 2–7, …).</li>
+</ul>
+
+<h1 id="regeln">Regeln</h1>
+
+<p>Es wird nach den offiziellen Tischfußballregeln des <strong>ITSF</strong> gespielt.</p>
+
+<h1 id="spielgeräte">Spielgeräte</h1>
+
+<ul>
+  <li>Bei Challengerturnieren dürfen nur Tische von den aktuellen BTFV-Tischpartnern genutzt werden.</li>
+  <li>Es müssen mindestens zwei Tische eingesetzt werden.</li>
+  <li>Multitable-Turniere sind gestattet.</li>
+  <li>Die Spieltische müssen bis 1 Stunde vor Turnierbeginn spielbereit aufgestellt und ausgerichtet sein.</li>
+  <li>Gespielt wird mit den von den BTFV-Tischpartnern angebotenen Bällen.</li>
+  <li>Es ist auf ausreichende Ausleuchtung der Tische zu achten.</li>
+  <li>Bälle sind vom Veranstalter/Ausrichter bereitzustellen.</li>
+</ul>
+
+<h1 id="preise">Preise</h1>
+
+<p>Die 3 Erstplatzierten jeder Disziplin des Profifeldes erhalten Ehrungen (Pokale, Medaillen, Bargeld oder vergleichbare Sachpreise), die vom Ausrichter zu stellen sind.</p>
+
+<p>Stehen weitere Preise von Sponsoren oder Werbegeschenke zur Verfügung, steht es dem Ausrichter frei, wie diese Preise hinzuaddiert werden.</p>
+
+<p>Ehrungen für andere Felder sind optional. Hier liegt die Entscheidung beim Ausrichter.</p>
+
+<p>Bei Nichtanwesenheit kann der Anspruch auf die Preise verfallen.</p>
+
+<h1 id="ergebnismeldung">Ergebnismeldung</h1>
+
+<p>Die Ergebnisse sind über das Formular auf der <a href="https://btfv.de/challenger-ergebnisse-hochladen/">BTFV-Seite</a>
+oder alternativ als <a href="mailto:challenger@btfv.de">E-Mail</a> zu senden.</p>
+
+    </div>
+    
+    <!-- Nach oben Button -->
+    <a href="#markdown-toc" id="back-to-top">Nach oben</a>
+
+    <!-- Staging-Banner -->
+    
+    
+    <div id="staging-banner">
+        Vorschau-Version – kein offizieller Stand
+    </div>
+    
+
+    <!-- Link-kopiert-Toast -->
+    <div id="base-toast" role="status" aria-live="polite">Link kopiert</div>
+
+    <script>
+        // Script, um den Button bei Scrollen einzublenden
+        const backToTopButton = document.getElementById("back-to-top");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopButton.style.display = "block"; // Zeigt den Button nach Scrollen an
+            } else {
+                backToTopButton.style.display = "none"; // Versteckt den Button, wenn man oben ist
+            }
+        };
+    </script>
+
+    <script>
+        const baseSlugify = (text) => text.toLowerCase()
+            .replace(/[^\w\s-]/g, "")
+            .trim()
+            .replace(/\s+/g, "-");
+
+        const baseCopyText = async (text) => {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(text);
+                return true;
+            }
+            const temp = document.createElement("textarea");
+            temp.value = text;
+            temp.setAttribute("readonly", "");
+            temp.style.position = "absolute";
+            temp.style.left = "-9999px";
+            document.body.appendChild(temp);
+            temp.select();
+            const success = document.execCommand("copy");
+            document.body.removeChild(temp);
+            return success;
+        };
+
+        let toastTimer = null;
+        const showCopyToast = () => {
+            const toast = document.getElementById("base-toast");
+            if (!toast) return;
+            clearTimeout(toastTimer);
+            toast.classList.add("base-toast--visible");
+            toastTimer = setTimeout(() => toast.classList.remove("base-toast--visible"), 2000);
+        };
+
+        const initHeadingLinks = () => {
+            const wrapper = document.querySelector(".wrapper");
+            if (!wrapper) return;
+            const headings = wrapper.querySelectorAll("h1, h2, h3, h4");
+
+            headings.forEach((heading) => {
+                if (heading.querySelector(".base-heading-link")) return;
+                let id = heading.getAttribute("id");
+                if (!id) {
+                    id = baseSlugify(heading.textContent || "section");
+                    let unique = id;
+                    let counter = 2;
+                    while (document.getElementById(unique)) {
+                        unique = `${id}-${counter++}`;
+                    }
+                    heading.setAttribute("id", unique);
+                }
+
+                const link = document.createElement("a");
+                link.className = "base-heading-link";
+                link.href = `#${id}`;
+                link.setAttribute("aria-label", "Link kopieren");
+                link.innerHTML = "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10.5 13.5l3-3\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M7 17a4 4 0 0 1 0-5.66l2.34-2.34a4 4 0 0 1 5.66 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M17 7a4 4 0 0 1 0 5.66l-2.34 2.34a4 4 0 0 1-5.66 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>";
+
+                link.addEventListener("click", async (event) => {
+                    event.preventDefault();
+                    const url = `${window.location.origin}${window.location.pathname}#${id}`;
+                    await baseCopyText(url);
+                    history.replaceState(null, "", `#${id}`);
+                    showCopyToast();
+                });
+
+                heading.appendChild(link);
+            });
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initHeadingLinks);
+        } else {
+            initHeadingLinks();
+        }
+    </script>
+</body>
+</html>
+
