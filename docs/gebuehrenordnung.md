@@ -1,6 +1,6 @@
 ---
 title: "Gebührenordnung des BTFV e.V."
-date: {{ site.time | date: "%d.%m.%Y" }}
+date: '{{ site.time | date: "%d.%m.%Y" }}'
 pdf: /assets/pdf/gebuehrenordnung.pdf
 source: https://github.com/BTFVonline/btfv-docs/blob/main/docs/gebuehrenordnung.md
 ---
