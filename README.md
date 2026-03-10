@@ -1,167 +1,109 @@
 # BTFV Verbandsdokumente
 
-Dieses Repository enthält die offiziellen Dokumente des Bayerischen Tischfußballverbands e.V. (BTFV) als Markdown-Dateien. Die Dokumente werden automatisch in PDF-Dateien umgewandelt und stehen zum Download bereit.
-
-## Inhalt
-
-- **docs/**: Enthält die Markdown-Quellen der Verbandsdokumente (`satzung.md`, `spielordnung.md`, `gebuehrenordnung.md` usw.).
-- **assets/pdf/**: Hier werden die automatisch generierten PDF-Versionen der Dokumente abgelegt.
-- **assets/css/**: Enthält das Stylesheet für die HTML-Darstellung.
-- **generate_pdf_local.sh**: Skript zur lokalen PDF-Erzeugung aus den Markdown-Dateien.
-- **.github/workflows/generate-pdf.yml**: GitHub Actions Workflow zur automatischen PDF-Erstellung bei jedem Push auf den `main`-Branch.
-- **_layouts/** und **_config.yml**: Dateien für das Jekyll-Setup zur HTML-Darstellung auf GitHub Pages.
+Offizielle Dokumente des Bayerischen Tischfußballverbands e.V. (BTFV) als Markdown-Quellen.
+Die Website und PDFs werden automatisch per GitHub Actions generiert und auf GitHub Pages veröffentlicht.
 
 ---
 
-## Hinweise zur Bearbeitung der Markdown-Dokumente
+## Dokumente bearbeiten
 
-Die Dokumente werden im [Markdown-Format](https://www.markdownguide.org/basic-syntax/) geschrieben. Markdown ist eine einfache Auszeichnungssprache, die leicht zu lesen und zu bearbeiten ist – auch für Nicht-ITler.
+Alle Dokumente liegen im Ordner `docs/` als Markdown-Dateien. Nach jedem Push auf `main` werden automatisch:
+- die **PDFs** neu generiert und in `assets/pdf/` gespeichert
+- die **Website** neu gebaut und auf GitHub Pages deployt
 
-### Automatische Platzhalter und "Magic"
+### Datei-Aufbau
 
-- **Datum:** Ganz oben im Dokument steht oft eine Zeile wie  
-  `date: {{ site.time | date: "%d-%m-%Y" }}`  
-  Beim PDF-Export wird dieser Platzhalter automatisch durch das Datum des letzten Commits ersetzt.
-- **TOC (Inhaltsverzeichnis):**  
-  Die Zeile  
-  ```
-  * TOC
-  {:toc}
-  ```
-  erzeugt beim Export ein automatisches Inhaltsverzeichnis an dieser Stelle.
-- **HTML-Blöcke:**  
-  Blöcke wie `<div class="html-only">...</div>` werden beim PDF-Export entfernt und erscheinen nur in der HTML-Version.
-- **Alphabetische Listen:**  
-  Für Listen mit Buchstaben (a, b, c, ...) wird in HTML folgendes verwendet:
-  ```html
-  <ol type="a">
-    <li>Erster Punkt</li>
-    <li>Zweiter Punkt</li>
-  </ol>
-  ```
-  Diese Syntax wird beim PDF-Export automatisch in eine passende Darstellung umgewandelt.  
-  **Hinweis:** Solche Listen bitte nur verwenden, wenn wirklich eine alphabetische Nummerierung (a, b, c, ...) benötigt wird.
+Jedes Dokument beginnt mit einem YAML-Header:
 
-Alle diese Anpassungen werden automatisch durch das Skript und den GitHub Actions Workflow erledigt (siehe `.github/workflows/generate-pdf.yml`).
+```yaml
+---
+title: "Satzung"
+subtitle: "des BTFV e.V."          # optional
+date: "{{ site.time | date: '%d.%m.%Y' }}"
+section_numbering: paragraph        # paragraph | arabic | weglassen = keine
+pdf: /assets/pdf/satzung.pdf       # für Download-Link auf der Website
+---
+```
+
+### Abschnittsnummerierung
+
+| Wert | Darstellung |
+|---|---|
+| `paragraph` | § 1, § 1.1, § 1.1.1 … |
+| `arabic` | 1, 1.1, 1.1.1 … |
+| *(nicht gesetzt)* | Keine automatische Nummerierung |
+
+### Inhaltsverzeichnis
+
+```markdown
+* TOC
+{:toc}
+```
+
+Wird im PDF zu einem automatischen Inhaltsverzeichnis. Auf der Website rendert Jekyll es als verlinkte Liste.
+
+### Datum
+
+```yaml
+date: "{{ site.time | date: '%d.%m.%Y' }}"
+```
+
+Wird beim PDF-Export automatisch durch das Datum des letzten Commits ersetzt.
+
+### HTML-only-Blöcke
+
+```html
+<div class="html-only">
+  Dieser Inhalt erscheint nur auf der Website, nicht im PDF.
+</div>
+```
+
+### Alphabetische Listen
+
+```html
+<ol type="a">
+  <li>Erster Punkt</li>
+  <li>Zweiter Punkt</li>
+</ol>
+```
+
+Wird im PDF automatisch in eine alphabetisch nummerierte Liste umgewandelt.
 
 ---
 
-### Überschriften
+## Website-Features
 
-Überschriften werden mit `#` markiert. Je mehr `#`, desto kleiner die Überschrift:
+Die generierte Website bietet folgende eingebaute Funktionen:
 
-```
-# Überschrift 1
-## Überschrift 2
-### Überschrift 3
-```
-
----
-
-### Aufzählungen (Listen)
-
-**Ungeordnete Liste (Punkte):**
-
-```
-- Erster Punkt
-- Zweiter Punkt
-  - Unterpunkt
-```
-
-**Ergebnis:**
-- Erster Punkt
-- Zweiter Punkt
-  - Unterpunkt
-
-**Geordnete Liste (Nummerierung):**
-
-```
-1. Erster Punkt
-2. Zweiter Punkt
-   1. Unterpunkt
-```
-
-**Ergebnis:**
-1. Erster Punkt
-2. Zweiter Punkt
-   1. Unterpunkt
+- **PWA** – kann auf iOS und Android als App installiert werden
+- **Hell / Dunkel / Auto** – Theme-Toggle im Einstellungs-Menü (Zahnrad)
+- **Schriftgröße** – 5-stufiger Regler (70 %–150 %) im Einstellungs-Menü
+- **Suche** – In-Page-Suche mit Treffer-Markierung und Navigation
+- **Lesefortschritt** – Fortschrittsbalken oben auf der Seite
+- **Heading-Links** – Klick auf Überschrift kopiert direkten Link
 
 ---
 
-### Bilder einfügen
+## Neues Dokument anlegen
 
-Bilder können mit folgender Syntax eingefügt werden:
-
-```
-![Alternativtext](pfad/zum/bild.png)
-```
-
-Beispiel:
-
-```
-![BTFV Logo](images/btfv-logo.png)
-```
+1. Neue `.md`-Datei in `docs/` erstellen
+2. YAML-Header einfügen (siehe oben)
+3. Inhalt schreiben
+4. **`index.md` aktualisieren** – damit das Dokument auf der Startseite verlinkt wird:
+   ```markdown
+   | [Mein Dokument](docs/mein-dokument.html) | [PDF](assets/pdf/mein-dokument.pdf) |
+   ```
+5. `pdf:` ins Front Matter eintragen sobald das PDF nach dem ersten Build vorhanden ist
+6. Push auf `main` → PDF und Website werden automatisch aktualisiert
 
 ---
 
-### Weitere Tipps
+## Technischer Hintergrund
 
-- **Fett:** `**Text**` → **Text**
-- **Kursiv:** `_Text_` → _Text_
-- **Links:** `[Linktext](URL)`
-- **Tabellen:** Siehe Beispiele in den bestehenden Dokumenten.
-
-Eine ausführliche Anleitung zu Markdown findest du z.B. hier:  
-👉 [Markdown Guide (deutsch)](https://www.markdownguide.org/basic-syntax/)
-
----
-
-## Automatische PDF-Erstellung
-
-Bei jedem Push auf den `main`-Branch wird der [GitHub Actions Workflow](.github/workflows/generate-pdf.yml) ausgeführt:
-
-1. Das Änderungsdatum wird automatisch in die Dokumente eingefügt.
-2. Die Markdown-Dateien werden mit Pandoc und LaTeX in PDFs umgewandelt.
-3. Die PDFs werden im Ordner [`assets/pdf/`](assets/pdf/) gespeichert und ins Repository zurückgepusht.
-
-**Hinweis:**  
-Wenn das Repository auf eine Organisation (wie BTFV) umgezogen wurde, muss für GitHub Actions das "Workflow permissions" Feature aktiviert werden, damit der Workflow Änderungen (z.B. neue PDFs) auf den `main`-Branch pushen darf.  
-Gehe dazu in die Repository-Einstellungen unter  
-`Settings` → `Actions` → `General` → `Workflow permissions`  
-und aktiviere **"Read and write permissions"**.
-
----
-
-## Lokale PDF-Erstellung
-
-Um die PDFs lokal zu generieren, führe das Skript aus:
-
-```sh
-bash generate_pdf_local.sh
-```
-
-Voraussetzungen:
-- [Pandoc](https://pandoc.org/)
-- [XeLaTeX](https://www.tug.org/xetex/)
-
----
-
-## Lokale Jekyll-Vorschau
-
-Für eine lokale Vorschau kannst du dieses Skript verwenden (installiert fehlende Dependencies automatisch):
-
-```sh
-bash run_jekyll.sh
-```
-
-Danach im Browser öffnen: `http://localhost:4000/`
+Dieses Repo nutzt das Framework [md-to-web-and-pdf](https://github.com/deluxeGitHub/md-to-web-and-pdf) als reusable Workflow. Layout, Templates und CSS werden automatisch aus dem Framework bezogen – dieses Repo enthält nur die Dokumente selbst.
 
 ---
 
 ## Lizenz
 
 [UNLICENSE](LICENSE) – Public Domain
-
----
-
-Bei Fragen oder Verbesserungsvorschlägen bitte ein Issue eröffnen oder einen Pull Request stellen.
