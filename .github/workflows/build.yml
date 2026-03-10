@@ -12,7 +12,7 @@ jobs:
     uses: deluxeGitHub/md-to-web-and-pdf/.github/workflows/reusable-build.yml@main
     with:
       source_dir: docs
-      baseurl: /btfv-docs
+      baseurl: ""
       framework_ref: main
       staging_branch: staging
     permissions:
