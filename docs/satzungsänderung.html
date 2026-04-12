@@ -17,8 +17,8 @@
         <link rel="icon" type="image/png" href="/templates/btfv/images/favicon.png">
         <link rel="apple-touch-icon" href="/templates/btfv/images/logo.png">
         <link rel="manifest" href="/manifest.webmanifest">
-        <link rel="stylesheet" href="/templates/shared/web.css?v=1773140228">
-        <link rel="stylesheet" href="/templates/btfv/web.css?v=1773140228">
+        <link rel="stylesheet" href="/templates/shared/web.css?v=1775985331">
+        <link rel="stylesheet" href="/templates/btfv/web.css?v=1775985331">
     
 </head>
 <body class="section-arabic template-btfv">
@@ -101,7 +101,8 @@
                         <polyline points="15 18 9 12 15 6"/>
                     </svg>
                 
-                    <img class="base-doc-logo" src="/templates/btfv/images/logo.png" alt="Logo">
+                    <img class="base-doc-logo base-doc-logo--light" src="/templates/btfv/images/logo.png" alt="Logo">
+                    <img class="base-doc-logo base-doc-logo--dark" src="/templates/btfv/images/logo-dark.png" alt="Logo">
                     <span class="base-doc-sitename">BTFV Dokumente</span>
                 
                 </a>
@@ -373,6 +374,21 @@
             });
         }
         applyFontZoom();
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buildV = '1775985331';
+            document.querySelectorAll('a[href]').forEach(a => {
+                const href = a.getAttribute('href');
+                if (!href || !href.match(/\.pdf(\?|$)/)) return;
+                if (!href.includes('?v=')) {
+                    a.setAttribute('href', href.replace(/\.pdf$/, '.pdf') + '?v=' + buildV);
+                }
+                a.setAttribute('target', '_blank');
+                a.setAttribute('rel', 'noopener');
+            });
+        });
     </script>
 
     <script>
