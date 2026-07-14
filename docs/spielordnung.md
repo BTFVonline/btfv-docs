@@ -127,7 +127,7 @@ Jeder Mannschaft sind pro Saison **zwei** Spielverschiebungen gestattet, die nic
 - Die Termine müssen im Zeitraum von **30 Tagen** nach dem **ursprünglichen Datum** des Spieltages liegen.
 - Die Termine sind für den jeweiligen Heimspieltag anzusetzen.
   - Bsp. Spieltag war ursprünglich Fr. 20:00, so muss der Ersatzspieltermin auch Fr. 20:00 sein.
-- **Team B** muss einen dieser Termine **5 Tage** nach der Deadline von **Samstag 20:00** Empfang annehmen. Das wäre dann spätestens **Donnerstag 20:00**
+- **Team B** muss einen dieser Termine **5 Tage** nach Erhalt der Ausweichtermine annehmen. Das wäre dann spätestens **Donnerstag 20:00**
 - Bei der Kommunikation ist der Ligakoordinator bei jedem Schritt zu informieren, damit die Verschiebung ins EDV-System eingetragen werden kann.
 - Wird keine Einigung innerhalb der Fristen erzielt, so wird in folgender Reihenfolge über Sieg oder Niederlage entschieden:
   - **Team A** schlägt die Ausweichtermine nicht rechtzeitig vor: **Niederlage Team A**
@@ -152,6 +152,7 @@ Jeder Mannschaft sind pro Saison **zwei** Spielverschiebungen gestattet, die nic
 - Nimmt ein Team keinen der vorgeschlagenen Termine an oder meldet sich nicht innerhalb der gesetzten Fristen:
   - Team, welches in der Bringschuld war, hat das Spiel verloren.
   - Gebühren werden zur Last gelegt.
+- Die Mannschaft die das Spiel gewonnen hat, darf selbst entscheiden welche Spieler diese als Verlierer einträgt. Dies dürfen keine Aushilfsspieler sein.
 
 ## Spielregeln
 
