@@ -33,6 +33,8 @@ Für die Ausrichtung eines Turniers der BTFV-Tour fallen **keine Gebühren an de
 
 Innerhalb der BTFV-Tour können drei verschiedene Arten von Ranglistenturnieren ausgerichtet werden:
 
+<div class="tabelle-breit" markdown="1">
+
 | | DTFB-Challenger | BTFV-Challenger | Mini-Challenger |
 |---|---|---|---|
 | **Ranglistenwertung** | DTFB + BTFV | BTFV | BTFV |
@@ -43,6 +45,75 @@ Innerhalb der BTFV-Tour können drei verschiedene Arten von Ranglistenturnieren 
 | **Doppel möglich** | ja | ja | ja |
 | **KO-Runde** | nach DTFB-Regularien | verpflichtend | für Ranglistenwertung verpflichtend |
 | **BTFV-Wertung** | Doppel 100 %, Einzel 50 % | Doppel 100 %, Einzel 50 % | 50 % |
+
+</div>
+
+<div class="html-only">
+<p class="tabelle-breit-hinweis">Die Tabelle lässt sich auf schmalen Displays seitlich scrollen.</p>
+<style>
+/* Vergleichstabelle: auf schmalen Displays seitlich scrollbar, die Spalte mit
+   den Merkmalen bleibt dabei stehen.
+
+   Die Klasse steht doppelt (.tabelle-breit.tabelle-breit), damit die Regeln
+   die allgemeinen Tabellenregeln des Layouts überschreiben. */
+
+.tabelle-breit { overflow-x: auto; margin-bottom: 8px; }
+
+.tabelle-breit.tabelle-breit table {
+  min-width: 44rem;
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Rahmen einzeln setzen, damit sie trotz border-spacing nicht doppelt liegen */
+.tabelle-breit.tabelle-breit th,
+.tabelle-breit.tabelle-breit td { border-width: 1px 1px 0 0; }
+.tabelle-breit.tabelle-breit tr > *:first-child { border-left-width: 1px; }
+.tabelle-breit.tabelle-breit tbody tr:last-child > * { border-bottom-width: 1px; }
+
+/* Die letzte Spalte ist im Layout sonst schmal und ohne Umbruch
+   (für die PDF-Links auf der Startseite) – hier soll sie normal umbrechen. */
+.tabelle-breit.tabelle-breit td:last-child,
+.tabelle-breit.tabelle-breit th:last-child {
+  width: auto;
+  white-space: normal;
+  text-align: left;
+}
+
+/* Spaltenüberschriften nicht mitten im Wort trennen */
+.tabelle-breit.tabelle-breit th { overflow-wrap: normal; word-break: keep-all; }
+
+/* Merkmalsspalte bleibt beim seitlichen Scrollen stehen */
+.tabelle-breit.tabelle-breit th:first-child,
+.tabelle-breit.tabelle-breit td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 9rem;
+}
+
+.tabelle-breit.tabelle-breit td:first-child { background: var(--color-surface-card); }
+
+.tabelle-breit-hinweis { display: none; }
+
+@media (max-width: 900px) {
+  .tabelle-breit-hinweis {
+    display: block;
+    margin: 0 0 20px;
+    font-size: calc(14px * var(--font-zoom, 1));
+    color: var(--color-text-muted);
+  }
+}
+
+@media (max-width: 640px) {
+  .tabelle-breit.tabelle-breit th,
+  .tabelle-breit.tabelle-breit td { padding: 8px 10px; font-size: calc(14px * var(--font-zoom, 1)); }
+  .tabelle-breit.tabelle-breit th:first-child,
+  .tabelle-breit.tabelle-breit td:first-child { min-width: 8rem; }
+}
+</style>
+</div>
 
 **Hinweis zur Lizenz:** Bei Mini-Challengern dürfen auch Spieler ohne Lizenz teilnehmen. In die BTFV-Rangliste werden jedoch nur Spieler aufgenommen, die über eine gültige Lizenz verfügen.
 
