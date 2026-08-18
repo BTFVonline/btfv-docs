@@ -13,13 +13,13 @@ source: https://github.com/BTFVonline/btfv-docs/blob/main/docs/btfv-challengeror
 
 Jeder Verein, der Mitglied des BTFV ist, kann ein Ranglistenturnier beim BTFV beantragen.
 
-Zum Schaffen einer fairen Verteilung der Turniere hat sich der BTFV auch dieses Jahr wieder dazu entschlossen, die Termine zur Bewerbung auszuschreiben. **Bitte beachtet hierfür die News.** Sollten im Anschluss an die Bewerbungsfrist noch freie Termine sein, werden diese dann an den ersten Bewerber vergeben. Sofern sich für einen Termin mehrere Vereine um die Ausrichtung bemühen, wird der BTFV bei der Verteilung der Turniere darauf achten, dass eine **faire regionale Aufteilung** und Verteilung zwischen den Vereinen stattfindet.
+Zum Schaffen einer fairen Verteilung der Turniere hat sich der BTFV entschlossen, dass die Termine zur Bewerbung augeschrieben werden. **Bitte beachtet hierfür die News.** Sollten im Anschluss an die Bewerbungsfrist noch freie Termine sein, werden diese dann an den ersten Bewerber vergeben. Sofern sich für einen Termin mehrere Vereine um die Ausrichtung bemühen, wird der BTFV bei der Verteilung der Turniere darauf achten, dass eine **faire regionale Aufteilung** und Verteilung zwischen den Vereinen stattfindet.
 
 # Arten von Turnieren
 
 ## DTFB Challenger:
 - Ausschreibung ([Download](https://dtfb.de/images/dokumente/Turniere/2024_01_Challenger_Ausschreibung_Vorlage.pdf)) 6 Wochen vor dem Termin an [E-Mail](mailto:challenger@btfv.de)
-- Alle Weiteren Informationen unter [DTTFB-Dokumente](https://dtfb.de/verband/dokumente)
+- Alle Weiteren Informationen unter [DTFB-Dokumente](https://dtfb.de/verband/dokumente)
 - Challenger werden wie gehabt in die DTFB-Rangliste und die BTFV-Rangliste eingepflegt
 - **Achtung** alle Teilnehmer benötigen eine [B-Lizenz](https://lizenz.dtfb.de/). Welche Lizenz ihr habt seht ihr [hier](https://dtfb.de/wettbewerbe/turnierserie/spielersuche)
 
@@ -29,14 +29,16 @@ Zum Schaffen einer fairen Verteilung der Turniere hat sich der BTFV auch dieses 
 
 ## BTFV Challenger
 
+BTFV Challenger wurden ins Leben gerufen, damit Vereine bei Spielmodus und Preisvergabe etwas freier handeln können, als bei DTFB Challengern. Im folgenden werden die Abweichungen zu DTFB Challengern beschrieben.
+
 ### Ausschreibung
 
-- Spätestens 2 Wochen vor Turnierstart
+- Spätestens 4 Wochen vor Turnierstart
 - Bezeichnung des Turniers (**BTFV Challenger**)
 - Name des Veranstalters/Ausrichters inkl. Kontaktmöglichkeit (E-Mail/Telefon)
 - Beginn des Turniers
 - Ort der Austragung (Name und Adresse)
-- Anzahl und der Typ der Spieltische
+- Anzahl und Typ der Spieltische
 - verwendete Figuren und Bälle
 - Disziplin (Doppel und/oder Einzel)
 - maximale Anzahl der Teilnehmer (wenn es eine gibt)
@@ -85,18 +87,14 @@ Bei Nichtanwesenheit kann der Anspruch auf die Preise verfallen.
 - Die Namen müssen **"DTFB-Challenger"**, **"BTFV-Challenger"** oder **"Mini-Challenger"** beinhalten
 - Bei den Turnieren muss **"Ergebnisse teilen"** angehakt sein
 - Der Link zu den Vereinsturnieren muss an den [BTFV](mailto:challenger@btfv.de) gesendet werden
-- Die Ergebnisse sind über das Formular auf der [BTFV-Seite](https://btfv.de/challenger-ergebnisse-hochladen/) oder alternativ als [E-Mail](mailto:challenger@btfv.de) zu senden.
-- Mini Challenger dürfen nur mit KO gemeldet werden. 
-- DTFB Challenger sind spätestens am nächsten Tag um 12:00 zu übermitteln
-- BTFV Challenger sind im laufe der kommenden Woche zu übermitteln
-- Mini Challenger sind am Ende des Monats zu übermitteln
-- Ergebnisse, die zu spät geliefert werden, fließen nicht mehr in die Rangliste ein, deshalb behalten wir uns vor bei zu später Meldung an entsprechende Vereine weniger oder keine Challenger mehr zu vergeben
+- Die Ergebnisse werden automatisiert an uns übermittelt, sobald ihr uns eure öffentlichen Links gesendet habt. Es ist nicht notwendig Ergebnisse manuell hochzuladen oder per Mail zu versenden. Die korrekte Benennung und das öffentlich stellen der Turniere sind jedoch die Vorraussetzung, dass dieser Ablauf funktioniert.
+- Mini Challenger dürfen nur mit KO gemeldet werden.
 
 # Jahresrangliste
 
 ## Wertung
 
-- Die besten 10 Ergebnisse werden nach der Formel des DTFB in die BTFV-Turnierrangliste gewertet. Doppel-Ergebnisse zählen zu 100%, Einzel-Ergebnisse, ebenso wie Mini-Challenger, fließen mit 50 % der vollen Punktzahl in die Wertung mit ein.
+- Die besten 10 Ergebnisse werden nach einer Formel gewertet (```VERTEILUNG(POW(MAX(MIN(n, 200), 10) * 10, 0.7), p, n, m)```, Variablen: n = Anzahl Teilnehmer, p = Platz, m = Multiplikator für Wertung und im Doppel ggf. zusätzlich reduzierte Wertung). Doppel-Ergebnisse zählen zu 100%, Einzel-Ergebnisse, ebenso wie Mini-Challenger, fließen mit 50 % der vollen Punktzahl in die Wertung mit ein.
 - Die Turnierserie beginnt am 01.12 und geht bis 30.11. des aktuellen Jahres.
 - Bitte beachtet, dass die Landesmeisterschaft nicht in die Rangliste einfließt. Bei der Landesmeisterschaft geht es einmal im Jahr unabhängig von den Ranglisten darum, den Landesmeister auszuspielen.
 
