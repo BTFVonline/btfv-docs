@@ -224,10 +224,10 @@ Die Spieler bzw. Teams werden anhand ihrer Platzierung aus der Vorrunde in die P
 
 Beispiel bei acht Qualifizierten:
 
-- 1. gegen 8.
-- 2. gegen 7.
-- 3. gegen 6.
-- 4. gegen 5.
+- Platz 1 gegen Platz 8
+- Platz 2 gegen Platz 7
+- Platz 3 gegen Platz 6
+- Platz 4 gegen Platz 5
 
 ### Satzmodus
 
