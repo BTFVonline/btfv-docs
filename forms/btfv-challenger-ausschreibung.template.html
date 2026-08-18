@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Ausschreibung BTFV-Challenger</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #14202e;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* --- Farben BTFV --- */
+  :root {
+    --navy: #03326c;
+    --navy-dark: #041f43;
+    --navy-light: #1663b0;
+    --pale: #dfeaf8;
+    --rail: #0b1826;
+  }
+
+  .page {
+    width: 210mm; height: 297mm;
+    display: grid;
+    grid-template-columns: 26mm 1fr;
+    grid-template-rows: repeat(8, min-content) 1fr min-content min-content;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  /* --- linke Schiene: eine Zelle je Abschnitt --- */
+  .rail { background: var(--rail); position: relative; }
+  .rail.label { padding: 4.5mm 0 0 6.5mm; }
+  .rail.label span {
+    color: var(--navy-light);
+    font-weight: 800; font-size: 10pt; letter-spacing: .05em;
+    text-transform: uppercase; white-space: nowrap;
+  }
+  .rail.label::before {
+    content: ""; position: absolute; left: 0; top: 4mm;
+    width: 4mm; height: 6mm; background: var(--navy-light);
+  }
+  .filler { background: var(--rail); }
+  .filler + .fillw { background: #fff; }
+
+  /* --- Kopf --- */
+  .head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8mm 10mm 5mm 8mm;
+  }
+  .head h1 {
+    margin: 0; font-size: 29pt; line-height: .9; letter-spacing: -.01em;
+    font-weight: 900; color: var(--navy-dark); text-transform: uppercase;
+  }
+  .head .sub { margin-top: 2mm; font-size: 13.5pt; font-weight: 800; color: var(--navy-light); }
+  .head img { width: 22mm; height: auto; }
+
+  /* --- Datenblöcke --- */
+  .block { padding: 0 10mm 5mm 8mm; }
+  .block.top { padding-top: 5mm; }
+  .row { display: grid; grid-template-columns: 36mm 1fr; gap: 0 4mm; margin-bottom: 2.9mm; }
+  .row .k { font-weight: 700; font-size: 9.5pt; color: var(--navy-dark); padding-top: .6mm; }
+  .row .v { font-size: 9.5pt; color: #5b6b7d; border-bottom: .35mm solid var(--pale); min-height: 5mm; }
+  .row .v small { display: block; color: #8fa0b3; font-size: 7.5pt; }
+
+  /* --- Bänder --- */
+  .band {
+    background: var(--navy); color: #fff;
+    font-weight: 800; font-size: 12.5pt; letter-spacing: .04em;
+    text-align: center; text-transform: uppercase;
+    padding: 2.2mm 0;
+  }
+  .band.sub {
+    display: flex; align-items: center; gap: 7mm;
+    justify-content: flex-start; padding-left: 8mm;
+    font-size: 11pt; background: var(--navy-light); text-align: left;
+  }
+  .band.sub .n {
+    display: inline-block; min-width: 13mm; margin-left: 2mm;
+    border-bottom: .4mm solid rgba(255,255,255,.6);
+  }
+
+  /* --- Checkbox-Raster --- */
+  .grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2.5mm 4mm; padding: 3mm 10mm 3mm 8mm;
+  }
+  .cb { display: flex; align-items: center; gap: 3mm; font-size: 9.5pt; font-weight: 700; color: var(--navy-dark); }
+  .opts { display: flex; gap: 7mm; padding-top: .4mm; }
+  .opts .cb { font-size: 9pt; }
+  .cb i { display: inline-block; width: 5mm; height: 5mm; border: .5mm solid var(--pale); background: #f6f9fd; }
+
+  /* --- Partner --- */
+  .partner { display: flex; align-items: center; gap: 5mm; padding: 0 10mm 4mm 8mm; }
+  .partner img { height: 10mm; width: auto; }
+  .partner span { font-size: 8pt; color: #7c8b9c; }
+
+  /* --- Fuß --- */
+  .foot-band {
+    grid-column: 1 / -1;
+    background: var(--navy); color: #fff; text-align: center;
+    font-weight: 800; font-size: 11.5pt; letter-spacing: .04em;
+    text-transform: uppercase; padding: 2.2mm 0;
+  }
+  .foot {
+    grid-column: 1 / -1;
+    background: var(--rail); color: #cfdcec;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 8mm;
+    padding: 4.5mm 10mm 5mm 8mm; font-size: 7.2pt; line-height: 1.4;
+  }
+  .foot dl { margin: 0; display: grid; grid-template-columns: 26mm 1fr; gap: 1mm 3mm; }
+  .foot dt { font-weight: 800; color: #fff; }
+  .foot dd { margin: 0; }
+  .foot-full { grid-column: 1 / -1; color: #9fb2c6; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="rail label"><span>Format</span></div>
+  <div class="head">
+    <div>
+      <h1>Challenger</h1>
+      <div class="sub">BTFV-Tour &nbsp;|&nbsp; Ausschreibung</div>
+    </div>
+    <img src="data:image/png;base64,__LOGO__" alt="BTFV">
+  </div>
+
+  <div class="rail label"><span>Turnier</span></div>
+  <div class="block">
+    <div class="row"><div class="k">Turniername</div><div class="v">&lt;Name&gt;</div></div>
+    <div class="row"><div class="k">Ausrichter / Verein</div><div class="v">&lt;Verein&gt;</div></div>
+    <div class="row"><div class="k">Ansprechpartner</div><div class="v">&lt;Name, E-Mail, Telefon&gt;</div></div>
+    <div class="row"><div class="k">Location</div><div class="v">&lt;Spielstätte, Straße Hausnummer, PLZ Ort&gt;</div></div>
+    <div class="row"><div class="k">Datum</div><div class="v">&lt;TT.MM.JJJJ&gt;</div></div>
+    <div class="row"><div class="k">Einlass</div><div class="v">&lt;hh:mm&gt;</div></div>
+    <div class="row"><div class="k">Turnierstart</div><div class="v">&lt;hh:mm&gt;</div></div>
+  </div>
+
+  <div class="rail"></div>
+  <div class="band">Disziplin &amp; Kategorie</div>
+
+  <div class="rail"></div>
+  <div class="block top">
+    <div class="row"><div class="k">Disziplin</div><div class="opts"><span class="cb"><i></i>Offenes Doppel</span><span class="cb"><i></i>Offenes Einzel</span></div></div>
+    <div class="row"><div class="k">Weitere Disziplin</div><div class="v">&lt;z. B. Damen, Junioren, Senioren, Mixed&gt;</div></div>
+  </div>
+
+  <div class="rail"></div>
+  <div class="band sub">
+    <span>Tische <span class="n">&nbsp;</span></span>
+    <span>Startplätze &nbsp; Doppel <span class="n">&nbsp;</span></span>
+    <span>Einzel <span class="n">&nbsp;</span></span>
+  </div>
+
+  <div class="rail label"><span>Tische</span></div>
+  <div class="block top">
+    <div class="row"><div class="k">Tischmodelle</div><div class="v">&lt;Modell, Anzahl&gt;</div></div>
+  </div>
+
+  <div class="rail label"><span>Info</span></div>
+  <div class="block top">
+    <div class="row"><div class="k">Anmeldung</div><div class="v">&lt;E-Mail-Adresse oder Link zur Anmeldung&gt;</div></div>
+    <div class="row"><div class="k">Startgeld</div><div class="v">&lt;Betrag pro Person, inkl. Organisationspauschale&gt;</div></div>
+    <div class="row"><div class="k">Preise</div><div class="v">&lt;Profifeld Platz 1–3, weitere Preise&gt;</div></div>
+    <div class="row"><div class="k">Vorrunde</div><div class="opts"><span class="cb"><i></i>Schweizer System</span><span class="cb"><i></i>Jeder gegen Jeden</span></div></div>
+    <div class="row"><div class="k">Playoffs</div><div class="opts"><span class="cb"><i></i>Single-KO</span><span class="cb"><i></i>Doppel-KO</span></div></div>
+    <div class="row"><div class="k">Catering</div><div class="v">&lt;Getränke, Essen – Preise&gt;</div></div>
+    <div class="row"><div class="k">Sonstiges</div><div class="v">&lt;Dresscode, Hinweise&gt;</div></div>
+  </div>
+
+  <div class="rail label"><span>Partner</span></div>
+  <div class="partner">
+    <img src="data:image/png;base64,__LEONHART__" alt="powered by Leonhart">
+    <span>Partner der BTFV-Tour: Original Leonhart – Kickertische &amp; Tischfußball, Made in Germany.</span>
+  </div>
+
+  <div class="filler"></div>
+  <div class="fillw"></div>
+
+  <div class="foot-band">BTFV-Challenger Standard</div>
+  <div class="foot">
+    <dl>
+      <dt>Teilnahme</dt><dd>gültige D-Lizenz – erhält jeder für einen Verein gemeldete Spieler automatisch</dd>
+      <dt>Ausschreibung</dt><dd>spätestens 4 Wochen vor Turnierbeginn an challenger@btfv.de</dd>
+      <dt>Gebühren</dt><dd>keine Abgaben an den BTFV; Startgeld und Organisationspauschale legt der Ausrichter fest</dd>
+      <dt>Spielgeräte</dt><dd>mindestens 2 Tische der BTFV-Tischpartner, eine Stunde vor Turnierbeginn aufgebaut</dd>
+    </dl>
+    <dl>
+      <dt>Vorrunde</dt><dd>Jeder gegen Jeden oder Schweizer System mit Buchholzzahl</dd>
+      <dt>Playoffs</dt><dd>Single-KO (mit Spiel um Platz 3) oder Doppel-KO</dd>
+      <dt>Divisionen</dt><dd>ab 16 Teilnehmern mindestens zwei, ab 32 Teilnehmern drei Divisionen</dd>
+      <dt>Satzmodus</dt><dd>Gewinnerfeld Profi Best of 5, übrige Felder Best of 3 (Entscheidungssatz max. 8 Tore)</dd>
+    </dl>
+    <div class="foot-full">ITSF-Regeln · Wertung für die BTFV-Jahresrangliste · Ergebnisübermittlung über Kickertool mit korrekter Turnierbenennung und aktivierter Funktion „Ergebnisse teilen“ · Details in der BTFV-Tour – Turnier- und Ranglistenordnung auf docs.btfv.de</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,3 +1,20 @@
+---
+template: btfv
+title: "BTFV-Tour – Turnier- und Ranglistenordnung"
+date: '{{ site.time | date: "%d.%m.%Y" }}'
+section_numbering: arabic
+pdf: /assets/pdf/btfv-challengerordnung.pdf
+source: https://github.com/BTFVonline/btfv-docs/blob/main/docs/btfv-challengerordnung.md
+---
+* TOC
+{:toc}
+
+# Die BTFV-Tour
+
+Die BTFV-Tour ist eine 2016 vom Bayerischen Tischfußballverband e. V. gestartete Turnierserie.
+
+Über die Saison verteilt richten die bayerischen Vereine Ranglistenturniere aus. Die Ergebnisse dieser Turniere fließen in die **BTFV-Jahresrangliste** ein.
+
 # Challenger ausrichten
 
 Jeder Verein, der Mitglied im BTFV ist, kann ein Ranglistenturnier der BTFV-Tour ausrichten.
@@ -10,6 +27,8 @@ Bewerben sich mehrere Vereine für denselben Termin, achtet der BTFV bei der Ver
 
 Sind nach Ablauf der Bewerbungsfrist noch Termine frei, werden diese anschließend nach Eingang der Bewerbungen vergeben.
 
+Für die Ausrichtung eines Turniers der BTFV-Tour fallen **keine Gebühren an den BTFV** an. Startgeld und Organisationspauschale legt der Ausrichter selbst fest und behält sie ein.
+
 ## Welche Turnierart passt zu uns?
 
 Innerhalb der BTFV-Tour können drei verschiedene Arten von Ranglistenturnieren ausgerichtet werden:
@@ -17,7 +36,7 @@ Innerhalb der BTFV-Tour können drei verschiedene Arten von Ranglistenturnieren 
 | | DTFB-Challenger | BTFV-Challenger | Mini-Challenger |
 |---|---|---|---|
 | **Ranglistenwertung** | DTFB + BTFV | BTFV | BTFV |
-| **Lizenz** | B-Lizenz erforderlich | D-Lizenz erforderlich | keine Lizenz erforderlich |
+| **Lizenz** | B-Lizenz erforderlich | D-Lizenz (erhält jeder Vereinsspieler automatisch) | keine Lizenz erforderlich |
 | **Ausschreibung** | spätestens 6 Wochen vorher | spätestens 4 Wochen vorher | keine Frist |
 | **Vorgaben zum Spielmodus** | nach DTFB-Regularien | BTFV-Vorgaben | weitgehend frei |
 | **Einzel möglich** | ja | ja | ja |
@@ -53,6 +72,10 @@ Den aktuellen Lizenzstatus eines Spielers könnt ihr über die DTFB-Spielersuche
 
 [DTFB-Spielersuche](https://dtfb.de/wettbewerbe/turnierserie/spielersuche)
 
+Eine B-Lizenz kann direkt beim DTFB beantragt bzw. erworben werden:
+
+[Lizenz erwerben](https://lizenz.dtfb.de)
+
 
 # BTFV-Challenger
 
@@ -62,7 +85,11 @@ Sie werden für die **BTFV-Jahresrangliste** gewertet.
 
 ## Lizenz
 
-Für die Teilnahme an einem BTFV-Challenger benötigen die Spieler eine gültige **D-Lizenz** und müssen somit für einen Verein gemeldet sein.
+Für die Teilnahme an einem BTFV-Challenger benötigen die Spieler eine gültige **D-Lizenz**.
+
+Die D-Lizenz erhält jeder Spieler automatisch, sobald er für einen Verein gemeldet ist. Ein gesonderter Antrag ist dafür nicht notwendig.
+
+Ausgeschlossen sind damit ausschließlich Spieler ohne Vereinszugehörigkeit.
 
 ## Ausschreibung
 
@@ -82,6 +109,14 @@ Folgende Angaben müssen enthalten sein:
 - Meldeschluss mit Datum und Uhrzeit, sofern es einen Meldeschluss gibt
 - Höhe der Gebühren, z. B. Organisationspauschale und Startgeld
 - vorgesehene Preise, z. B. Pokale, Medaillen, Geld- oder Sachpreise
+
+### Vorlage für die Ausschreibung
+
+Für die Ausschreibung stellt der BTFV ein ausfüllbares PDF-Formular bereit. Einfach am Rechner ausfüllen, speichern und per E-Mail an [challenger@btfv.de](mailto:challenger@btfv.de) senden.
+
+[Ausschreibungsformular BTFV-Challenger (PDF zum Ausfüllen)](/assets/pdf/btfv-challenger-ausschreibung.pdf)
+
+Bitte beachtet: Die Ausschreibung muss dem BTFV spätestens **4 Wochen vor Turnierbeginn** vorliegen.
 
 ## Spielmodus
 
@@ -104,9 +139,11 @@ Das Teilnehmerfeld kann in bis zu drei Divisionen aufgeteilt werden:
 - Amateur
 - Neuling
 
-Ab **16 teilnehmenden Teams** muss das Teilnehmerfeld in mindestens zwei Divisionen aufgeteilt werden.
+Ab **16 Teilnehmern** muss das Teilnehmerfeld in mindestens zwei Divisionen aufgeteilt werden.
 
-Ab **32 teilnehmenden Teams** muss das Teilnehmerfeld in drei Divisionen aufgeteilt werden.
+Ab **32 Teilnehmern** muss das Teilnehmerfeld in drei Divisionen aufgeteilt werden.
+
+Maßgeblich ist die Anzahl der startenden Teams im Doppel bzw. der startenden Spieler im Einzel.
 
 In einer untergeordneten Division müssen mindestens genauso viele oder mehr Spieler bzw. Teams starten wie in der jeweils darüberliegenden Division.
 
@@ -137,11 +174,11 @@ Gespielt wird nach den offiziellen Tischfußballregeln des **ITSF**.
 
 Für BTFV-Challenger gelten folgende Anforderungen:
 
-- Es dürfen nur Tische der aktuellen BTFV-Tischpartner eingesetzt werden.
+- Es dürfen nur Tische der aktuellen BTFV-Tischpartner eingesetzt werden. Die zugelassenen Tischmodelle, Figuren und Bälle sind in der [Spielordnung, Abschnitt Spielgeräte](https://docs.btfv.de/docs/spielordnung.html#spielgeräte) aufgeführt.
 - Es müssen mindestens **zwei Spieltische** zur Verfügung stehen.
 - Multitable-Turniere sind zulässig.
 - Die Spieltische müssen spätestens **eine Stunde vor Turnierbeginn** vollständig aufgebaut und ausgerichtet sein.
-- Gespielt wird mit den von den BTFV-Tischpartnern angebotenen Bällen.
+- Gespielt wird mit den zum jeweiligen Tischmodell zugelassenen Bällen.
 - Die Bälle werden vom Veranstalter bzw. Ausrichter bereitgestellt.
 - Die Spieltische müssen ausreichend ausgeleuchtet sein.
 
@@ -210,12 +247,22 @@ Damit die Ergebnisse automatisch verarbeitet und der BTFV-Rangliste zugeordnet w
    - **DTFB-Challenger**
    - **BTFV-Challenger**
    - **Mini-Challenger**
-3. Im Kickertool muss **„Ergebnisse teilen“** aktiviert sein. ![alt text](images/kickertool_ergebnisse_teilen.png)
-4. Der öffentlichen Link zum Verein per E-Mail an [challenger@btfv.de](mailto:challenger@btfv.de) senden. ![alt text](images/kickertool_oeffentliche_seite.png)
+3. Im Kickertool muss **„Ergebnisse teilen“** aktiviert sein.
+
+   ![Kickertool-Einstellung „Ergebnisse teilen“](images/kickertool_ergebnisse_teilen.png)
+4. Nach dem Turnier den öffentlichen Link zum Turnier per E-Mail an [challenger@btfv.de](mailto:challenger@btfv.de) senden.
+
+   ![Öffentliche Turnierseite im Kickertool](images/kickertool_oeffentliche_seite.png)
 
 Die Ergebnisse werden anschließend automatisiert an den BTFV übermittelt.
 
 Ein zusätzliches Hochladen oder Versenden der Ergebnisse als Datei ist **nicht erforderlich**.
+
+## Meldefristen
+
+Die Übertragung der Ergebnisse läuft automatisch **jeden Montag um 8:00 Uhr**.
+
+Gesonderte Meldefristen gibt es deshalb nicht. Jedes Turnier, das zu diesem Zeitpunkt korrekt benannt und öffentlich freigegeben ist, wird mit dem nächsten Lauf in die Rangliste übernommen.
 
 **Wichtig:** Voraussetzung für die automatische Verarbeitung sind die korrekte Benennung des Turniers und ein öffentlich freigegebener Ergebnislink.
 
@@ -294,6 +341,22 @@ Bei der Landesmeisterschaft geht es unabhängig von der Rangliste darum, einmal 
 | 2. | 60 € |
 | 3. | 40 € |
 
+Die Turniere der BTFV-Tour sind offene Turniere. Alle teilnehmenden Spielerinnen werden daher automatisch zusätzlich in der Damenwertung geführt. Eine gesonderte Meldung oder Anmeldung ist nicht erforderlich.
+
 ## Juniorenförderung
 
 Juniorinnen und Junioren unter 18 Jahren erhalten vom BTFV **20 €**, wenn sie innerhalb der jeweiligen Ranglistensaison an mindestens **drei Turnieren der BTFV-Tour** teilgenommen haben.
+
+## Auszahlung
+
+Die Preise der Jahresrangliste werden auf der **Jahreshauptversammlung des BTFV** ausgezahlt.
+
+Ist ein Gewinner verhindert, kann der Preis unter Vorlage einer **Vollmacht** auch von einer dritten Person entgegengenommen werden.
+
+Nicht beanspruchte Preise gehen dem BTFV als **Spende** zu.
+
+# Sponsoring
+
+Die BTFV-Tour wird unterstützt von **Original Leonhart** – Kickertische und Tischfußball, Made in Germany.
+
+![powered by Leonhart](images/powered_by_leonhart.png)

@@ -17,6 +17,7 @@ defaults:
 
 exclude:
   - scripts/
+  - forms/
   - temp/
   - README.md
   - LICENSE
