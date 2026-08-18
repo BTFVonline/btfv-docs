@@ -1,0 +1,17 @@
+
+
+{
+  "name": "BTFV Dokumente",
+  "short_name": "BTFV Dokumente",
+  "display": "standalone",
+  "start_url": "/staging/",
+  "background_color": "#ffffff",
+  "theme_color": "#4a4a49",
+  "icons": [
+    {
+      "src": "/staging/templates/btfv/images/favicon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

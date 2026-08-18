@@ -2,8 +2,9 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>BTFV Challenger Turnierordnung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>BTFV-Tour – Turnier- und Ranglistenordnung</title>
     
     
     
@@ -13,14 +14,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/png" href="/btfv-docs/staging/templates/btfv/images/favicon.png">
-        <link rel="apple-touch-icon" href="/btfv-docs/staging/templates/btfv/images/logo.png">
-        <link rel="manifest" href="/btfv-docs/staging/manifest.webmanifest">
-        <link rel="stylesheet" href="/btfv-docs/staging/templates/shared/web.css?v=1773016544">
-        <link rel="stylesheet" href="/btfv-docs/staging/templates/btfv/web.css?v=1773016544">
+        <link rel="icon" type="image/png" href="/staging/templates/btfv/images/favicon.png">
+        <link rel="apple-touch-icon" href="/staging/templates/btfv/images/logo.png">
+        <link rel="manifest" href="/staging/manifest.webmanifest">
+        <link rel="stylesheet" href="/staging/templates/shared/web.css?v=1787091715">
+        <link rel="stylesheet" href="/staging/templates/btfv/web.css?v=1787091715">
     
 </head>
-<body class=" template-btfv">
+<body class="section-arabic template-btfv">
     
         
 <header class="base-hero"></header>
@@ -32,12 +33,14 @@
         const icon = document.querySelector('[data-theme-icon]');
         if (!toggle || !icon) return;
 
+        const SUN = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5.5"/><line x1="12" y1="18.5" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5.5" y2="12"/><line x1="18.5" y1="12" x2="21.5" y2="12"/><line x1="4.5" y1="4.5" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.5" y2="19.5"/><line x1="17.2" y1="6.8" x2="19.5" y2="4.5"/><line x1="4.5" y1="19.5" x2="6.8" y2="17.2"/></g></svg>';
+        const MOON = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
+        const AUTO = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>';
+
+        const getOsDark = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
         const renderIcon = (mode) => {
-            if (mode === 'dark') {
-                icon.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
-            } else {
-                icon.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5.5"/><line x1="12" y1="18.5" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5.5" y2="12"/><line x1="18.5" y1="12" x2="21.5" y2="12"/><line x1="4.5" y1="4.5" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.5" y2="19.5"/><line x1="17.2" y1="6.8" x2="19.5" y2="4.5"/><line x1="4.5" y1="19.5" x2="6.8" y2="17.2"/></g></svg>';
-            }
+            icon.innerHTML = mode === 'dark' ? MOON : mode === 'auto' ? AUTO : SUN;
         };
 
         const updateThemeColor = () => {
@@ -47,26 +50,30 @@
             if (color) meta.setAttribute('content', color);
         };
 
-        const applyTheme = (mode) => {
-            root.setAttribute('data-theme', mode);
-            toggle.setAttribute('aria-pressed', mode === 'dark' ? 'true' : 'false');
+        let osMediaQuery = null;
+        const onOsChange = () => applyMode('auto');
+
+        const applyMode = (mode) => {
+            const visual = mode === 'auto' ? (getOsDark() ? 'dark' : 'light') : mode;
+            root.setAttribute('data-theme', visual);
+            toggle.setAttribute('aria-pressed', visual === 'dark' ? 'true' : 'false');
             renderIcon(mode);
             updateThemeColor();
+            if (osMediaQuery) { osMediaQuery.removeEventListener('change', onOsChange); osMediaQuery = null; }
+            if (mode === 'auto') {
+                osMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                osMediaQuery.addEventListener('change', onOsChange);
+            }
         };
 
+        const cycleMap = { light: 'dark', dark: 'auto', auto: 'light' };
         const stored = localStorage.getItem('base-theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (stored === 'light' || stored === 'dark') {
-            applyTheme(stored);
-        } else if (prefersDark) {
-            applyTheme('dark');
-        } else {
-            applyTheme('light');
-        }
+        applyMode(stored === 'light' || stored === 'dark' || stored === 'auto' ? stored : 'auto');
 
         toggle.addEventListener('click', () => {
-            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            applyTheme(next);
+            const current = localStorage.getItem('base-theme') || 'auto';
+            const next = cycleMap[current] || 'light';
+            applyMode(next);
             localStorage.setItem('base-theme', next);
         });
     };
@@ -89,128 +96,669 @@
         <div class="base-doc-heading">
             <div class="base-doc-heading__top">
                 
-                <a class="base-doc-brand-link" href="/btfv-docs/staging/">
+                <a class="base-doc-brand-link" href="/staging/">
                     <svg class="base-doc-back-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="15 18 9 12 15 6"/>
                     </svg>
                 
-                    <img class="base-doc-logo" src="/btfv-docs/staging/templates/btfv/images/logo.png" alt="Logo">
+                    <img class="base-doc-logo base-doc-logo--light" src="/staging/templates/btfv/images/logo.png" alt="Logo">
+                    <img class="base-doc-logo base-doc-logo--dark" src="/staging/templates/btfv/images/logo-dark.png" alt="Logo">
                     <span class="base-doc-sitename">BTFV Dokumente</span>
                 
                 </a>
                 
                 <div class="base-doc-titles">
-                    <div class="base-doc-title">BTFV Challenger Turnierordnung</div>
+                    <div class="base-doc-title">BTFV-Tour – Turnier- und Ranglistenordnung</div>
                     
                 </div>
                 <div class="base-doc-actions">
                     <div class="base-hero__links">
                         
-                            <a href="/btfv-docs/staging/assets/pdf/btfv-challengerordnung.pdf" target="_blank" rel="noopener">PDF</a>
+                            <a href="/staging/assets/pdf/btfv-challengerordnung.pdf" target="_blank" rel="noopener">PDF</a>
                         
                         
                             <a href="https://github.com/BTFVonline/btfv-docs/blob/main/docs/btfv-challengerordnung.md" target="_blank" rel="noopener">Quelle</a>
                         
                     </div>
                     
-                        <div class="base-doc-date">Stand: 09.03.2026</div>
+                        <div class="base-doc-date">Stand: 18.08.2026</div>
                     
                 </div>
-                <button class="base-theme-toggle" type="button" data-theme-toggle aria-label="Theme wechseln" aria-pressed="false">
-                    <span class="base-theme-toggle__icon" data-theme-icon>
-                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                            <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
-                            <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                                <line x1="12" y1="2.5" x2="12" y2="5.5"/>
-                                <line x1="12" y1="18.5" x2="12" y2="21.5"/>
-                                <line x1="2.5" y1="12" x2="5.5" y2="12"/>
-                                <line x1="18.5" y1="12" x2="21.5" y2="12"/>
-                                <line x1="4.5" y1="4.5" x2="6.8" y2="6.8"/>
-                                <line x1="17.2" y1="17.2" x2="19.5" y2="19.5"/>
-                                <line x1="17.2" y1="6.8" x2="19.5" y2="4.5"/>
-                                <line x1="4.5" y1="19.5" x2="6.8" y2="17.2"/>
-                            </g>
+                <div class="base-toolbar">
+                    <button class="base-search-btn" type="button" data-search-open aria-label="Suche">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
                         </svg>
-                    </span>
-                </button>
+                    </button>
+                    <div class="base-settings-wrap">
+                        <button class="base-settings-btn" type="button" data-settings-toggle aria-label="Einstellungen" aria-expanded="false">
+                            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                        </button>
+                        <div class="base-settings-panel" data-settings-panel hidden>
+                            <div class="base-settings-row">
+                                <button class="base-settings-font-small" type="button" data-font-decrease aria-label="Schrift verkleinern">A</button>
+                                <input class="base-font-slider" type="range" min="0" max="4" step="1" value="2" data-font-slider aria-label="Schriftgröße">
+                                <button class="base-settings-font-large" type="button" data-font-increase aria-label="Schrift vergrößern">A</button>
+                            </div>
+                            <div class="base-settings-font-pct" data-font-pct aria-live="polite">100%</div>
+                            <div class="base-settings-row base-settings-search-row">
+                                <span class="base-settings-label">Suche</span>
+                                <button class="base-theme-toggle" type="button" data-search-open aria-label="Suche öffnen">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                </button>
+                            </div>
+                            <div class="base-settings-row">
+                                <span class="base-settings-label">Theme</span>
+                                <button class="base-theme-toggle" type="button" data-theme-toggle aria-label="Theme wechseln" aria-pressed="false">
+                                    <span class="base-theme-toggle__icon" data-theme-icon>
+                                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                            <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                            <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                                <line x1="12" y1="2.5" x2="12" y2="5.5"/>
+                                                <line x1="12" y1="18.5" x2="12" y2="21.5"/>
+                                                <line x1="2.5" y1="12" x2="5.5" y2="12"/>
+                                                <line x1="18.5" y1="12" x2="21.5" y2="12"/>
+                                                <line x1="4.5" y1="4.5" x2="6.8" y2="6.8"/>
+                                                <line x1="17.2" y1="17.2" x2="19.5" y2="19.5"/>
+                                                <line x1="17.2" y1="6.8" x2="19.5" y2="4.5"/>
+                                                <line x1="4.5" y1="19.5" x2="6.8" y2="17.2"/>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     
     <div class="wrapper">
         <ul id="markdown-toc">
-  <li><a href="#ausschreibung" id="markdown-toc-ausschreibung">Ausschreibung</a></li>
-  <li><a href="#modus" id="markdown-toc-modus">Modus</a></li>
-  <li><a href="#regeln" id="markdown-toc-regeln">Regeln</a></li>
-  <li><a href="#spielgeräte" id="markdown-toc-spielgeräte">Spielgeräte</a></li>
-  <li><a href="#preise" id="markdown-toc-preise">Preise</a></li>
-  <li><a href="#ergebnismeldung" id="markdown-toc-ergebnismeldung">Ergebnismeldung</a></li>
+  <li><a href="#die-btfv-tour" id="markdown-toc-die-btfv-tour">Die BTFV-Tour</a></li>
+  <li><a href="#challenger-ausrichten" id="markdown-toc-challenger-ausrichten">Challenger ausrichten</a>    <ul>
+      <li><a href="#welche-turnierart-passt-zu-uns" id="markdown-toc-welche-turnierart-passt-zu-uns">Welche Turnierart passt zu uns?</a></li>
+    </ul>
+  </li>
+  <li><a href="#dtfb-challenger" id="markdown-toc-dtfb-challenger">DTFB-Challenger</a>    <ul>
+      <li><a href="#ausschreibung" id="markdown-toc-ausschreibung">Ausschreibung</a></li>
+      <li><a href="#lizenz" id="markdown-toc-lizenz">Lizenz</a></li>
+    </ul>
+  </li>
+  <li><a href="#btfv-challenger" id="markdown-toc-btfv-challenger">BTFV-Challenger</a>    <ul>
+      <li><a href="#lizenz-1" id="markdown-toc-lizenz-1">Lizenz</a></li>
+      <li><a href="#ausschreibung-1" id="markdown-toc-ausschreibung-1">Ausschreibung</a>        <ul>
+          <li><a href="#vorlage-für-die-ausschreibung" id="markdown-toc-vorlage-für-die-ausschreibung">Vorlage für die Ausschreibung</a></li>
+        </ul>
+      </li>
+      <li><a href="#spielmodus" id="markdown-toc-spielmodus">Spielmodus</a>        <ul>
+          <li><a href="#divisionen" id="markdown-toc-divisionen">Divisionen</a></li>
+          <li><a href="#setzung-der-playoffs" id="markdown-toc-setzung-der-playoffs">Setzung der Playoffs</a></li>
+          <li><a href="#satzmodus" id="markdown-toc-satzmodus">Satzmodus</a></li>
+        </ul>
+      </li>
+      <li><a href="#regeln" id="markdown-toc-regeln">Regeln</a></li>
+      <li><a href="#spielgeräte" id="markdown-toc-spielgeräte">Spielgeräte</a></li>
+      <li><a href="#preise" id="markdown-toc-preise">Preise</a></li>
+    </ul>
+  </li>
+  <li><a href="#mini-challenger" id="markdown-toc-mini-challenger">Mini-Challenger</a>    <ul>
+      <li><a href="#lizenz-2" id="markdown-toc-lizenz-2">Lizenz</a></li>
+      <li><a href="#spielmodus-1" id="markdown-toc-spielmodus-1">Spielmodus</a></li>
+      <li><a href="#ko-runde" id="markdown-toc-ko-runde">KO-Runde</a></li>
+    </ul>
+  </li>
+  <li><a href="#kickertool-und-ergebnismeldung" id="markdown-toc-kickertool-und-ergebnismeldung">Kickertool und Ergebnismeldung</a>    <ul>
+      <li><a href="#meldefristen" id="markdown-toc-meldefristen">Meldefristen</a></li>
+    </ul>
+  </li>
+  <li><a href="#btfv-jahresrangliste" id="markdown-toc-btfv-jahresrangliste">BTFV-Jahresrangliste</a>    <ul>
+      <li><a href="#wertungszeitraum" id="markdown-toc-wertungszeitraum">Wertungszeitraum</a></li>
+      <li><a href="#wertung" id="markdown-toc-wertung">Wertung</a></li>
+      <li><a href="#landesmeisterschaft" id="markdown-toc-landesmeisterschaft">Landesmeisterschaft</a></li>
+    </ul>
+  </li>
+  <li><a href="#preise-der-jahresrangliste" id="markdown-toc-preise-der-jahresrangliste">Preise der Jahresrangliste</a>    <ul>
+      <li><a href="#offene-wertung" id="markdown-toc-offene-wertung">Offene Wertung</a></li>
+      <li><a href="#damenwertung" id="markdown-toc-damenwertung">Damenwertung</a></li>
+      <li><a href="#juniorenförderung" id="markdown-toc-juniorenförderung">Juniorenförderung</a></li>
+      <li><a href="#auszahlung" id="markdown-toc-auszahlung">Auszahlung</a></li>
+    </ul>
+  </li>
+  <li><a href="#sponsoring" id="markdown-toc-sponsoring">Sponsoring</a></li>
 </ul>
 
-<h1 id="ausschreibung">Ausschreibung</h1>
+<h1 id="die-btfv-tour">Die BTFV-Tour</h1>
+
+<p>Die BTFV-Tour ist eine 2016 vom Bayerischen Tischfußballverband e. V. gestartete Turnierserie.</p>
+
+<p>Über die Saison verteilt richten die bayerischen Vereine Ranglistenturniere aus. Die Ergebnisse dieser Turniere fließen in die <strong>BTFV-Jahresrangliste</strong> ein.</p>
+
+<h1 id="challenger-ausrichten">Challenger ausrichten</h1>
+
+<p>Jeder Verein, der Mitglied im BTFV ist, kann ein Ranglistenturnier der BTFV-Tour ausrichten.</p>
+
+<p>Um die Turniere möglichst fair über Bayern und die verschiedenen Vereine zu verteilen, schreibt der BTFV verfügbare Termine zur Bewerbung aus. <strong>Bitte beachtet hierzu die News auf der BTFV-Webseite.</strong></p>
+
+<p>Während der Bewerbungsphase können sich interessierte Vereine per E-Mail an <a href="mailto:challenger@btfv.de">challenger@btfv.de</a> um einen Termin bewerben.</p>
+
+<p>Bewerben sich mehrere Vereine für denselben Termin, achtet der BTFV bei der Vergabe insbesondere auf eine <strong>faire regionale Verteilung</strong> sowie eine ausgewogene Verteilung der Turniere zwischen den Vereinen.</p>
+
+<p>Sind nach Ablauf der Bewerbungsfrist noch Termine frei, werden diese anschließend nach Eingang der Bewerbungen vergeben.</p>
+
+<p>Für die Ausrichtung eines Turniers der BTFV-Tour fallen <strong>keine Gebühren an den BTFV</strong> an. Startgeld und Organisationspauschale legt der Ausrichter selbst fest und behält sie ein.</p>
+
+<h2 id="welche-turnierart-passt-zu-uns">Welche Turnierart passt zu uns?</h2>
+
+<p>Innerhalb der BTFV-Tour können drei verschiedene Arten von Ranglistenturnieren ausgerichtet werden:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>DTFB-Challenger</th>
+      <th>BTFV-Challenger</th>
+      <th>Mini-Challenger</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ranglistenwertung</strong></td>
+      <td>DTFB + BTFV</td>
+      <td>BTFV</td>
+      <td>BTFV</td>
+    </tr>
+    <tr>
+      <td><strong>Lizenz</strong></td>
+      <td>B-Lizenz erforderlich</td>
+      <td>D-Lizenz (erhält jeder Vereinsspieler automatisch)</td>
+      <td>keine Lizenz erforderlich</td>
+    </tr>
+    <tr>
+      <td><strong>Ausschreibung</strong></td>
+      <td>spätestens 6 Wochen vorher</td>
+      <td>spätestens 4 Wochen vorher</td>
+      <td>keine Frist</td>
+    </tr>
+    <tr>
+      <td><strong>Vorgaben zum Spielmodus</strong></td>
+      <td>nach DTFB-Regularien</td>
+      <td>BTFV-Vorgaben</td>
+      <td>weitgehend frei</td>
+    </tr>
+    <tr>
+      <td><strong>Einzel möglich</strong></td>
+      <td>ja</td>
+      <td>ja</td>
+      <td>ja</td>
+    </tr>
+    <tr>
+      <td><strong>Doppel möglich</strong></td>
+      <td>ja</td>
+      <td>ja</td>
+      <td>ja</td>
+    </tr>
+    <tr>
+      <td><strong>KO-Runde</strong></td>
+      <td>nach DTFB-Regularien</td>
+      <td>verpflichtend</td>
+      <td>für Ranglistenwertung verpflichtend</td>
+    </tr>
+    <tr>
+      <td><strong>BTFV-Wertung</strong></td>
+      <td>Doppel 100 %, Einzel 50 %</td>
+      <td>Doppel 100 %, Einzel 50 %</td>
+      <td>50 %</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Hinweis zur Lizenz:</strong> Bei Mini-Challengern dürfen auch Spieler ohne Lizenz teilnehmen. In die BTFV-Rangliste werden jedoch nur Spieler aufgenommen, die über eine gültige Lizenz verfügen.</p>
+
+<h1 id="dtfb-challenger">DTFB-Challenger</h1>
+
+<p>DTFB-Challenger sind Turniere nach den Vorgaben des Deutschen Tischfußballbundes und werden sowohl für die <strong>DTFB-Rangliste</strong> als auch für die <strong>BTFV-Rangliste</strong> gewertet.</p>
+
+<p>Die detaillierten organisatorischen und sportlichen Vorgaben werden vom DTFB festgelegt und deshalb an dieser Stelle nicht zusätzlich wiederholt.</p>
+
+<h2 id="ausschreibung">Ausschreibung</h2>
+
+<p>Die Ausschreibung muss spätestens <strong>6 Wochen vor dem Turniertermin</strong> an <a href="mailto:challenger@btfv.de">challenger@btfv.de</a> gesendet werden.</p>
+
+<p>Eine Vorlage für die Ausschreibung steht beim DTFB zur Verfügung:</p>
+
+<p><a href="https://dtfb.de/images/dokumente/Turniere/2024_01_Challenger_Ausschreibung_Vorlage.pdf">DTFB-Challenger-Ausschreibung herunterladen</a></p>
+
+<p>Die jeweils aktuellen Regelungen und Dokumente findet ihr direkt beim DTFB:</p>
+
+<p><a href="https://dtfb.de/verband/dokumente">DTFB-Dokumente</a></p>
+
+<h2 id="lizenz">Lizenz</h2>
+
+<p>Für die Teilnahme an einem DTFB-Challenger ist eine gültige <strong>B-Lizenz</strong> erforderlich.</p>
+
+<p>Den aktuellen Lizenzstatus eines Spielers könnt ihr über die DTFB-Spielersuche prüfen:</p>
+
+<p><a href="https://dtfb.de/wettbewerbe/turnierserie/spielersuche">DTFB-Spielersuche</a></p>
+
+<p>Eine B-Lizenz kann direkt beim DTFB beantragt bzw. erworben werden:</p>
+
+<p><a href="https://lizenz.dtfb.de">Lizenz erwerben</a></p>
+
+<h1 id="btfv-challenger">BTFV-Challenger</h1>
+
+<p>BTFV-Challenger wurden geschaffen, um den Vereinen bei <strong>Spielmodus, Turniergestaltung und Preisvergabe</strong> mehr Freiheiten zu ermöglichen als bei einem DTFB-Challenger.</p>
+
+<p>Sie werden für die <strong>BTFV-Jahresrangliste</strong> gewertet.</p>
+
+<h2 id="lizenz-1">Lizenz</h2>
+
+<p>Für die Teilnahme an einem BTFV-Challenger benötigen die Spieler eine gültige <strong>D-Lizenz</strong>.</p>
+
+<p>Die D-Lizenz erhält jeder Spieler automatisch, sobald er für einen Verein gemeldet ist. Ein gesonderter Antrag ist dafür nicht notwendig.</p>
+
+<p>Ausgeschlossen sind damit ausschließlich Spieler ohne Vereinszugehörigkeit.</p>
+
+<h2 id="ausschreibung-1">Ausschreibung</h2>
+
+<p>Die Ausschreibung muss spätestens <strong>4 Wochen vor Turnierbeginn</strong> per E-Mail an <a href="mailto:challenger@btfv.de">challenger@btfv.de</a> gesendet werden.</p>
+
+<p>Folgende Angaben müssen enthalten sein:</p>
 
 <ul>
-  <li>Spätestens 2 Wochen vor Turnierstart</li>
-  <li>Bezeichnung des Turniers (<strong>BTFV Challenger</strong>)</li>
-  <li>Name des Veranstalters/Ausrichters inkl. Kontaktmöglichkeit (E-Mail/Telefon)</li>
-  <li>Beginn des Turniers</li>
-  <li>Ort der Austragung (Name und Adresse)</li>
-  <li>Anzahl und der Typ der Spieltische</li>
+  <li>Bezeichnung des Turniers als <strong>BTFV-Challenger</strong></li>
+  <li>Name des Veranstalters bzw. Ausrichters</li>
+  <li>Kontaktmöglichkeit des Ausrichters, z. B. E-Mail oder Telefonnummer</li>
+  <li>Datum und Beginn des Turniers</li>
+  <li>Austragungsort mit Name und Adresse</li>
+  <li>Anzahl und Typ der Spieltische</li>
   <li>verwendete Figuren und Bälle</li>
-  <li>Disziplin (Doppel und/oder Einzel)</li>
-  <li>maximale Anzahl der Teilnehmer (wenn es eine gibt)</li>
-  <li>Tag und Zeit des Meldeschlusses (wenn es einen gibt)</li>
-  <li>Höhe der Gebühren (Organisationspauschale, Startgeld)</li>
-  <li>Preise (Pokale, Medaillen oder Sachpreise)</li>
+  <li>Disziplin: Doppel und/oder Einzel</li>
+  <li>maximale Teilnehmerzahl, sofern diese begrenzt ist</li>
+  <li>Meldeschluss mit Datum und Uhrzeit, sofern es einen Meldeschluss gibt</li>
+  <li>Höhe der Gebühren, z. B. Organisationspauschale und Startgeld</li>
+  <li>vorgesehene Preise, z. B. Pokale, Medaillen, Geld- oder Sachpreise</li>
 </ul>
 
-<h1 id="modus">Modus</h1>
+<h3 id="vorlage-für-die-ausschreibung">Vorlage für die Ausschreibung</h3>
+
+<p>Für die Ausschreibung stellt der BTFV ein ausfüllbares PDF-Formular bereit. Einfach am Rechner ausfüllen, speichern und per E-Mail an <a href="mailto:challenger@btfv.de">challenger@btfv.de</a> senden.</p>
+
+<p><a href="/staging/assets/pdf/btfv-challenger-ausschreibung.pdf">Ausschreibungsformular BTFV-Challenger (PDF zum Ausfüllen)</a></p>
+
+<p>Bitte beachtet: Die Ausschreibung muss dem BTFV spätestens <strong>4 Wochen vor Turnierbeginn</strong> vorliegen.</p>
+
+<h2 id="spielmodus">Spielmodus</h2>
+
+<p>Zunächst spielen alle Teilnehmer eine Qualifikationsphase. Diese kann entweder</p>
 
 <ul>
-  <li>Alle Teilnehmer spielen Qualifikationsrunden Jeder gegen Jeden oder nach dem Schweizer System und Buchholzzahl. Anschließend folgen Playoffs als Single- oder Doppel-KO, um die Endplatzierungen auszuspielen. Bei Single-KO wird ein dritter Platz ausgespielt.</li>
-  <li>Das Feld darf in bis zu 3 Divisionen aufgeteilt werden (Profi, Amateur und Neuling).</li>
-  <li>Ab 16 teilnehmenden Teams muss in 2 Divisionen aufgeteilt werden.</li>
-  <li>Ab 32 teilnehmenden Teams muss in 3 Divisionen aufgeteilt werden.</li>
-  <li>Im Gewinnerfeld der Profirunde wird <strong>Best of 5</strong> mit Verlängerung im Entscheidungssatz bis maximal 8 Tore gespielt.</li>
-  <li>In allen anderen Feldern wird <strong>Best of 3</strong> mit Verlängerung im Entscheidungssatz bis maximal 8 Tore empfohlen.</li>
-  <li>In der untergeordneten Division muss mindestens die gleiche Anzahl oder mehr Aktive starten als in der übergeordneten.</li>
-  <li>In den Playoffs werden die Spieler gemäß ihrer Platzierung aus der Vorrunde gesetzt (z. B. 1–8, 2–7, …).</li>
+  <li><strong>Jeder gegen Jeden</strong> oder</li>
+  <li>nach dem <strong>Schweizer System mit Buchholzzahl</strong></li>
 </ul>
 
-<h1 id="regeln">Regeln</h1>
+<p>gespielt werden.</p>
 
-<p>Es wird nach den offiziellen Tischfußballregeln des <strong>ITSF</strong> gespielt.</p>
+<p>Anschließend werden die Endplatzierungen in Playoffs ausgespielt. Dabei ist <strong>Single-KO oder Doppel-KO</strong> möglich.</p>
 
-<h1 id="spielgeräte">Spielgeräte</h1>
+<p>Bei einem Single-KO wird der dritte Platz ausgespielt.</p>
+
+<h3 id="divisionen">Divisionen</h3>
+
+<p>Das Teilnehmerfeld kann in bis zu drei Divisionen aufgeteilt werden:</p>
 
 <ul>
-  <li>Bei Challengerturnieren dürfen nur Tische von den aktuellen BTFV-Tischpartnern genutzt werden.</li>
-  <li>Es müssen mindestens zwei Tische eingesetzt werden.</li>
-  <li>Multitable-Turniere sind gestattet.</li>
-  <li>Die Spieltische müssen bis 1 Stunde vor Turnierbeginn spielbereit aufgestellt und ausgerichtet sein.</li>
-  <li>Gespielt wird mit den von den BTFV-Tischpartnern angebotenen Bällen.</li>
-  <li>Es ist auf ausreichende Ausleuchtung der Tische zu achten.</li>
-  <li>Bälle sind vom Veranstalter/Ausrichter bereitzustellen.</li>
+  <li>Profi</li>
+  <li>Amateur</li>
+  <li>Neuling</li>
 </ul>
 
-<h1 id="preise">Preise</h1>
+<p>Ab <strong>16 Teilnehmern</strong> muss das Teilnehmerfeld in mindestens zwei Divisionen aufgeteilt werden.</p>
 
-<p>Die 3 Erstplatzierten jeder Disziplin des Profifeldes erhalten Ehrungen (Pokale, Medaillen, Bargeld oder vergleichbare Sachpreise), die vom Ausrichter zu stellen sind.</p>
+<p>Ab <strong>32 Teilnehmern</strong> muss das Teilnehmerfeld in drei Divisionen aufgeteilt werden.</p>
 
-<p>Stehen weitere Preise von Sponsoren oder Werbegeschenke zur Verfügung, steht es dem Ausrichter frei, wie diese Preise hinzuaddiert werden.</p>
+<p>Maßgeblich ist die Anzahl der startenden Teams im Doppel bzw. der startenden Spieler im Einzel.</p>
 
-<p>Ehrungen für andere Felder sind optional. Hier liegt die Entscheidung beim Ausrichter.</p>
+<p>In einer untergeordneten Division müssen mindestens genauso viele oder mehr Spieler bzw. Teams starten wie in der jeweils darüberliegenden Division.</p>
 
-<p>Bei Nichtanwesenheit kann der Anspruch auf die Preise verfallen.</p>
+<h3 id="setzung-der-playoffs">Setzung der Playoffs</h3>
 
-<h1 id="ergebnismeldung">Ergebnismeldung</h1>
+<p>Die Spieler bzw. Teams werden anhand ihrer Platzierung aus der Vorrunde in die Playoffs gesetzt.</p>
 
-<p>Die Ergebnisse sind über das Formular auf der <a href="https://btfv.de/challenger-ergebnisse-hochladen/">BTFV-Seite</a>
-oder alternativ als <a href="mailto:challenger@btfv.de">E-Mail</a> zu senden.</p>
+<p>Beispiel bei acht Qualifizierten:</p>
+
+<ul>
+  <li>
+    <ol>
+      <li>gegen 8.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>gegen 7.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>gegen 6.</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>gegen 5.</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="satzmodus">Satzmodus</h3>
+
+<p>Im Gewinnerfeld der <strong>Profi-Division</strong> wird <strong>Best of 5</strong> gespielt.</p>
+
+<p>Im Entscheidungssatz wird mit Verlängerung gespielt, maximal jedoch bis <strong>8 Tore</strong>.</p>
+
+<p>In allen anderen Feldern wird <strong>Best of 3</strong> mit Verlängerung im Entscheidungssatz bis maximal 8 Tore empfohlen.</p>
+
+<h2 id="regeln">Regeln</h2>
+
+<p>Gespielt wird nach den offiziellen Tischfußballregeln des <strong>ITSF</strong>.</p>
+
+<h2 id="spielgeräte">Spielgeräte</h2>
+
+<p>Für BTFV-Challenger gelten folgende Anforderungen:</p>
+
+<ul>
+  <li>Es dürfen nur Tische der aktuellen BTFV-Tischpartner eingesetzt werden. Die zugelassenen Tischmodelle, Figuren und Bälle sind in der <a href="https://docs.btfv.de/docs/spielordnung.html#spielgeräte">Spielordnung, Abschnitt Spielgeräte</a> aufgeführt.</li>
+  <li>Es müssen mindestens <strong>zwei Spieltische</strong> zur Verfügung stehen.</li>
+  <li>Multitable-Turniere sind zulässig.</li>
+  <li>Die Spieltische müssen spätestens <strong>eine Stunde vor Turnierbeginn</strong> vollständig aufgebaut und ausgerichtet sein.</li>
+  <li>Gespielt wird mit den zum jeweiligen Tischmodell zugelassenen Bällen.</li>
+  <li>Die Bälle werden vom Veranstalter bzw. Ausrichter bereitgestellt.</li>
+  <li>Die Spieltische müssen ausreichend ausgeleuchtet sein.</li>
+</ul>
+
+<h2 id="preise">Preise</h2>
+
+<p>Die drei Erstplatzierten jeder Disziplin des <strong>Profifeldes</strong> müssen eine Ehrung erhalten.</p>
+
+<p>Möglich sind beispielsweise:</p>
+
+<ul>
+  <li>Pokale</li>
+  <li>Medaillen</li>
+  <li>Geldpreise</li>
+  <li>vergleichbare Sachpreise</li>
+</ul>
+
+<p>Die Preise werden vom Ausrichter gestellt.</p>
+
+<p>Zusätzliche Sponsorenpreise oder Werbegeschenke können vom Ausrichter frei vergeben werden.</p>
+
+<p>Ehrungen und Preise in den weiteren Divisionen sind optional.</p>
+
+<p>Bei Nichtanwesenheit bei der Siegerehrung kann der Anspruch auf einen Preis verfallen.</p>
+
+<h1 id="mini-challenger">Mini-Challenger</h1>
+
+<p>Mini-Challenger ermöglichen Vereinen, mit sehr wenigen organisatorischen Vorgaben ein Turnier für die BTFV-Tour anzubieten.</p>
+
+<p>Es gibt <strong>keine Bewerbungs- oder Ausschreibungsfrist</strong> und keine zusätzlichen BTFV-Vorgaben beispielsweise zu</p>
+
+<ul>
+  <li>Startgeld</li>
+  <li>Preisen</li>
+  <li>Anzahl der Spieltische</li>
+</ul>
+
+<h2 id="lizenz-2">Lizenz</h2>
+
+<p>Für die Teilnahme an einem Mini-Challenger ist <strong>keine Lizenz erforderlich</strong>.</p>
+
+<p>Damit können auch Spieler teilnehmen, die keinem Verein angehören oder noch keine Lizenz besitzen.</p>
+
+<p><strong>Für die BTFV-Rangliste werden jedoch ausschließlich Spieler mit gültiger Lizenz berücksichtigt.</strong></p>
+
+<h2 id="spielmodus-1">Spielmodus</h2>
+
+<p>Mini-Challenger können als <strong>Einzel oder Doppel</strong> ausgetragen werden.</p>
+
+<p>Für Einzel und Doppel sind folgende Vorrundenmodi möglich:</p>
+
+<ul>
+  <li><strong>Schweizer System</strong></li>
+  <li><strong>Jeder gegen Jeden</strong></li>
+</ul>
+
+<p>Zusätzlich kann ein Mini-Challenger als <strong>Monster-DYP</strong> ausgetragen werden. Beim Monster-DYP wird ausschließlich Doppel gespielt und die Partner werden während der Vorrunde wechselnd zugelost.</p>
+
+<h2 id="ko-runde">KO-Runde</h2>
+
+<p>Damit ein Mini-Challenger für die BTFV-Rangliste gewertet werden kann, muss nach der Vorrunde eine <strong>KO-Runde</strong> zur Ermittlung der Endplatzierungen gespielt werden.</p>
+
+<p>Mini-Challenger ohne KO-Runde können nicht für die Rangliste gemeldet werden.</p>
+
+<h1 id="kickertool-und-ergebnismeldung">Kickertool und Ergebnismeldung</h1>
+
+<p>Für <strong>alle Turniere der BTFV-Tour</strong> muss das Kickertool verwendet werden.</p>
+
+<p>Damit die Ergebnisse automatisch verarbeitet und der BTFV-Rangliste zugeordnet werden können, sind folgende Punkte zu beachten:</p>
+
+<ol>
+  <li>Das Turnier im Kickertool anlegen.</li>
+  <li>Die Turnierart muss im Namen des Turniers enthalten sein:
+    <ul>
+      <li><strong>DTFB-Challenger</strong></li>
+      <li><strong>BTFV-Challenger</strong></li>
+      <li><strong>Mini-Challenger</strong></li>
+    </ul>
+  </li>
+  <li>
+    <p>Im Kickertool muss <strong>„Ergebnisse teilen“</strong> aktiviert sein.</p>
+
+    <p><img src="/staging/docs/images/kickertool_ergebnisse_teilen.png" alt="Kickertool-Einstellung „Ergebnisse teilen“" /></p>
+  </li>
+  <li>
+    <p>Nach dem Turnier den öffentlichen Link zum Turnier per E-Mail an <a href="mailto:challenger@btfv.de">challenger@btfv.de</a> senden.</p>
+
+    <p><img src="/staging/docs/images/kickertool_oeffentliche_seite.png" alt="Öffentliche Turnierseite im Kickertool" /></p>
+  </li>
+</ol>
+
+<p>Die Ergebnisse werden anschließend automatisiert an den BTFV übermittelt.</p>
+
+<p>Ein zusätzliches Hochladen oder Versenden der Ergebnisse als Datei ist <strong>nicht erforderlich</strong>.</p>
+
+<h2 id="meldefristen">Meldefristen</h2>
+
+<p>Die Übertragung der Ergebnisse läuft automatisch <strong>jeden Montag um 8:00 Uhr</strong>.</p>
+
+<p>Gesonderte Meldefristen gibt es deshalb nicht. Jedes Turnier, das zu diesem Zeitpunkt korrekt benannt und öffentlich freigegeben ist, wird mit dem nächsten Lauf in die Rangliste übernommen.</p>
+
+<p><strong>Wichtig:</strong> Voraussetzung für die automatische Verarbeitung sind die korrekte Benennung des Turniers und ein öffentlich freigegebener Ergebnislink.</p>
+
+<p>Bei Mini-Challengern ist zusätzlich eine <strong>KO-Runde verpflichtend</strong>, damit das Ergebnis in die Rangliste übernommen werden kann.</p>
+
+<hr />
+
+<h1 id="btfv-jahresrangliste">BTFV-Jahresrangliste</h1>
+
+<h2 id="wertungszeitraum">Wertungszeitraum</h2>
+
+<p>Eine Ranglistensaison läuft jeweils vom</p>
+
+<p><strong>1. Dezember bis zum 30. November des Folgejahres.</strong></p>
+
+<p>Die Saison 2026 läuft beispielsweise vom <strong>01.12.2025 bis 30.11.2026</strong>.</p>
+
+<h2 id="wertung">Wertung</h2>
+
+<p>Für die Jahresrangliste werden die <strong>10 besten Turnierergebnisse</strong> eines Spielers berücksichtigt.</p>
+
+<p>Dabei gelten folgende Wertungsfaktoren:</p>
+
+<ul>
+  <li><strong>Doppel:</strong> 100 %</li>
+  <li><strong>Einzel:</strong> 50 %</li>
+  <li><strong>Mini-Challenger:</strong> 50 %</li>
+</ul>
+
+<p>Bei einem Mini-Challenger gilt die reduzierte Wertung unabhängig davon, ob Einzel oder Doppel gespielt wird.</p>
+
+<p>Die tatsächlich erzielbaren Ranglistenpunkte hängen unter anderem von</p>
+
+<ul>
+  <li>der Anzahl der Teilnehmer,</li>
+  <li>der erreichten Platzierung und</li>
+  <li>dem für die jeweilige Turnierart geltenden Wertungsfaktor</li>
+</ul>
+
+<p>ab.</p>
+
+<p>Die Berechnung erfolgt nach folgender Formel:</p>
+
+<p><code class="language-plaintext highlighter-rouge">VERTEILUNG(POW(MAX(MIN(n, 200), 10) * 10, 0.7), p, n, m)</code></p>
+
+<p>Dabei gilt:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n</code> = Anzahl der Teilnehmer</li>
+  <li><code class="language-plaintext highlighter-rouge">p</code> = Platzierung</li>
+  <li><code class="language-plaintext highlighter-rouge">m</code> = Multiplikator der jeweiligen Wertung</li>
+</ul>
+
+<h2 id="landesmeisterschaft">Landesmeisterschaft</h2>
+
+<p>Die <strong>Bayerische Landesmeisterschaft</strong> fließt nicht in die Jahresrangliste ein.</p>
+
+<p>Bei der Landesmeisterschaft geht es unabhängig von der Rangliste darum, einmal im Jahr die Bayerischen Landesmeister auszuspielen.</p>
+
+<h1 id="preise-der-jahresrangliste">Preise der Jahresrangliste</h1>
+
+<h2 id="offene-wertung">Offene Wertung</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Platz</th>
+      <th style="text-align: right">Preis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">1.</td>
+      <td style="text-align: right">Leonhart Tisch</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2.</td>
+      <td style="text-align: right">200 €</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">3.</td>
+      <td style="text-align: right">100 €</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">4.</td>
+      <td style="text-align: right">80 €</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">5.</td>
+      <td style="text-align: right">70 €</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">6.</td>
+      <td style="text-align: right">60 €</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">7.</td>
+      <td style="text-align: right">50 €</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">8.</td>
+      <td style="text-align: right">40 €</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">9.</td>
+      <td style="text-align: right">30 €</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">10.</td>
+      <td style="text-align: right">20 €</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="damenwertung">Damenwertung</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Platz</th>
+      <th style="text-align: right">Preis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">1.</td>
+      <td style="text-align: right">100 €</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2.</td>
+      <td style="text-align: right">60 €</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">3.</td>
+      <td style="text-align: right">40 €</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Die Turniere der BTFV-Tour sind offene Turniere. Alle teilnehmenden Spielerinnen werden daher automatisch zusätzlich in der Damenwertung geführt. Eine gesonderte Meldung oder Anmeldung ist nicht erforderlich.</p>
+
+<h2 id="juniorenförderung">Juniorenförderung</h2>
+
+<p>Juniorinnen und Junioren unter 18 Jahren erhalten vom BTFV <strong>20 €</strong>, wenn sie innerhalb der jeweiligen Ranglistensaison an mindestens <strong>drei Turnieren der BTFV-Tour</strong> teilgenommen haben.</p>
+
+<h2 id="auszahlung">Auszahlung</h2>
+
+<p>Die Preise der Jahresrangliste werden auf der <strong>Jahreshauptversammlung des BTFV</strong> ausgezahlt.</p>
+
+<p>Ist ein Gewinner verhindert, kann der Preis unter Vorlage einer <strong>Vollmacht</strong> auch von einer dritten Person entgegengenommen werden.</p>
+
+<p>Nicht beanspruchte Preise gehen dem BTFV als <strong>Spende</strong> zu.</p>
+
+<h1 id="sponsoring">Sponsoring</h1>
+
+<p>Die BTFV-Tour wird unterstützt von <strong>Original Leonhart</strong> – Kickertische und Tischfußball, Made in Germany.</p>
+
+<p><img src="/staging/docs/images/powered_by_leonhart.png" alt="powered by Leonhart" /></p>
 
     </div>
     
+    <!-- Suchleiste -->
+    <div id="base-search-bar" hidden role="search">
+        <input id="base-search-input" type="search" placeholder="Auf dieser Seite suchen…" aria-label="Suche" autocomplete="off">
+        <span id="base-search-count" aria-live="polite"></span>
+        <button id="base-search-prev" type="button" aria-label="Vorheriger Treffer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button id="base-search-next" type="button" aria-label="Nächster Treffer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button id="base-search-close" type="button" aria-label="Suche schließen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+
+    <!-- Safe-area Abdeckung (nur in PWA) -->
+    <div id="safe-area-cover"></div>
+
+    <!-- Scroll-Fortschrittsbalken -->
+    <div id="scroll-progress"></div>
+
     <!-- Nach oben Button -->
-    <a href="#markdown-toc" id="back-to-top">Nach oben</a>
+    <a href="#" id="back-to-top">Nach oben</a>
 
     <!-- Staging-Banner -->
     
@@ -224,15 +772,87 @@ oder alternativ als <a href="mailto:challenger@btfv.de">E-Mail</a> zu senden.</p
     <div id="base-toast" role="status" aria-live="polite">Link kopiert</div>
 
     <script>
-        // Script, um den Button bei Scrollen einzublenden
+        // Einstellungen-Panel
+        const settingsToggle = document.querySelector("[data-settings-toggle]");
+        const settingsPanel = document.querySelector("[data-settings-panel]");
+        if (settingsToggle && settingsPanel) {
+            settingsToggle.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const open = !settingsPanel.hidden;
+                settingsPanel.hidden = open;
+                settingsToggle.setAttribute("aria-expanded", String(!open));
+            });
+            settingsPanel.addEventListener("click", (e) => { e.stopPropagation(); });
+            document.addEventListener("click", () => {
+                if (!settingsPanel.hidden) {
+                    settingsPanel.hidden = true;
+                    settingsToggle.setAttribute("aria-expanded", "false");
+                }
+            });
+        }
+
+        // Schriftgröße
+        const fontSteps = [0.70, 0.85, 1.0, 1.25, 1.50];
+        let fontIndex = parseInt(localStorage.getItem("fontIndex") ?? "2", 10);
+        const fontSlider = document.querySelector("[data-font-slider]");
+        const fontPct = document.querySelector("[data-font-pct]");
+        const fontDecrease = document.querySelector("[data-font-decrease]");
+        const fontIncrease = document.querySelector("[data-font-increase]");
+        const applyFontZoom = () => {
+            document.documentElement.style.setProperty("--font-zoom", fontSteps[fontIndex]);
+            if (fontSlider) {
+                fontSlider.value = fontIndex;
+                const pct = (fontIndex / (fontSteps.length - 1)) * 100;
+                fontSlider.style.setProperty("--slider-fill", pct + "%");
+            }
+            if (fontPct) fontPct.textContent = Math.round(fontSteps[fontIndex] * 100) + "%";
+            if (fontDecrease) fontDecrease.disabled = fontIndex === 0;
+            if (fontIncrease) fontIncrease.disabled = fontIndex === fontSteps.length - 1;
+        };
+        if (fontSlider) {
+            fontSlider.addEventListener("input", () => {
+                fontIndex = parseInt(fontSlider.value, 10);
+                localStorage.setItem("fontIndex", fontIndex);
+                applyFontZoom();
+            });
+        }
+        if (fontDecrease) {
+            fontDecrease.addEventListener("click", () => {
+                if (fontIndex > 0) { fontIndex--; localStorage.setItem("fontIndex", fontIndex); applyFontZoom(); }
+            });
+        }
+        if (fontIncrease) {
+            fontIncrease.addEventListener("click", () => {
+                if (fontIndex < fontSteps.length - 1) { fontIndex++; localStorage.setItem("fontIndex", fontIndex); applyFontZoom(); }
+            });
+        }
+        applyFontZoom();
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buildV = '1787091715';
+            document.querySelectorAll('a[href]').forEach(a => {
+                const href = a.getAttribute('href');
+                if (!href || !href.match(/\.pdf(\?|$)/)) return;
+                if (!href.includes('?v=')) {
+                    a.setAttribute('href', href.replace(/\.pdf$/, '.pdf') + '?v=' + buildV);
+                }
+                a.setAttribute('target', '_blank');
+                a.setAttribute('rel', 'noopener');
+            });
+        });
+    </script>
+
+    <script>
         const backToTopButton = document.getElementById("back-to-top");
+        const scrollProgress = document.getElementById("scroll-progress");
 
         window.onscroll = function() {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                backToTopButton.style.display = "block"; // Zeigt den Button nach Scrollen an
-            } else {
-                backToTopButton.style.display = "none"; // Versteckt den Button, wenn man oben ist
-            }
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            scrollProgress.style.width = docHeight > 0 ? (scrollTop / docHeight * 100) + "%" : "0%";
+            backToTopButton.style.display = scrollTop > 200 ? "block" : "none";
         };
     </script>
 
@@ -309,6 +929,125 @@ oder alternativ als <a href="mailto:challenger@btfv.de">E-Mail</a> zu senden.</p
         } else {
             initHeadingLinks();
         }
+    </script>
+
+    <script>
+        (() => {
+            const searchBar = document.getElementById("base-search-bar");
+            const searchInput = document.getElementById("base-search-input");
+            const searchCount = document.getElementById("base-search-count");
+            const btnPrev = document.getElementById("base-search-prev");
+            const btnNext = document.getElementById("base-search-next");
+            const btnClose = document.getElementById("base-search-close");
+            const openBtns = document.querySelectorAll("[data-search-open]");
+            const wrapper = document.querySelector(".wrapper");
+
+            if (!searchBar || !openBtns.length || !wrapper) return;
+
+            let marks = [];
+            let currentIndex = -1;
+
+            const clearMarks = () => {
+                wrapper.querySelectorAll("mark.base-search-mark").forEach(m => {
+                    const parent = m.parentNode;
+                    parent.replaceChild(document.createTextNode(m.textContent), m);
+                    parent.normalize();
+                });
+                marks = [];
+                currentIndex = -1;
+            };
+
+            const highlight = (query) => {
+                clearMarks();
+                if (!query) { searchCount.textContent = ""; return; }
+                const re = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
+                const walker = document.createTreeWalker(wrapper, NodeFilter.SHOW_TEXT, {
+                    acceptNode: n => {
+                        const tag = n.parentElement?.tagName;
+                        return (tag === "SCRIPT" || tag === "STYLE" || n.parentElement?.closest("mark"))
+                            ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+                    }
+                });
+                const textNodes = [];
+                while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+                textNodes.forEach(node => {
+                    if (!re.test(node.textContent)) return;
+                    re.lastIndex = 0;
+                    const frag = document.createDocumentFragment();
+                    let last = 0, m;
+                    while ((m = re.exec(node.textContent)) !== null) {
+                        frag.appendChild(document.createTextNode(node.textContent.slice(last, m.index)));
+                        const mark = document.createElement("mark");
+                        mark.className = "base-search-mark";
+                        mark.textContent = m[0];
+                        frag.appendChild(mark);
+                        marks.push(mark);
+                        last = m.index + m[0].length;
+                    }
+                    frag.appendChild(document.createTextNode(node.textContent.slice(last)));
+                    node.parentNode.replaceChild(frag, node);
+                });
+
+                searchCount.textContent = marks.length ? `1 / ${marks.length}` : "Kein Treffer";
+                if (marks.length) { currentIndex = 0; goTo(0); }
+            };
+
+            // Sichtbare Viewport-Höhe (berücksichtigt virtuelle Tastatur via visualViewport)
+            const getVisibleHeight = () =>
+                window.visualViewport ? window.visualViewport.height : window.innerHeight;
+
+            const goTo = (idx) => {
+                marks.forEach((m, i) => m.classList.toggle("base-search-mark--active", i === idx));
+                searchCount.textContent = `${idx + 1} / ${marks.length}`;
+                const mark = marks[idx];
+                if (!mark) return;
+                const rect = mark.getBoundingClientRect();
+                const visibleH = getVisibleHeight();
+                const barH = searchBar.offsetHeight + 16;
+                // Mitte des sichtbaren Bereichs unterhalb der Suchleiste
+                const targetCenter = barH + (visibleH - barH) / 2;
+                const scrollY = window.scrollY + rect.top - targetCenter;
+                window.scrollTo({ top: scrollY, behavior: "smooth" });
+            };
+
+            const open = () => {
+                if (settingsPanel && !settingsPanel.hidden) {
+                    settingsPanel.hidden = true;
+                    document.querySelector("[data-settings-toggle]")?.setAttribute("aria-expanded", "false");
+                }
+                searchBar.hidden = false;
+                setTimeout(() => { searchInput.focus(); searchInput.select(); }, 50);
+            };
+
+            const close = () => {
+                searchBar.hidden = true;
+                clearMarks();
+                searchInput.value = "";
+                searchCount.textContent = "";
+            };
+
+            openBtns.forEach(btn => btn.addEventListener("click", open));
+            btnClose.addEventListener("click", close);
+            btnPrev.addEventListener("click", () => { if (marks.length) { currentIndex = (currentIndex - 1 + marks.length) % marks.length; goTo(currentIndex); } });
+            btnNext.addEventListener("click", () => { if (marks.length) { currentIndex = (currentIndex + 1) % marks.length; goTo(currentIndex); } });
+
+            let debounce;
+            searchInput.addEventListener("input", () => {
+                clearTimeout(debounce);
+                debounce = setTimeout(() => highlight(searchInput.value.trim()), 150);
+            });
+
+            searchInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") { e.preventDefault(); if (marks.length) { currentIndex = (currentIndex + 1) % marks.length; goTo(currentIndex); } }
+                if (e.key === "Escape") close();
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === "f") { e.preventDefault(); open(); }
+                if (e.key === "Escape" && !searchBar.hidden) close();
+            });
+        })();
     </script>
 </body>
 </html>

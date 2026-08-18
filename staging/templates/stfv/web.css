@@ -43,3 +43,25 @@
     --color-link-underline: rgba(var(--color-brand-rgb), 0.45);
 }
 
+/* Logo-Skalierung: STFV-Logo per Hoehe begrenzen */
+.base-doc-logo {
+    width: auto !important;
+    height: 60px !important;
+    max-width: 160px;
+}
+
+@media (max-width: 540px) {
+    .base-doc-logo {
+        height: 40px !important;
+        max-width: 110px;
+    }
+}
+
+/* Dark-Mode-Logo: light-Logo ausblenden, dark-Logo einblenden */
+:root[data-theme='dark'] .base-doc-logo--light {
+    display: none;
+}
+
+:root[data-theme='dark'] .base-doc-logo--dark {
+    display: inline-block;
+}
