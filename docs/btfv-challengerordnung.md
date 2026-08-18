@@ -24,7 +24,8 @@ Zum Schaffen einer fairen Verteilung der Turniere hat sich der BTFV entschlossen
 - **Achtung** alle Teilnehmer benötigen eine [B-Lizenz](https://lizenz.dtfb.de/). Welche Lizenz ihr habt seht ihr [hier](https://dtfb.de/wettbewerbe/turnierserie/spielersuche)
 
 ## Mini Challenger:
-- Spielmodus: „Schweizer System“, „Jeder gegen Jeden“ oder „Monsterdyp“
+- Spielmodus: „Schweizer System“, „Jeder gegen Jeden“ (Einzel oder Doppel) oder „Monsterdyp“
+- KO Runde ist verpflichtend für Ranglistenwertung.
 - Weitere Vorgaben (z.B.: Startgeld, Startpreis, Preise, Tischanzahl) gibt es nicht.
 
 ## BTFV Challenger
