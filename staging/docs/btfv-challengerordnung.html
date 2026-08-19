@@ -17,8 +17,8 @@
         <link rel="icon" type="image/png" href="/staging/templates/btfv/images/favicon.png">
         <link rel="apple-touch-icon" href="/staging/templates/btfv/images/logo.png">
         <link rel="manifest" href="/staging/manifest.webmanifest">
-        <link rel="stylesheet" href="/staging/templates/shared/web.css?v=1787092923">
-        <link rel="stylesheet" href="/staging/templates/btfv/web.css?v=1787092923">
+        <link rel="stylesheet" href="/staging/templates/shared/web.css?v=1787181216">
+        <link rel="stylesheet" href="/staging/templates/btfv/web.css?v=1787181216">
     
 </head>
 <body class="section-arabic template-btfv">
@@ -121,7 +121,7 @@
                         
                     </div>
                     
-                        <div class="base-doc-date">Stand: 18.08.2026</div>
+                        <div class="base-doc-date">Stand: 19.08.2026</div>
                     
                 </div>
                 <div class="base-toolbar">
@@ -255,137 +255,66 @@
 
 <p>Innerhalb der BTFV-Tour können drei verschiedene Arten von Ranglistenturnieren ausgerichtet werden:</p>
 
-<div class="tabelle-breit">
-
-  <table>
-    <thead>
-      <tr>
-        <th> </th>
-        <th>DTFB-Challenger</th>
-        <th>BTFV-Challenger</th>
-        <th>Mini-Challenger</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Ranglistenwertung</strong></td>
-        <td>DTFB + BTFV</td>
-        <td>BTFV</td>
-        <td>BTFV</td>
-      </tr>
-      <tr>
-        <td><strong>Lizenz</strong></td>
-        <td>B-Lizenz erforderlich</td>
-        <td>D-Lizenz (erhält jeder Vereinsspieler automatisch)</td>
-        <td>keine Lizenz erforderlich</td>
-      </tr>
-      <tr>
-        <td><strong>Ausschreibung</strong></td>
-        <td>spätestens 6 Wochen vorher</td>
-        <td>spätestens 4 Wochen vorher</td>
-        <td>keine Frist</td>
-      </tr>
-      <tr>
-        <td><strong>Vorgaben zum Spielmodus</strong></td>
-        <td>nach DTFB-Regularien</td>
-        <td>BTFV-Vorgaben</td>
-        <td>weitgehend frei</td>
-      </tr>
-      <tr>
-        <td><strong>Einzel möglich</strong></td>
-        <td>ja</td>
-        <td>ja</td>
-        <td>ja</td>
-      </tr>
-      <tr>
-        <td><strong>Doppel möglich</strong></td>
-        <td>ja</td>
-        <td>ja</td>
-        <td>ja</td>
-      </tr>
-      <tr>
-        <td><strong>KO-Runde</strong></td>
-        <td>nach DTFB-Regularien</td>
-        <td>verpflichtend</td>
-        <td>für Ranglistenwertung verpflichtend</td>
-      </tr>
-      <tr>
-        <td><strong>BTFV-Wertung</strong></td>
-        <td>Doppel 100 %, Einzel 50 %</td>
-        <td>Doppel 100 %, Einzel 50 %</td>
-        <td>50 %</td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
-
-<div class="html-only">
-<p class="tabelle-breit-hinweis">Die Tabelle lässt sich auf schmalen Displays seitlich scrollen.</p>
-<style>
-/* Vergleichstabelle: auf schmalen Displays seitlich scrollbar, die Spalte mit
-   den Merkmalen bleibt dabei stehen.
-
-   Die Klasse steht doppelt (.tabelle-breit.tabelle-breit), damit die Regeln
-   die allgemeinen Tabellenregeln des Layouts überschreiben. */
-
-.tabelle-breit { overflow-x: auto; margin-bottom: 8px; }
-
-.tabelle-breit.tabelle-breit table {
-  min-width: 44rem;
-  margin-bottom: 0;
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-/* Rahmen einzeln setzen, damit sie trotz border-spacing nicht doppelt liegen */
-.tabelle-breit.tabelle-breit th,
-.tabelle-breit.tabelle-breit td { border-width: 1px 1px 0 0; }
-.tabelle-breit.tabelle-breit tr > *:first-child { border-left-width: 1px; }
-.tabelle-breit.tabelle-breit tbody tr:last-child > * { border-bottom-width: 1px; }
-
-/* Die letzte Spalte ist im Layout sonst schmal und ohne Umbruch
-   (für die PDF-Links auf der Startseite) – hier soll sie normal umbrechen. */
-.tabelle-breit.tabelle-breit td:last-child,
-.tabelle-breit.tabelle-breit th:last-child {
-  width: auto;
-  white-space: normal;
-  text-align: left;
-}
-
-/* Spaltenüberschriften nicht mitten im Wort trennen */
-.tabelle-breit.tabelle-breit th { overflow-wrap: normal; word-break: keep-all; }
-
-/* Merkmalsspalte bleibt beim seitlichen Scrollen stehen */
-.tabelle-breit.tabelle-breit th:first-child,
-.tabelle-breit.tabelle-breit td:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 1;
-  min-width: 9rem;
-}
-
-.tabelle-breit.tabelle-breit td:first-child { background: var(--color-surface-card); }
-
-.tabelle-breit-hinweis { display: none; }
-
-@media (max-width: 900px) {
-  .tabelle-breit-hinweis {
-    display: block;
-    margin: 0 0 20px;
-    font-size: calc(14px * var(--font-zoom, 1));
-    color: var(--color-text-muted);
-  }
-}
-
-@media (max-width: 640px) {
-  .tabelle-breit.tabelle-breit th,
-  .tabelle-breit.tabelle-breit td { padding: 8px 10px; font-size: calc(14px * var(--font-zoom, 1)); }
-  .tabelle-breit.tabelle-breit th:first-child,
-  .tabelle-breit.tabelle-breit td:first-child { min-width: 8rem; }
-}
-</style>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>DTFB-Challenger</th>
+      <th>BTFV-Challenger</th>
+      <th>Mini-Challenger</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Ranglistenwertung</strong></td>
+      <td>DTFB + BTFV</td>
+      <td>BTFV</td>
+      <td>BTFV</td>
+    </tr>
+    <tr>
+      <td><strong>Lizenz</strong></td>
+      <td>B-Lizenz erforderlich</td>
+      <td>D-Lizenz (erhält jeder Vereinsspieler automatisch)</td>
+      <td>keine Lizenz erforderlich</td>
+    </tr>
+    <tr>
+      <td><strong>Ausschreibung</strong></td>
+      <td>spätestens 6 Wochen vorher</td>
+      <td>spätestens 4 Wochen vorher</td>
+      <td>keine Frist</td>
+    </tr>
+    <tr>
+      <td><strong>Vorgaben zum Spielmodus</strong></td>
+      <td>nach DTFB-Regularien</td>
+      <td>BTFV-Vorgaben</td>
+      <td>weitgehend frei</td>
+    </tr>
+    <tr>
+      <td><strong>Einzel möglich</strong></td>
+      <td>ja</td>
+      <td>ja</td>
+      <td>ja</td>
+    </tr>
+    <tr>
+      <td><strong>Doppel möglich</strong></td>
+      <td>ja</td>
+      <td>ja</td>
+      <td>ja</td>
+    </tr>
+    <tr>
+      <td><strong>KO-Runde</strong></td>
+      <td>nach DTFB-Regularien</td>
+      <td>verpflichtend</td>
+      <td>für Ranglistenwertung verpflichtend</td>
+    </tr>
+    <tr>
+      <td><strong>BTFV-Wertung</strong></td>
+      <td>Doppel 100 %, Einzel 50 %</td>
+      <td>Doppel 100 %, Einzel 50 %</td>
+      <td>50 %</td>
+    </tr>
+  </tbody>
+</table>
 
 <p><strong>Hinweis zur Lizenz:</strong> Bei Mini-Challengern dürfen auch Spieler ohne Lizenz teilnehmen. In die BTFV-Rangliste werden jedoch nur Spieler aufgenommen, die über eine gültige Lizenz verfügen.</p>
 
@@ -886,7 +815,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const buildV = '1787092923';
+            const buildV = '1787181216';
             document.querySelectorAll('a[href]').forEach(a => {
                 const href = a.getAttribute('href');
                 if (!href || !href.match(/\.pdf(\?|$)/)) return;
@@ -1103,6 +1032,82 @@
                 if (e.key === "Escape" && !searchBar.hidden) close();
             });
         })();
+    </script>
+
+    <script>
+        // Breite Tabellen seitlich scrollbar machen (SPEC-001).
+        // kramdown liefert ein nacktes <table>; der Scroll-Container entsteht
+        // deshalb hier zur Laufzeit, damit kein Dokument Markup dafuer braucht.
+        const initTableScroll = () => {
+            const wrapper = document.querySelector(".wrapper");
+            if (!wrapper) return;
+
+            // Letzte Spalte enthaelt in jeder Zeile nur einen Link (Index-Tabellen)?
+            const isLinkColumn = (table) => {
+                const cells = [...table.rows].map(r => r.cells[r.cells.length - 1]);
+                if (cells.length < 2) return false;
+                return cells.every(cell => {
+                    if (!cell) return false;
+                    if (cell.tagName === "TH") return true;
+                    const links = cell.querySelectorAll("a");
+                    return links.length === 1 && cell.textContent.trim() === links[0].textContent.trim();
+                });
+            };
+
+            wrapper.querySelectorAll("table").forEach((table) => {
+                if (table.closest(".table-scroll")) return;
+
+                if (isLinkColumn(table)) table.classList.add("table-linkcol");
+
+                const box = document.createElement("div");
+                box.className = "table-scroll";
+                box.setAttribute("role", "region");
+                box.setAttribute("aria-label", "Tabelle, seitlich scrollbar");
+                table.parentNode.insertBefore(box, table);
+                box.appendChild(table);
+
+                const columns = table.rows.length ? table.rows[0].cells.length : 0;
+                if (columns > 2) box.classList.add("table-scroll--sticky");
+
+                const hint = document.createElement("p");
+                hint.className = "table-scroll-hint";
+                hint.textContent = "Die Tabelle lässt sich seitlich scrollen.";
+                hint.hidden = true;
+                box.after(hint);
+
+                const update = () => {
+                    const overflowing = table.scrollWidth > box.clientWidth + 1;
+                    box.classList.toggle("is-overflowing", overflowing);
+                    hint.hidden = !overflowing;
+                    // Fokus nur vergeben, wenn es auch etwas zu scrollen gibt.
+                    if (overflowing) {
+                        box.setAttribute("tabindex", "0");
+                    } else {
+                        box.removeAttribute("tabindex");
+                    }
+                };
+
+                update();
+
+                if (window.ResizeObserver) {
+                    const ro = new ResizeObserver(update);
+                    ro.observe(box);
+                    ro.observe(table);
+                }
+
+                // Die Schriftgröße hängt an --font-zoom auf <html>.
+                new MutationObserver(update).observe(document.documentElement, {
+                    attributes: true,
+                    attributeFilter: ["style"]
+                });
+            });
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initTableScroll);
+        } else {
+            initTableScroll();
+        }
     </script>
 </body>
 </html>
