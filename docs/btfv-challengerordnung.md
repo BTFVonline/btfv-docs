@@ -246,10 +246,10 @@ Damit die Ergebnisse automatisch verarbeitet und der BTFV-Rangliste zugeordnet w
    - **DTFB-Challenger**
    - **BTFV-Challenger**
    - **Mini-Challenger**
-3. Im Kickertool muss **„Ergebnisse teilen“** aktiviert sein.
+3. Im Kickertool muss **„Auf Ergebnisseite teilen“** aktiviert sein.
 
    ![Kickertool-Einstellung „Ergebnisse teilen“](images/kickertool_ergebnisse_teilen.png)
-4. Nach dem Turnier den öffentlichen Link zum Turnier per E-Mail an [challenger@btfv.de](mailto:challenger@btfv.de) senden.
+4. Der öffentliche Link zum Verein muss per E-Mail an [challenger@btfv.de](mailto:challenger@btfv.de) gesendet werden.
 
    ![Öffentliche Turnierseite im Kickertool](images/kickertool_oeffentliche_seite.png)
 
@@ -266,8 +266,6 @@ Gesonderte Meldefristen gibt es deshalb nicht. Jedes Turnier, das zu diesem Zeit
 **Wichtig:** Voraussetzung für die automatische Verarbeitung sind die korrekte Benennung des Turniers und ein öffentlich freigegebener Ergebnislink.
 
 Bei Mini-Challengern ist zusätzlich eine **KO-Runde verpflichtend**, damit das Ergebnis in die Rangliste übernommen werden kann.
-
----
 
 # BTFV-Jahresrangliste
 
@@ -344,7 +342,7 @@ Die Turniere der BTFV-Tour sind offene Turniere. Alle teilnehmenden Spielerinnen
 
 ## Juniorenförderung
 
-Juniorinnen und Junioren unter 18 Jahren erhalten vom BTFV **20 €**, wenn sie innerhalb der jeweiligen Ranglistensaison an mindestens **drei Turnieren der BTFV-Tour** teilgenommen haben.
+Junioren unter 18 Jahren erhalten vom BTFV **20 €**, wenn sie innerhalb der jeweiligen Ranglistensaison an mindestens **drei Turnieren der BTFV-Tour** teilgenommen haben.
 
 ## Auszahlung
 
