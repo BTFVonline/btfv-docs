@@ -103,7 +103,6 @@ Folgende Angaben müssen enthalten sein:
 - Datum und Beginn des Turniers
 - Austragungsort mit Name und Adresse
 - Anzahl und Typ der Spieltische
-- verwendete Figuren und Bälle
 - Disziplin: Doppel und/oder Einzel
 - maximale Teilnehmerzahl, sofern diese begrenzt ist
 - Meldeschluss mit Datum und Uhrzeit, sofern es einen Meldeschluss gibt
