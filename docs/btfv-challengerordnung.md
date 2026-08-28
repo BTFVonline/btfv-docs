@@ -27,7 +27,7 @@ Bewerben sich mehrere Vereine für denselben Termin, achtet der BTFV bei der Ver
 
 Sind nach Ablauf der Bewerbungsfrist noch Termine frei, werden diese anschließend nach Eingang der Bewerbungen vergeben.
 
-Für die Ausrichtung eines Turniers der BTFV-Tour fallen **keine Gebühren an den BTFV** an. Die Organisationspauschale für Challenger-Turniere beträgt pro Disziplin 10€ je Teilnehmer (Junioren 0€ für alle Disziplinen). Diese ist direkt an den ausrichtenden Verein zu entrichten.
+Für die Ausrichtung eines Turniers der BTFV-Tour fallen **keine Gebühren an den BTFV** an.
 
 ## Welche Turnierart passt zu uns?
 
@@ -76,6 +76,12 @@ Eine B-Lizenz kann direkt beim DTFB beantragt bzw. erworben werden:
 
 [Lizenz erwerben](https://lizenz.dtfb.de)
 
+## Gebühren
+
+Die Organisationspauschale beträgt **10 € je Teilnehmer und Disziplin**. Junioren zahlen für alle Disziplinen **0 €**.
+
+Die Pauschale ist direkt an den ausrichtenden Verein zu entrichten. Ein zusätzliches Startgeld darf nicht erhoben werden.
+
 
 # BTFV-Challenger
 
@@ -104,7 +110,7 @@ Folgende Angaben müssen enthalten sein:
 - Austragungsort mit Name und Adresse
 - Anzahl und Typ der Spieltische
 - Disziplin: Doppel und/oder Einzel
-- maximale Teilnehmerzahl, sofern diese begrenzt ist
+- Startplätze je Disziplin, sofern die Teilnehmerzahl begrenzt ist
 - Meldeschluss mit Datum und Uhrzeit, sofern es einen Meldeschluss gibt
 - vorgesehene Preise, z. B. Pokale, Medaillen, Geld- oder Sachpreise
 
@@ -118,7 +124,7 @@ Bitte beachtet: Die Ausschreibung muss dem BTFV spätestens **4 Wochen vor Turni
 
 ## Spielmodus
 
-Zunächst spielen alle Teilnehmer eine Qualifikationsphase. Diese kann entweder
+Zunächst spielen alle Teilnehmer eine Vorrunde. Diese kann entweder
 
 - **Jeder gegen Jeden** oder
 - nach dem **Schweizer System mit Buchholzzahl**
@@ -179,6 +185,12 @@ Für BTFV-Challenger gelten folgende Anforderungen:
 - Gespielt wird mit den zum jeweiligen Tischmodell zugelassenen Bällen.
 - Die Bälle werden vom Veranstalter bzw. Ausrichter bereitgestellt.
 - Die Spieltische müssen ausreichend ausgeleuchtet sein.
+
+## Gebühren
+
+Die Organisationspauschale beträgt **10 € je Teilnehmer und Disziplin**. Junioren zahlen für alle Disziplinen **0 €**.
+
+Die Pauschale ist direkt an den ausrichtenden Verein zu entrichten. Ein zusätzliches Startgeld darf nicht erhoben werden.
 
 ## Preise
 
@@ -248,7 +260,7 @@ Damit die Ergebnisse automatisch verarbeitet und der BTFV-Rangliste zugeordnet w
 3. Im Kickertool muss **„Auf Ergebnisseite teilen“** aktiviert sein.
 
    ![Kickertool-Einstellung „Ergebnisse teilen“](images/kickertool_ergebnisse_teilen.png)
-4. Der öffentliche Link zum Verein muss per E-Mail an [challenger@btfv.de](mailto:challenger@btfv.de) gesendet werden.
+4. Der öffentliche Ergebnislink des Vereins muss **einmalig** per E-Mail an [challenger@btfv.de](mailto:challenger@btfv.de) gesendet werden. Über diesen Link werden alle Turniere des Vereins erfasst; er muss nur dann erneut gemeldet werden, wenn er sich ändert.
 
    ![Öffentliche Turnierseite im Kickertool](images/kickertool_oeffentliche_seite.png)
 
@@ -339,9 +351,13 @@ Bei der Landesmeisterschaft geht es unabhängig von der Rangliste darum, einmal 
 
 Die Turniere der BTFV-Tour sind offene Turniere. Alle teilnehmenden Spielerinnen werden daher automatisch zusätzlich in der Damenwertung geführt. Eine gesonderte Meldung oder Anmeldung ist nicht erforderlich.
 
+Spielerinnen, die in beiden Wertungen einen Preis erreichen, erhalten die Preise aus der offenen Wertung und aus der Damenwertung nebeneinander.
+
 ## Juniorenförderung
 
-Junioren unter 18 Jahren erhalten vom BTFV **20 €**, wenn sie innerhalb der jeweiligen Ranglistensaison an mindestens **drei Turnieren der BTFV-Tour** teilgenommen haben.
+Junioren erhalten vom BTFV **20 €**, wenn sie innerhalb der jeweiligen Ranglistensaison an mindestens **drei Turnieren der BTFV-Tour** teilgenommen haben.
+
+Als Junior gilt, wer nach den Regularien des DTFB in einer Juniorenkategorie (**U19, U16 oder U13**) startberechtigt ist.
 
 ## Auszahlung
 

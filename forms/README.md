@@ -31,7 +31,10 @@ Ablauf im Detail:
 
 1. `make_fillable.py html` entfernt alle Platzhalter der Form `&lt;…&gt;` aus dem Template
    (die Felder bleiben leer) und bettet die Logos als Base64 ein.
-2. Edge druckt das HTML nach `assets/pdf/btfv-challenger-ausschreibung.pdf`.
+2. Edge druckt das HTML nach `forms/.build/btfv-challenger-ausschreibung.pdf`; erst nach
+   dem Einsetzen der Felder wird die Datei nach `assets/pdf/` kopiert. Grund: Ist das PDF
+   in `assets/pdf/` gerade in einem Viewer geöffnet, schreibt Edge es nicht neu – Schritt 3
+   hätte die Felder sonst ein zweites Mal in die alte Datei gesetzt.
 3. `make_fillable.py fields` liest die Vektorzeichnung der Seite, erkennt daran die
    Feldpositionen und setzt echte AcroForm-Felder ein:
    - **Textfeld**: jede waagerechte Linie breiter als 200 pt (die Unterstriche der Zeilen)

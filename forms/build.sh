@@ -17,9 +17,15 @@ urlpath()  { cygpath -m "$1" 2>/dev/null || echo "$1"; }
 python "$ROOT/forms/make_fillable.py" html "$TEMPLATE" "$OUT_HTML"
 
 EDGE="/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
-"$EDGE" --headless --disable-gpu --no-pdf-header-footer \
-  --print-to-pdf="$(winpath "$OUT_PDF")" "file:///$(urlpath "$OUT_HTML")"
+# Edge druckt in den Build-Ordner, nicht direkt nach assets/: Liegt dort ein
+# gesperrtes PDF (offener Viewer), schreibt Edge nichts und der naechste Schritt
+# wuerde die Felder ein zweites Mal in die alte Datei setzen.
+BUILD_PDF="$ROOT/forms/.build/btfv-challenger-ausschreibung.pdf"
+rm -f "$BUILD_PDF"
+"$EDGE" --headless --disable-gpu --no-pdf-header-footer   --print-to-pdf="$(winpath "$BUILD_PDF")" "file:///$(urlpath "$OUT_HTML")"
+[ -s "$BUILD_PDF" ] || { echo "Edge hat kein PDF geschrieben" >&2; exit 1; }
 
-python "$ROOT/forms/make_fillable.py" fields "$OUT_PDF"
+python "$ROOT/forms/make_fillable.py" fields "$BUILD_PDF"
+cp "$BUILD_PDF" "$OUT_PDF"
 
 echo "PDF: $OUT_PDF"
