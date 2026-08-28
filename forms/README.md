@@ -51,6 +51,10 @@ wurde das Template geändert, ohne die Listen nachzuziehen.
   nicht passt, wird ohne Fehlermeldung abgeschnitten. Nach jeder Änderung das PDF ansehen
   und prüfen, ob das Fußband samt Schlusszeile vollständig sichtbar ist. Stellschraube für
   die Höhe ist in erster Linie `margin-bottom` bei `.row` (aktuell 2,9 mm).
+- **Den Restplatz nimmt der Info-Block auf** (`.block.grow`, Grid-Zeile `1fr`), dessen letzte
+  Zeile „Sonstiges“ sich dehnt. Eine eigene Füllzeile gibt es nicht mehr: Ein schmaler weißer
+  Füllstreifen wurde ab einer Höhe unter 3 pt als Feldlinie erkannt und ließ den Build
+  fehlschlagen.
 - **Es darf keine `docs/btfv-challenger-ausschreibung.md` geben.** Der Build-Workflow
   erzeugt für jede `docs/*.md` ein Pandoc-PDF gleichen Namens und würde das Formular
   überschreiben. Deshalb liegt die Quelle in `forms/` und `forms/` ist in `_config.yml`
@@ -76,7 +80,7 @@ umgesetzt in BTFV-Farben.
 │        │ Disziplin (Ankreuzfelder), Weitere       │
 │        │ ▬ Band: Tische / Startplätze ▬           │
 │ TISCHE │ Tischmodelle                             │
-│ INFO   │ Anmeldung … Sonstiges, Vorrunde, Playoffs│
+│ INFO   │ Anmeldung, Preise, Catering, Sonstiges    │
 │ PARTNER│ Leonhart-Badge + Partnerzeile            │
 ├────────┴──────────────────────────────────────────┤
 │ ▬ Band: BTFV-CHALLENGER STANDARD ▬                │
@@ -114,18 +118,16 @@ Appearance-Stream geschrieben, damit sie in jedem Reader gleich aussehen. Zusät
 | `einlass` | Einlass | |
 | `turnierstart` | Turnierstart | |
 | `weitere_disziplin` | Weitere Disziplin | Freitext für Damen, Junioren, Senioren, Mixed |
-| `tischmodelle` | Tischmodelle | nur Tische der BTFV-Tischpartner |
+| `tischmodelle` | Tischmodelle | Anzahl und Modell, nur Tische der BTFV-Tischpartner |
 | `anmeldung` | Anmeldung | E-Mail-Adresse oder Link, über den sich Teams melden |
-| `startgeld` | Startgeld | pro Person, inklusive Organisationspauschale |
 | `preise` | Preise | |
 | `catering` | Catering | |
-| `sonstiges` | Sonstiges | |
+| `sonstiges` | Sonstiges | mehrzeilig, füllt den verbleibenden Platz bis zur Partnerzeile |
 
 **Bandfelder** (blaues Band, kurze Zahlenfelder): `anzahl_tische`,
 `startplaetze_doppel`, `startplaetze_einzel`.
 
-**Ankreuzfelder**: `offenes_doppel`, `offenes_einzel`, `vorrunde_schweizer`,
-`vorrunde_jgj`, `playoffs_single_ko`, `playoffs_doppel_ko`.
+**Ankreuzfelder**: `offenes_doppel`, `offenes_einzel`.
 
 ---
 
@@ -135,12 +137,16 @@ Appearance-Stream geschrieben, damit sie in jedem Reader gleich aussehen. Zusät
   Freitextfeld „Weitere Disziplin“. Begründung: In der Praxis sind fast alle Turniere
   offenes Doppel oder offenes Einzel; ein Raster mit Damen, Junioren, Senioren und Mixed
   war zu viel Fläche für seltene Fälle.
-- **Schweizer System steht bei „Vorrunde“ an erster Stelle**, davor stand „Jeder gegen
-  Jeden“ vorn.
+- **Kein Feld für Vorrunde und Playoffs.** Die zulässigen Modi sind in der Ordnung
+  geregelt und stehen im Fußband; als Ankreuzfeld waren sie doppelt gepflegt.
+- **`sonstiges` ist mehrzeilig** und reicht von der Catering-Zeile bis zur Partnerzeile.
+  Dafür ist der Eintrag in `TEXT_FIELDS` um `"multiline"` ergänzt; die Feldhöhe ergibt sich
+  aus dem Abstand zur darüberliegenden Linie.
 - **Divisionen (Profi/Amateur/Neuling) sind kein Formularfeld.** Die Aufteilung ergibt
   sich aus der Teilnehmerzahl und steht im Fußband beziehungsweise in der Ordnung.
-- **Startgeld und Organisationspauschale sind ein Feld.** Für den Ausrichter zählt der
-  Betrag pro Person.
+- **Kein Feld für Startgeld.** Die Organisationspauschale ist in der Ordnung mit 10 € je
+  Teilnehmer und Disziplin (Junioren 0 €) festgelegt und steht deshalb als feste Angabe im
+  Fußband statt als ausfüllbares Feld.
 - **Kein Feld für Meldeschluss und maximale Teilnehmerzahl.** Die Teilnehmerzahl steht
   bereits als Startplätze im blauen Band.
 - **Kein Feld für Figuren und Bälle.** Ergibt sich aus dem Tischmodell; die Anforderung

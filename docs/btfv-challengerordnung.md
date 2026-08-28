@@ -27,7 +27,7 @@ Bewerben sich mehrere Vereine für denselben Termin, achtet der BTFV bei der Ver
 
 Sind nach Ablauf der Bewerbungsfrist noch Termine frei, werden diese anschließend nach Eingang der Bewerbungen vergeben.
 
-Für die Ausrichtung eines Turniers der BTFV-Tour fallen **keine Gebühren an den BTFV** an. Startgeld und Organisationspauschale legt der Ausrichter selbst fest und behält sie ein.
+Für die Ausrichtung eines Turniers der BTFV-Tour fallen **keine Gebühren an den BTFV** an. Die Organisationspauschale für Challenger-Turniere beträgt pro Disziplin 10€ je Teilnehmer (Junioren 0€ für alle Disziplinen). Diese ist direkt an den ausrichtenden Verein zu entrichten.
 
 ## Welche Turnierart passt zu uns?
 
@@ -106,7 +106,6 @@ Folgende Angaben müssen enthalten sein:
 - Disziplin: Doppel und/oder Einzel
 - maximale Teilnehmerzahl, sofern diese begrenzt ist
 - Meldeschluss mit Datum und Uhrzeit, sofern es einen Meldeschluss gibt
-- Höhe der Gebühren, z. B. Organisationspauschale und Startgeld
 - vorgesehene Preise, z. B. Pokale, Medaillen, Geld- oder Sachpreise
 
 ### Vorlage für die Ausschreibung
@@ -194,7 +193,7 @@ Möglich sind beispielsweise:
 
 Die Preise werden vom Ausrichter gestellt.
 
-Zusätzliche Sponsorenpreise oder Werbegeschenke können vom Ausrichter frei vergeben werden.
+Zusätzliche Sponsorenpreise oder Werbegeschenke können vom Ausrichter dazuaddiert werden.
 
 Ehrungen und Preise in den weiteren Divisionen sind optional.
 
@@ -346,11 +345,17 @@ Junioren unter 18 Jahren erhalten vom BTFV **20 €**, wenn sie innerhalb der je
 
 ## Auszahlung
 
-Die Preise der Jahresrangliste werden auf der **Jahreshauptversammlung des BTFV** ausgezahlt.
+Die Endergebnisse der Jahresrangliste werden nach dem letzten Turnier der Saison auf der **BTFV-Webseite** veröffentlicht.
 
-Ist ein Gewinner verhindert, kann der Preis unter Vorlage einer **Vollmacht** auch von einer dritten Person entgegengenommen werden.
+Am selben Tag kontaktiert der BTFV die Gewinner per E-Mail – ausschließlich über die beim Verband hinterlegten Kontaktdaten. So ist sichergestellt, dass die Preise an die tatsächlich berechtigten Personen gehen.
 
-Nicht beanspruchte Preise gehen dem BTFV als **Spende** zu.
+Damit das möglich ist, ist der jeweilige **Vereinsvorstand** dafür verantwortlich, für seine Mitglieder eine gültige **E-Mail-Adresse** zu hinterlegen – idealerweise zusätzlich eine **Telefonnummer**.
+
+Erhält ein Gewinner keine E-Mail, ist er selbst dafür verantwortlich, sich beim BTFV unter [challenger@btfv.de](mailto:challenger@btfv.de) zu melden. Die Fristen bleiben davon unberührt.
+
+Ab der Veröffentlichung der Ergebnisse haben die Gewinner **vier Wochen** Zeit, ihren Preis anzunehmen.
+
+Erfolgt innerhalb dieser Frist keine Rückmeldung, gehen die nicht beanspruchten Preise dem BTFV als **Spende** zu.
 
 # Sponsoring
 

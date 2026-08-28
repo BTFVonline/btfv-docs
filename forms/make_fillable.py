@@ -18,7 +18,8 @@ import fitz
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GRAY = (0.36, 0.42, 0.49)
 
-# Textfelder in Layout-Reihenfolge (oben nach unten): Name, Tooltip, Vorbelegung
+# Textfelder in Layout-Reihenfolge (oben nach unten): Name, Tooltip, Vorbelegung,
+# optional "multiline" – dann reicht das Feld bis zur Zeile darueber
 TEXT_FIELDS = [
     ("turniername",       "Turniername",                            "BTFV-Challenger "),
     ("ausrichter",        "Ausrichter / Verein",                    ""),
@@ -28,12 +29,11 @@ TEXT_FIELDS = [
     ("einlass",           "Einlass (hh:mm)",                        ""),
     ("turnierstart",      "Turnierstart (hh:mm)",                   ""),
     ("weitere_disziplin", "Weitere Disziplin, z. B. Damen, Junioren, Senioren, Mixed", ""),
-    ("tischmodelle",      "Tischmodelle – nur Tische der BTFV-Tischpartner", ""),
+    ("tischmodelle",      "Tischmodelle mit Anzahl – nur Tische der BTFV-Tischpartner", ""),
     ("anmeldung",         "Anmeldung: E-Mail-Adresse oder Link",    ""),
-    ("startgeld",         "Startgeld pro Person, inkl. Organisationspauschale", ""),
     ("preise",            "Preise",                                 ""),
     ("catering",          "Catering",                               ""),
-    ("sonstiges",         "Sonstiges",                              ""),
+    ("sonstiges",         "Sonstiges",                              "", "multiline"),
 ]
 
 # Kurze Felder im blauen Band (links nach rechts)
@@ -46,8 +46,6 @@ BAND_FIELDS = [
 # Ankreuzfelder in Layout-Reihenfolge (zeilenweise, links nach rechts)
 CHECKBOXES = [
     "offenes_doppel", "offenes_einzel",
-    "vorrunde_schweizer", "vorrunde_jgj",
-    "playoffs_single_ko", "playoffs_doppel_ko",
 ]
 
 
@@ -130,16 +128,21 @@ def add_fields(pdf_path):
         if count != want:
             raise SystemExit(f"Layout passt nicht: {count} {name} gefunden, erwartet {want}")
 
-    for rule, (name, tip, value) in zip(rules, TEXT_FIELDS):
+    for i, (rule, field) in enumerate(zip(rules, TEXT_FIELDS)):
+        name, tip, value = field[:3]
+        multiline = len(field) > 3 and field[3] == "multiline"
+        top = rules[i - 1].y0 + 4 if multiline and i else rule.y0 - 13.5
         w = fitz.Widget()
         w.field_type = fitz.PDF_WIDGET_TYPE_TEXT
-        w.rect = fitz.Rect(rule.x0 + 1, rule.y0 - 13.5, rule.x1 - 1, rule.y0 + 1.5)
+        w.rect = fitz.Rect(rule.x0 + 1, top, rule.x1 - 1, rule.y0 + 1.5)
         w.field_name = name
         w.field_label = tip
         w.field_value = value
         w.text_fontsize = 9.5
         w.text_color = GRAY
         w.border_width = 0
+        if multiline:
+            w.field_flags |= fitz.PDF_TX_FIELD_IS_MULTILINE
         page.add_widget(w)
 
     for rule, (name, tip) in zip(band_rules, BAND_FIELDS):
