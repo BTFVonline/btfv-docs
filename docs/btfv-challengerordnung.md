@@ -357,7 +357,7 @@ Spielerinnen, die in beiden Wertungen einen Preis erreichen, erhalten die Preise
 
 Junioren erhalten vom BTFV **20 €**, wenn sie innerhalb der jeweiligen Ranglistensaison an mindestens **drei Turnieren der BTFV-Tour** teilgenommen haben.
 
-Als Junior gilt, wer nach den Regularien des DTFB in einer Juniorenkategorie (**U19, U16 oder U13**) startberechtigt ist.
+Als Junior gilt, wer nach den Regularien des DTFB in einer Juniorenkategorie (**U19, U16 oder U13**) startberechtigt ist. 
 
 ## Auszahlung
 
