@@ -1,6 +1,6 @@
 ---
 template: btfv
-title: "BTFV-Tour – Turnier- und Ranglistenordnung"
+title: "Turnier- und Ranglistenordnung"
 date: '{{ site.time | date: "%d.%m.%Y" }}'
 section_numbering: arabic
 pdf: /assets/pdf/btfv-challengerordnung.pdf
