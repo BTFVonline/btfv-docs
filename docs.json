@@ -1,0 +1,78 @@
+{
+  "generated": "2026-08-29T09:05:18+00:00",
+  "site": "BTFV Dokumente",
+  "documents": [
+    {
+      "slug": "btfv-challengerordnung",
+      "title": "Turnier- und Ranglistenordnung",
+      "subtitle": "",
+      "url": "/docs/btfv-challengerordnung.html",
+      "pdf": "/assets/pdf/btfv-challengerordnung.pdf",
+      "source": "https://github.com/BTFVonline/btfv-docs/blob/main/docs/btfv-challengerordnung.md",
+      "template": "btfv",
+      "section_numbering": "arabic",
+      "lang": "de",
+      "home": false
+    },
+    {
+      "slug": "gebuehrenordnung",
+      "title": "Gebührenordnung des BTFV e.V.",
+      "subtitle": "",
+      "url": "/docs/gebuehrenordnung.html",
+      "pdf": "/assets/pdf/gebuehrenordnung.pdf",
+      "source": "https://github.com/BTFVonline/btfv-docs/blob/main/docs/gebuehrenordnung.md",
+      "template": "btfv",
+      "section_numbering": "arabic",
+      "lang": "de",
+      "home": false
+    },
+    {
+      "slug": "index",
+      "title": "BTFV Dokumente",
+      "subtitle": "Offizielle Verbandsdokumente des Bayerischen Tischfußballverbandes e.V.",
+      "url": "/",
+      "pdf": "",
+      "source": "",
+      "template": "btfv",
+      "section_numbering": "",
+      "lang": "de",
+      "home": true
+    },
+    {
+      "slug": "satzung",
+      "title": "Satzung des BTFV e.V.",
+      "subtitle": "",
+      "url": "/docs/satzung.html",
+      "pdf": "/assets/pdf/satzung.pdf",
+      "source": "https://github.com/BTFVonline/btfv-docs/blob/main/docs/satzung.md",
+      "template": "btfv",
+      "section_numbering": "paragraph",
+      "lang": "de",
+      "home": false
+    },
+    {
+      "slug": "satzungs%C3%A4nderung",
+      "title": "Änderungsprotokoll (2026-02-14)",
+      "subtitle": "",
+      "url": "/docs/satzungs%C3%A4nderung.html",
+      "pdf": "",
+      "source": "",
+      "template": "btfv",
+      "section_numbering": "arabic",
+      "lang": "de",
+      "home": false
+    },
+    {
+      "slug": "spielordnung",
+      "title": "Spielordnung des BTFV e.V.",
+      "subtitle": "",
+      "url": "/docs/spielordnung.html",
+      "pdf": "/assets/pdf/spielordnung.pdf",
+      "source": "https://github.com/BTFVonline/btfv-docs/blob/main/docs/spielordnung.md",
+      "template": "btfv",
+      "section_numbering": "arabic",
+      "lang": "de",
+      "home": false
+    }
+  ]
+}

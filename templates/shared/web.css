@@ -404,8 +404,10 @@ body[class*="template-"] {
         padding: 10px 12px;
         border: 1px solid var(--color-border-default);
         text-align: left;
-        overflow-wrap: anywhere;
-        word-break: break-word;
+        /* Bewusst 'break-word' statt 'anywhere': 'anywhere' senkt die
+           min-content-Breite der Zelle auf ein Zeichen, dann quetscht sich eine
+           breite Tabelle in unlesbare Spalten, statt in .table-scroll zu scrollen. */
+        overflow-wrap: break-word;
         font-size: calc(15px * var(--font-zoom));
     }
 
@@ -424,12 +426,122 @@ body[class*="template-"] {
         }
     }
 
-    /* Letzte Spalte (z.B. PDF-Link) schmal und kein Umbruch */
-    & td:last-child,
-    & th:last-child {
+    /* Letzte Spalte schmal und ohne Umbruch – nur bei reinen Link-Spalten
+       (Index-Tabellen mit PDF-Link). Die Klasse setzt das Layout-Skript, wenn
+       jede Zelle der letzten Spalte ausschließlich einen Link enthält.
+       Früher galt das für jede Tabelle und musste in den Dokumenten von Hand
+       zurückgenommen werden. */
+    & table.table-linkcol td:last-child,
+    & table.table-linkcol th:last-child {
         width: 4rem;
         white-space: nowrap;
         text-align: center;
+    }
+
+    /* --- Breite Tabellen: eigener Scroll-Container ----------------------- */
+
+    /* Fallback ohne JavaScript: Eine Tabelle, die noch nicht eingepackt wurde,
+       liegt direkt im .wrapper. Sie scrollt dann selbst, damit sie die Seite
+       nicht seitlich sprengt. Sobald das Skript den Container gesetzt hat,
+       greift die Regel nicht mehr (die Tabelle liegt dann in .table-scroll). */
+    & .wrapper > table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    /* Der Container wird vom Layout-Skript um jede Tabelle gelegt. Ohne
+       JavaScript bleibt die Tabelle wie bisher – lesbar, nur ohne Sticky-Spalte. */
+    & .table-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 20px;
+
+        & table {
+            margin-bottom: 0;
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--color-brand-primary);
+            outline-offset: 2px;
+        }
+    }
+
+    /* Nur wenn wirklich etwas verdeckt ist: Rahmen auf Einzelkanten umstellen.
+       'border-collapse: collapse' und 'position: sticky' vertragen sich nicht –
+       zusammengelegte Rahmen wandern beim Scrollen weg. */
+    & .table-scroll.is-overflowing {
+        & table {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        & th,
+        & td {
+            border-width: 1px 1px 0 0;
+        }
+
+        & tr > *:first-child {
+            border-left-width: 1px;
+        }
+
+        & tr:last-child > * {
+            border-bottom-width: 1px;
+        }
+    }
+
+    /* Erste Spalte bleibt stehen – ab drei Spalten, siehe SPEC-001 F1. */
+    & .table-scroll--sticky.is-overflowing {
+        & th:first-child,
+        & td:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 1;
+            min-width: 8.5rem;
+        }
+
+        & td:first-child {
+            background: var(--color-surface-card);
+        }
+
+        /* Zebrastreifen liegen auf dem Zeilen-Element und scrollen mit weg.
+           Deshalb den gleichen Farbauftrag hier noch einmal deckend aufbauen. */
+        & tr:nth-child(even) td:first-child {
+            background:
+                linear-gradient(rgba(var(--color-brand-rgb), 0.06),
+                                rgba(var(--color-brand-rgb), 0.06)),
+                var(--color-surface-card);
+
+            :root[data-theme='dark'] & {
+                background:
+                    linear-gradient(rgba(var(--color-brand-rgb), 0.08),
+                                    rgba(var(--color-brand-rgb), 0.08)),
+                    var(--color-surface-card);
+            }
+        }
+    }
+
+    /* Hinweis erscheint nur bei echtem Überlauf; das Skript setzt 'hidden'. */
+    & .table-scroll-hint {
+        margin: 0 0 20px;
+        font-size: calc(14px * var(--font-zoom, 1));
+        color: var(--color-text-muted);
+    }
+
+    @media (max-width: 640px) {
+        & .table-scroll.is-overflowing {
+            & th,
+            & td {
+                padding: 8px 10px;
+                font-size: calc(14px * var(--font-zoom));
+            }
+        }
+
+        & .table-scroll--sticky.is-overflowing {
+            & th:first-child,
+            & td:first-child {
+                min-width: 7.5rem;
+            }
+        }
     }
 
     /* Inhaltsverzeichnis (TOC) */
@@ -926,4 +1038,86 @@ mark.base-search-mark--active {
     background: rgba(255, 160, 0, 0.7);
     outline: 2px solid rgba(255, 140, 0, 0.8);
     outline-offset: 1px;
+}
+
+/* --- Embed-Modus: Einbettung per Iframe (SPEC-007) -----------------------
+
+   Zur Spezifitaet: Die Regeln oben sind unter body[class*="template-"]
+   verschachtelt und erreichen damit (0,2,1). Wo hier dieselbe Eigenschaft
+   ueberschrieben wird, muss der Selektor das schlagen - deshalb steht in
+   einigen Regeln body[class*="template-"] mit drin.
+
+   Das !important gilt nur innerhalb von .is-embed und kann die Website nicht
+   beeinflussen. Es ist noetig, weil das Layout-Skript #back-to-top und
+   #scroll-progress per Inline-Style einblendet, und Inline schlaegt jeden
+   Selektor. */
+
+.is-embed,
+.is-embed body {
+    background: transparent;
+}
+
+.is-embed body {
+    padding-top: 0;
+}
+
+/* Seiten-Chrome, die in keiner Embed-Stufe ausser "full" auftaucht */
+.is-embed:not([data-embed-chrome="full"]) #scroll-progress,
+.is-embed:not([data-embed-chrome="full"]) #back-to-top,
+.is-embed #staging-banner,
+.is-embed #safe-area-cover {
+    display: none !important;
+}
+
+/* chrome="none": auch der Titelblock verschwindet */
+.is-embed[data-embed-chrome="none"] .base-doc-heading {
+    display: none !important;
+}
+
+/* chrome="minimal": Titel und Aktions-Links bleiben, Marke und Werkzeuge nicht */
+.is-embed[data-embed-chrome="minimal"] .base-doc-brand-link,
+.is-embed[data-embed-chrome="minimal"] .base-toolbar {
+    display: none !important;
+}
+
+/* Suche: im Embed-Modus komplett aus. Die Leiste ist position:fixed und braucht
+   ein Sichtfenster; ein Iframe mit inhaltsabhaengiger Hoehe hat keins. Der
+   Strg+F-Handler im Layout bleibt deshalb ebenfalls aus, damit die Suche des
+   Browsers greift. Auch bei chrome="full" - eine sichtbare, aber nutzlose
+   Schaltflaeche waere schlechter als keine. */
+.is-embed #base-search-bar,
+.is-embed [data-search-open] {
+    display: none !important;
+}
+
+/* nav="pinned": kein Weg zurueck ins Framework, unabhaengig von chrome.
+   Den Link selbst entfernt die Embed-Bruecke - hier faellt nur der Pfeil weg. */
+.is-embed[data-embed-nav="pinned"] .base-doc-back-icon {
+    display: none !important;
+}
+
+/* Kartenoptik aufloesen: Auf der Website liegt der Inhalt als Karte auf dem
+   Seitenhintergrund - eingebettet ergaebe das eine Box in der Box. Der Inhalt
+   soll stattdessen im Fluss der Gastgeberseite stehen, deren Breite und
+   Innenabstand gelten. Bei chrome="full" bleibt die Karte, weil dort bewusst
+   die Website nachgebildet wird. */
+.is-embed:not([data-embed-chrome="full"]) body[class*="template-"] .wrapper {
+    max-width: none;
+    margin: 0;
+    padding: 0 0 8px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+}
+
+.is-embed:not([data-embed-chrome="full"]) body[class*="template-"] .base-doc-heading {
+    max-width: none;
+    margin: 0 0 20px;
+    padding: 0 0 16px;
+    border: 0;
+    border-bottom: 1px solid var(--color-border-default);
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
 }

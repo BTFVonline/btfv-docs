@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <script>
+        // Embed-Modus (SPEC-007): Zustand setzen, bevor gezeichnet wird - kein Flackern
+        // der Kopfzeile und kein kurzes Aufblitzen des falschen Farbschemas.
+        (function () {
+            var p = new URLSearchParams(location.search);
+            if (p.get("embed") !== "1") return;
+            var root = document.documentElement;
+            root.classList.add("is-embed");
+            root.setAttribute("data-embed-chrome", p.get("chrome") || "none");
+            root.setAttribute("data-embed-nav", p.get("nav") === "framework" ? "framework" : "pinned");
+            var theme = p.get("theme") || "light";
+            if (theme !== "auto") {
+                root.setAttribute("data-embed-theme", theme);
+                root.setAttribute("data-theme", theme);
+            }
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,8 +34,8 @@
         <link rel="icon" type="image/png" href="/templates/btfv/images/favicon.png">
         <link rel="apple-touch-icon" href="/templates/btfv/images/logo.png">
         <link rel="manifest" href="/manifest.webmanifest">
-        <link rel="stylesheet" href="/templates/shared/web.css?v=1784056659">
-        <link rel="stylesheet" href="/templates/btfv/web.css?v=1784056659">
+        <link rel="stylesheet" href="/templates/shared/web.css?v=1787994318">
+        <link rel="stylesheet" href="/templates/btfv/web.css?v=1787994318">
     
 </head>
 <body class="section-arabic template-btfv">
@@ -29,6 +46,9 @@
 (() => {
     const initThemeToggle = () => {
         const root = document.documentElement;
+        // SPEC-007: Im Embed-Modus ist das Farbschema fest vorgegeben - die
+        // Automatik wuerde es sonst auf "auto" zuruecksetzen.
+        if (root.hasAttribute('data-embed-theme')) return;
         const toggle = document.querySelector('[data-theme-toggle]');
         const icon = document.querySelector('[data-theme-icon]');
         if (!toggle || !icon) return;
@@ -121,7 +141,7 @@
                         
                     </div>
                     
-                        <div class="base-doc-date">Stand: 14.07.2026</div>
+                        <div class="base-doc-date">Stand: 29.08.2026</div>
                     
                 </div>
                 <div class="base-toolbar">
@@ -812,7 +832,7 @@ Der BTFV-Vorstand behält sich das Recht vor neu gegründeten Mannschaften eine 
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const buildV = '1784056659';
+            const buildV = '1787994318';
             document.querySelectorAll('a[href]').forEach(a => {
                 const href = a.getAttribute('href');
                 if (!href || !href.match(/\.pdf(\?|$)/)) return;
@@ -869,6 +889,11 @@ Der BTFV-Vorstand behält sich das Recht vor neu gegründeten Mannschaften eine 
             toastTimer = setTimeout(() => toast.classList.remove("base-toast--visible"), 2000);
         };
 
+        // Die Embed-Bruecke (SPEC-007) kopiert im Namen der einbettenden Seite und
+        // braucht dafuer beides: die Bestaetigung und die Rueckfallebene von hier.
+        window.baseCopyText = baseCopyText;
+        window.baseShowCopyToast = showCopyToast;
+
         const initHeadingLinks = () => {
             const wrapper = document.querySelector(".wrapper");
             if (!wrapper) return;
@@ -895,6 +920,9 @@ Der BTFV-Vorstand behält sich das Recht vor neu gegründeten Mannschaften eine 
 
                 link.addEventListener("click", async (event) => {
                     event.preventDefault();
+                    // Eingebettet gehoert der Link der einbettenden Seite: eine Adresse
+                    // dieser Instanz fuehrte aus der Verbandsseite heraus (SPEC-007 A19).
+                    if (typeof window.baseEmbedCopyLink === "function" && window.baseEmbedCopyLink(id)) return;
                     const url = `${window.location.origin}${window.location.pathname}#${id}`;
                     await baseCopyText(url);
                     history.replaceState(null, "", `#${id}`);
@@ -914,6 +942,13 @@ Der BTFV-Vorstand behält sich das Recht vor neu gegründeten Mannschaften eine 
 
     <script>
         (() => {
+            // Im Embed-Modus (SPEC-007) bleibt die Suche aus: Die Leiste ist
+            // position:fixed und richtet sich am Sichtfenster aus - ein Iframe,
+            // dessen Hoehe dem Inhalt folgt, hat aber keins, die Leiste landete
+            // also irgendwo im Dokument. Ohne den Strg+F-Handler greift statt
+            // dessen die Suche des Browsers, und die funktioniert.
+            if (document.documentElement.classList.contains("is-embed")) return;
+
             const searchBar = document.getElementById("base-search-bar");
             const searchInput = document.getElementById("base-search-input");
             const searchCount = document.getElementById("base-search-count");
@@ -1030,6 +1065,346 @@ Der BTFV-Vorstand behält sich das Recht vor neu gegründeten Mannschaften eine 
             });
         })();
     </script>
+
+    <script>
+        // Breite Tabellen seitlich scrollbar machen (SPEC-001).
+        // kramdown liefert ein nacktes <table>; der Scroll-Container entsteht
+        // deshalb hier zur Laufzeit, damit kein Dokument Markup dafuer braucht.
+        const initTableScroll = () => {
+            const wrapper = document.querySelector(".wrapper");
+            if (!wrapper) return;
+
+            // Letzte Spalte enthaelt in jeder Zeile nur einen Link (Index-Tabellen)?
+            const isLinkColumn = (table) => {
+                const cells = [...table.rows].map(r => r.cells[r.cells.length - 1]);
+                if (cells.length < 2) return false;
+                return cells.every(cell => {
+                    if (!cell) return false;
+                    if (cell.tagName === "TH") return true;
+                    const links = cell.querySelectorAll("a");
+                    return links.length === 1 && cell.textContent.trim() === links[0].textContent.trim();
+                });
+            };
+
+            wrapper.querySelectorAll("table").forEach((table) => {
+                if (table.closest(".table-scroll")) return;
+
+                if (isLinkColumn(table)) table.classList.add("table-linkcol");
+
+                const box = document.createElement("div");
+                box.className = "table-scroll";
+                box.setAttribute("role", "region");
+                box.setAttribute("aria-label", "Tabelle, seitlich scrollbar");
+                table.parentNode.insertBefore(box, table);
+                box.appendChild(table);
+
+                const columns = table.rows.length ? table.rows[0].cells.length : 0;
+                if (columns > 2) box.classList.add("table-scroll--sticky");
+
+                const hint = document.createElement("p");
+                hint.className = "table-scroll-hint";
+                hint.textContent = "Die Tabelle lässt sich seitlich scrollen.";
+                hint.hidden = true;
+                box.after(hint);
+
+                const update = () => {
+                    const overflowing = table.scrollWidth > box.clientWidth + 1;
+                    box.classList.toggle("is-overflowing", overflowing);
+                    hint.hidden = !overflowing;
+                    // Fokus nur vergeben, wenn es auch etwas zu scrollen gibt.
+                    if (overflowing) {
+                        box.setAttribute("tabindex", "0");
+                    } else {
+                        box.removeAttribute("tabindex");
+                    }
+                };
+
+                update();
+
+                if (window.ResizeObserver) {
+                    const ro = new ResizeObserver(update);
+                    ro.observe(box);
+                    ro.observe(table);
+                }
+
+                // Die Schriftgröße hängt an --font-zoom auf <html>.
+                new MutationObserver(update).observe(document.documentElement, {
+                    attributes: true,
+                    attributeFilter: ["style"]
+                });
+            });
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initTableScroll);
+        } else {
+            initTableScroll();
+        }
+    </script>
+
+    <script>
+// Embed-Bruecke (SPEC-007): meldet Hoehe und Pfad an die einbettende Seite und
+// regelt, welche Links im Iframe bleiben duerfen.
+//
+// Liegt bewusst in _includes/ und nicht in assets/: die Reusable Workflow kopiert
+// scripts/, templates/, _layouts/ und _includes/ in die Kind-Repos, assets/ nicht.
+(() => {
+    const root = document.documentElement;
+    if (!root.classList.contains("is-embed")) return;
+
+    const nav = root.getAttribute("data-embed-nav") === "framework" ? "framework" : "pinned";
+    const chrome = root.getAttribute("data-embed-chrome") || "none";
+    const theme = root.getAttribute("data-embed-theme") || "";
+
+    // Zielorigin: die einbettende Seite. Gesendet werden nur Hoehe, Pfad und Titel.
+    //
+    // Der Wert kommt aus dem Parameter host, den die einbettende Seite setzt.
+    // Aus document.referrer laesst er sich nur beim ersten Laden ableiten: Nach
+    // einer Navigation im Rahmen ist der Referrer die vorige Dokumentseite, und
+    // die Nachrichten gingen an die eigene statt an die einbettende Adresse.
+    const hostParam = new URLSearchParams(location.search).get("host") || "";
+    const parentOrigin = (() => {
+        if (/^https?:\/\/[^/?#]+$/.test(hostParam)) {
+            return hostParam;
+        }
+        try {
+            return document.referrer ? new URL(document.referrer).origin : "*";
+        } catch (e) {
+            return "*";
+        }
+    })();
+
+    const send = (payload) => {
+        if (window.parent === window) return;
+        try {
+            window.parent.postMessage(payload, parentOrigin);
+        } catch (e) { /* einbettende Seite nicht erreichbar - nicht kritisch */ }
+    };
+
+    /* --- Anker: scrollen muss die einbettende Seite -------------------------- */
+
+    // Das Iframe ist so hoch wie sein Inhalt und traegt scrolling="no" - es hat also
+    // keinen eigenen Scrollweg. Ein Ankersprung im Iframe bewegt darum nichts sichtbar.
+    // Gemeldet wird der Abstand des Ziels vom Dokumentanfang; die einbettende Seite
+    // rechnet ihn in ihre Koordinaten um und scrollt (SPEC-007 A18).
+    const anchorTarget = (hash) => {
+        const raw = String(hash || "").replace(/^#/, "");
+        if (!raw) return null;
+        let id = raw;
+        try { id = decodeURIComponent(raw); } catch (e) { /* Rohwert verwenden */ }
+        return document.getElementById(id)
+            || document.getElementById(raw)
+            || document.getElementsByName(id)[0]
+            || null;
+    };
+
+    const requestScroll = (hash, smooth) => {
+        const target = anchorTarget(hash);
+        if (!target) return false;
+        const offset = Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY));
+        send({
+            type: "mdde:anchor",
+            hash: "#" + String(hash).replace(/^#/, ""),
+            offset: offset,
+            smooth: !!smooth
+        });
+        return true;
+    };
+
+    /* --- Kopier-Link an Ueberschriften --------------------------------------- */
+
+    // Kopiert wird in der einbettenden Seite: nur sie kennt ihre eigene Adresse, und
+    // navigator.clipboard scheitert im fremden Iframe an der Berechtigungsrichtlinie.
+    // Das Layout ruft diesen Haken, statt selbst zu kopieren (SPEC-007 A19).
+    window.baseEmbedCopyLink = (id) => {
+        if (window.parent === window || !id) return false;
+        send({ type: "mdde:copyLink", hash: "#" + id });
+        try { history.replaceState(null, "", "#" + id); } catch (e) { /* Adresse bleibt stehen */ }
+        return true;
+    };
+
+    /* --- Hoehe melden ------------------------------------------------------- */
+
+    let lastHeight = 0;
+    let pending = null;
+
+    // Gemessen wird die Hoehe des Inhalts, nicht die des Dokuments: scrollHeight von
+    // <html> ist immer mindestens so gross wie das Sichtfenster - und das Sichtfenster
+    // ist hier das Iframe in seiner bisherigen Hoehe. Ein kurzes Dokument meldete so
+    // beim Zurueckgehen die Hoehe des vorigen, langen.
+    const measure = () => {
+        const body = document.body;
+        if (!body) return 0;
+
+        let height = body.getBoundingClientRect().height;
+
+        // Der untere Aussenabstand des letzten Kindes zaehlt nicht zur Box des body.
+        const children = body.children;
+        for (let i = 0; i < children.length; i++) {
+            const child = children[i];
+            const style = getComputedStyle(child);
+            if (style.position === "fixed" || style.display === "none") continue;
+
+            const bottom = child.getBoundingClientRect().bottom
+                + window.scrollY
+                + (parseFloat(style.marginBottom) || 0);
+            if (bottom > height) height = bottom;
+        }
+
+        return Math.ceil(height);
+    };
+
+    const reportHeight = () => {
+        const height = measure();
+        if (height === lastHeight) return;
+        lastHeight = height;
+        send({ type: "mdde:height", height: height });
+    };
+
+    // Drosselung: waehrend Layoutaenderungen feuert der ResizeObserver haeufig.
+    const scheduleHeight = () => {
+        if (pending) return;
+        pending = setTimeout(() => { pending = null; reportHeight(); }, 100);
+    };
+
+    if (window.ResizeObserver) {
+        new ResizeObserver(scheduleHeight).observe(document.documentElement);
+    }
+    window.addEventListener("load", reportHeight);
+    window.addEventListener("resize", scheduleHeight);
+    document.addEventListener("DOMContentLoaded", scheduleHeight);
+
+    // Bilder aendern die Hoehe erst, wenn sie geladen sind.
+    document.addEventListener("load", (e) => {
+        if (e.target && e.target.tagName === "IMG") scheduleHeight();
+    }, true);
+
+    /* --- Pfad melden -------------------------------------------------------- */
+
+    const locationPayload = () => ({
+        type: "mdde:location",
+        path: location.pathname,
+        hash: location.hash,
+        title: document.title
+    });
+
+    if (nav === "framework") {
+        window.addEventListener("hashchange", () => send(locationPayload()));
+    }
+
+    /* --- Navigation --------------------------------------------------------- */
+
+    // nav="pinned": kein Weg zurueck ins Framework. Der Marken-Link wird durch ein
+    // nicht klickbares div ersetzt - dieselbe Markup-Variante, die das Layout auf
+    // der Startseite ohnehin ausgibt. Nur per CSS zu verstecken wuerde einen
+    // fokussierbaren Link stehen lassen.
+    const unlinkBrand = () => {
+        const brand = document.querySelector("a.base-doc-brand-link");
+        if (!brand) return;
+        const div = document.createElement("div");
+        div.className = brand.className;
+        div.innerHTML = brand.innerHTML;
+        brand.replaceWith(div);
+    };
+
+    const isPdf = (url) => /\.pdf(\?|#|$)/i.test(url.pathname + url.search);
+
+    const withEmbedParams = (url) => {
+        url.searchParams.set("embed", "1");
+        url.searchParams.set("chrome", chrome);
+        url.searchParams.set("nav", nav);
+        if (theme) url.searchParams.set("theme", theme);
+        // Ohne host verlieren die Folgeseiten die Adresse der einbettenden Seite.
+        if (hostParam) url.searchParams.set("host", hostParam);
+        return url;
+    };
+
+    const onClick = (e) => {
+        if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        const anchor = e.target.closest && e.target.closest("a[href]");
+        if (!anchor) return;
+
+        const href = anchor.getAttribute("href");
+        if (!href || href.startsWith("mailto:") || href.startsWith("tel:")) return;
+
+        let url;
+        try {
+            url = new URL(anchor.href, location.href);
+        } catch (err) {
+            return;
+        }
+
+        // Anker auf derselben Seite: Der Sprung des Browsers ginge ins Leere, weil das
+        // Iframe keinen Scrollweg hat - scrollen muss die einbettende Seite (A18).
+        const samePage = url.origin === location.origin && url.pathname === location.pathname && url.hash;
+        if (samePage) {
+            e.preventDefault();
+            if (requestScroll(url.hash, true)) {
+                try { history.replaceState(null, "", url.hash); } catch (err) { /* Adresse bleibt stehen */ }
+                if (nav === "framework") send(locationPayload());
+            }
+            return;
+        }
+
+        const external = url.origin !== location.origin;
+        if (external || isPdf(url) || nav === "pinned") {
+            e.preventDefault();
+            window.open(url.href, "_blank", "noopener");
+            return;
+        }
+
+        // nav="framework": im Iframe navigieren, Embed-Zustand mitnehmen.
+        e.preventDefault();
+        location.href = withEmbedParams(url).href;
+    };
+
+    /* --- Nachrichten der einbettenden Seite ---------------------------------- */
+
+    window.addEventListener("message", (ev) => {
+        if (parentOrigin !== "*" && ev.origin !== parentOrigin) return;
+        if (ev.source !== window.parent) return;
+        const data = ev.data;
+        if (!data || typeof data !== "object") return;
+
+        if (data.type === "mdde:scrollTo" && typeof data.hash === "string" && data.hash) {
+            requestScroll(data.hash, false);
+        } else if (data.type === "mdde:scrollSelf" && typeof data.offset === "number" && isFinite(data.offset)) {
+            // Nur bei gedeckelter Hoehe: dann gibt es hier ueberhaupt einen Scrollweg.
+            window.scrollTo({ top: Math.max(0, data.offset), behavior: data.smooth ? "smooth" : "auto" });
+        } else if (data.type === "mdde:copied") {
+            if (data.ok) {
+                if (typeof window.baseShowCopyToast === "function") window.baseShowCopyToast();
+            } else if (typeof data.url === "string" && data.url && typeof window.baseCopyText === "function") {
+                // Rueckfallebene im Dokument - greift nur mit allow="clipboard-write".
+                Promise.resolve(window.baseCopyText(data.url)).then(() => {
+                    if (typeof window.baseShowCopyToast === "function") window.baseShowCopyToast();
+                }, () => { /* ohne Zwischenablage keine Bestaetigung */ });
+            }
+        } else if (data.type === "mdde:theme" && (data.theme === "light" || data.theme === "dark")) {
+            root.setAttribute("data-theme", data.theme);
+            root.setAttribute("data-embed-theme", data.theme);
+            scheduleHeight();
+        }
+    });
+
+    /* --- Start -------------------------------------------------------------- */
+
+    const init = () => {
+        if (nav === "pinned") unlinkBrand();
+        document.addEventListener("click", onClick);
+        send({ type: "mdde:ready", path: location.pathname, title: document.title });
+        send(locationPayload());
+        reportHeight();
+    };
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+    } else {
+        init();
+    }
+})();
+</script>
+
 </body>
 </html>
 
