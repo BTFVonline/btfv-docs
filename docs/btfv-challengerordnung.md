@@ -248,7 +248,9 @@ Mini-Challenger ohne KO-Runde können nicht für die Rangliste gemeldet werden.
 
 # Kickertool und Ergebnismeldung
 
-Für **alle Turniere der BTFV-Tour** muss das [Kickertool](https://app.kickertool3.de/) verwendet werden.
+Für **alle Turniere der BTFV-Tour** muss das Kickertool unter **[app.kickertool3.de](https://app.kickertool3.de/)** verwendet werden.
+
+Achtung: Es gibt zwei Kickertool-Versionen parallel. Maßgeblich ist die Adresse mit der **3** (`app.kickertool3.de`); die ältere Version unter `app.kickertool.de` wird nicht mehr weiterentwickelt und ist für die BTFV-Rangliste nicht zugelassen.
 
 Damit die Ergebnisse automatisch verarbeitet und der BTFV-Rangliste zugeordnet werden können, sind folgende Punkte zu beachten:
 
